@@ -49,6 +49,7 @@ void  boutique::set_horaire(int nbr_heure){this-> nbr_heure= nbr_heure;}
           query.bindValue(":adresse",adresse);
            query.bindValue(":nbr_employees",nbre_string);
              query.bindValue(":nbr_heure", nbrh_string);
+              return  query.exec();
 
 }
 
@@ -73,8 +74,8 @@ void  boutique::set_horaire(int nbr_heure){this-> nbr_heure= nbr_heure;}
  bool boutique::supprimer(QString ID_boutique)
  {
      QSqlQuery query;
-     query.prepare("DELETE from boutique where ID_boutique=ID_boutique");
-      query.bindValue(":ID_boutique",ID_boutique);
+     query.prepare("DELETE from boutique where ID_boutique=:ID_boutique");
+      query.bindValue(0,ID_boutique);
 
       return  query.exec();
 

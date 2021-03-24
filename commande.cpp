@@ -49,7 +49,7 @@ bool commande::supprimer(QString ref_commande)
 {
     QSqlQuery query;
     query.prepare("DELETE from commande where ref_commande=:ref_commande");
-     query.bindValue(":ref_commande",ref_commande);
+     query.bindValue(0,ref_commande);
 
      return  query.exec();
 
@@ -60,8 +60,8 @@ QSqlQueryModel* commande::afficher()
 
       QSqlQueryModel*model=new QSqlQueryModel();
       model->setQuery("SELECT * FROM commande");
-       model->setHeaderData(0, Qt::Horizontal, QObject::tr("ref_commande"));
-         model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_produit"));
+       model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom_produit"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("ref_commande"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("nbr_produit"));
 
       return model;

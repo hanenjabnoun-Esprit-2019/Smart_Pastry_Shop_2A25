@@ -35,7 +35,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_ajouter_commande_clicked()
 {
-    QString nom_produit=ui->lineEdit_2->text();
+    QString nom_produit=ui->lineEdit->text();
        int nbr_produit=ui->lineEdit_2->text().toInt();
         QString ref_commande=ui->lineEdit_3->text();
       commande c (nom_produit,ref_commande,nbr_produit);
@@ -58,9 +58,9 @@ void MainWindow::on_ajouter_commande_clicked()
 
 void MainWindow::on_supprimer_commande_clicked()
 {
-    commande c;
-    QString ref=ui->lineEdit_8->text();
-      bool test=c.supprimer(ref);
+    commande c1;
+    c1.set_ref(ui->lineEdit_8->text());
+      bool test=c1.supprimer(c1.get_ref());
       if(test)
          {
              QMessageBox::information(nullptr, QObject::tr("ok"),
@@ -93,7 +93,7 @@ bool test=b.ajouter();
                 QMessageBox::information(nullptr, QObject::tr("ok"),
                             QObject::tr("ajout effectuer.\n"
                                         "Click Cancel to exit."), QMessageBox::Cancel);
-               ui->tableView_Commandes->setModel(c.afficher());
+               ui->tableView_boutique->setModel(b.afficher());
 
 
         }
@@ -112,16 +112,16 @@ bool test=b.ajouter();
 }
 void MainWindow::on_supprimer_boutique_clicked()
 {
-    boutique b;
-    QString ID=ui->lineEdit_14->text();
+    boutique b1;
+    b1.set_ID_boutique(ui->lineEdit_14->text());
 
-    bool test=b.supprimer(ID);
+    bool test=b1.supprimer(ui->lineEdit_14->text());
     if(test)
        {
            QMessageBox::information(nullptr, QObject::tr("ok"),
                        QObject::tr("suppression effectuer.\n"
                                    "Click Cancel to exit."), QMessageBox::Cancel);
-           ui->tableView_Commandes->setModel(c.afficher());
+           ui->tableView_boutique->setModel(b.afficher());
 
 
    }
@@ -130,4 +130,55 @@ void MainWindow::on_supprimer_boutique_clicked()
                        QObject::tr("suppression non effectuer.\n"
                                    "Click Cancel to exit."), QMessageBox::Cancel);
 
+}
+
+void MainWindow::on_bar_ajoutC_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(0);
+}
+
+void MainWindow::on_bar_modifC_clicked()
+{
+  ui->stackedWidget_2->setCurrentIndex(1);
+}
+
+void MainWindow::on_bar_afficheC_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_bar_suppC_clicked()
+{
+     ui->stackedWidget_2->setCurrentIndex(3);
+}
+
+void MainWindow::on_bar_ajoutB_clicked()
+{
+      ui->stackedWidget_3->setCurrentIndex(0);
+}
+
+void MainWindow::on_bar_modifB_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(1);
+}
+
+void MainWindow::on_bar_affichB_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(3);
+}
+
+void MainWindow::on_bar_suppB_clicked()
+{
+    ui->stackedWidget_3->setCurrentIndex(2);
+}
+
+void MainWindow::on_home1_clicked()
+{
+     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_home2_clicked()
+{
+     ui->stackedWidget->setCurrentIndex(0);
 }

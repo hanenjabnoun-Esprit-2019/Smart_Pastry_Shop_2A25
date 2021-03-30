@@ -80,3 +80,23 @@ void  boutique::set_horaire(int nbr_heure){this-> nbr_heure= nbr_heure;}
       return  query.exec();
 
  }
+
+
+ bool boutique::modifier(QString ID_boutique,QString nom_boutique,QString adresse,int nbr_employees,int nbr_heure)
+ {
+     QSqlQuery query;
+     QString nbrE=QString::number(nbr_employees);
+     QString nbr_H=QString::number(nbr_heure);
+     query.prepare("UPDATE boutique set ID_boutique=:ID_boutique,nom_boutique=:nom_boutique,adresse=:adresse, nbr_employees=:nbr_employees,nbr_heure=:nbr_heure WHERE ID_boutique=:ID_boutique");
+
+     query.bindValue(":ID_boutique", ID_boutique);
+     query.bindValue(":nom_boutique",nom_boutique);
+     query.bindValue(":adresse",adresse);
+     query.bindValue(":nbr_employees", nbrE);
+     query.bindValue(":nbr_heure",nbr_H);
+     return query.exec();
+
+
+
+
+ }

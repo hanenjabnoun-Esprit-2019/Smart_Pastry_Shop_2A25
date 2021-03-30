@@ -55,6 +55,14 @@ private slots:
 
     void on_home2_clicked();
 
+    void on_modifier_boutique_clicked();
+
+    void on_tableView_boutique_clicked(const QModelIndex &index);
+
+    void on_modifier_commande_clicked();
+
+    void on_tableView_Commandes_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     commande c;

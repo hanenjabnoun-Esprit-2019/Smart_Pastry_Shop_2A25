@@ -60,12 +60,24 @@ QSqlQueryModel* commande::afficher()
 
       QSqlQueryModel*model=new QSqlQueryModel();
       model->setQuery("SELECT * FROM commande");
-       model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom_produit"));
-         model->setHeaderData(1, Qt::Horizontal, QObject::tr("ref_commande"));
+       model->setHeaderData(1, Qt::Horizontal, QObject::tr("ref_command"));
+         model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom_produit"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("nbr_produit"));
 
       return model;
  }
 
+ bool commande::modifier(QString nom_produit,QString ref_commande,int nbr_produit)
+ {
 
+      QSqlQuery query;
+      QString nbrP=QString::number(nbr_produit);
+      query.prepare("UPDATE commande set  ref_commande=:ref_commande,nom_produit=:nom_produit,nbr_produit=:nbr_produit WHERE ref_commande=:ref_commande");
+       query.bindValue(":nom_produit",nom_produit);
+       query.bindValue(":ref_commandet",ref_commande);
+         query.bindValue(":nbr_produit",nbrP);
+ return query.exec();
+
+
+ }
 

@@ -23,7 +23,7 @@ public:
    bool ajouter();
    QSqlQueryModel* afficher();
     bool supprimer(QString);
-     bool modifier(QString,QString,QString,int,QTime);
+     bool modifier(QString,QString,QString,int,int);
 
 
 private:

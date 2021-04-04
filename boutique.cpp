@@ -3,6 +3,7 @@
 #include<QtDebug>
 #include<QObject>
 
+#include<QStringList>
 boutique::boutique()
 {
      ID_boutique="";
@@ -99,4 +100,20 @@ void  boutique::set_horaire(int nbr_heure){this-> nbr_heure= nbr_heure;}
 
 
 
+ }
+
+
+ QSqlQueryModel * boutique::trie(const QString &critere, const QString &mode )
+ {
+
+     QSqlQueryModel * model= new QSqlQueryModel();
+
+ model->setQuery("select * from boutique order by "+critere+" "+mode+"");
+ model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_boutique"));
+   model->setHeaderData(1, Qt::Horizontal, QObject::tr("nom_boutique"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("adresse"));
+     model->setHeaderData(3, Qt::Horizontal, QObject::tr("nbr_employees"));
+     model->setHeaderData(4, Qt::Horizontal, QObject::tr("nbr_heure"));
+
+ return  model;
  }

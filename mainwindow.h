@@ -63,6 +63,10 @@ private slots:
 
     void on_tableView_Commandes_clicked(const QModelIndex &index);
 
+    void on_tri_boutique_clicked();
+
+    void on_pushButton_22_clicked();
+
 private:
     Ui::MainWindow *ui;
     commande c;

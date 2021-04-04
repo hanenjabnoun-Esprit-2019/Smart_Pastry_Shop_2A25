@@ -3,6 +3,14 @@
 #include"commande.h"
 #include<QString>
 #include <QMessageBox>
+#include <QTextStream>
+#include <QSqlQuery>
+#include<QtDebug>
+#include <QTextDocument>
+#include <QPrinter>
+#include <QPrintDialog>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -12,6 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableView_boutique->setModel(b.afficher());
     ui->tableView_Commandes->setModel(c.afficher());
+     ui->spinBox->setValidator(new QIntValidator(100, 999, this));
+     ui->spinBox_3->setValidator(new QIntValidator(100, 999, this));
+     ui->spinBox_2->setValidator(new QIntValidator(100, 999, this));
+     ui->spinBox_4->setValidator(new QIntValidator(100, 999, this));
+     ui->lineEdit_6->setValidator(new QIntValidator(100, 999, this));
+     ui->lineEdit_2->setValidator(new QIntValidator(100, 999, this));
+
 
 }
 
@@ -229,19 +244,19 @@ void MainWindow::on_tableView_boutique_clicked(const QModelIndex &index)
 void MainWindow::on_modifier_commande_clicked()
 {
 
-
    QString ref_commande=ui->lineEdit_4->text();
     QString nom_produit=ui->lineEdit_5->text();
    int nbr_produit=ui->lineEdit_6->text().toInt();
-   commande c (nom_produit,ref_commande,nbr_produit);
+   commande c(nom_produit,ref_commande,nbr_produit);
 
    bool test=c.modifier(nom_produit,ref_commande,nbr_produit);
 
    if(test)
-       {ui->tableView_Commandes->setModel(c.afficher());
+       { ui->tableView_Commandes->setModel(c.afficher());
            QMessageBox::information(nullptr, QObject::tr("modifier une commande"),
                                     QObject::tr("commande  modifié.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);}
+                                                "Click Cancel to exit."), QMessageBox::Cancel);
+   }
        else
    {
            QMessageBox::critical(nullptr, QObject::tr("Modifier une commande"),
@@ -255,4 +270,90 @@ void MainWindow::on_tableView_Commandes_clicked(const QModelIndex &index)
     ui->lineEdit_4->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),1)).toString());
      ui->lineEdit_5->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),0)).toString());
      ui->lineEdit_6->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),2)).toString());
+}
+
+void MainWindow::on_tri_boutique_clicked()
+{
+    QString critere=ui->comboBox->currentText();
+    QString mode;
+    if (ui->checkBox->checkState()==false)
+{
+         mode="DESC";
+}
+     else if(ui->checkBox_2->checkState()==false)
+     {
+         mode="ASC";
+     }
+
+     ui->tableView_boutique->setModel(b.trie(critere,mode));
+}
+
+void MainWindow::on_pushButton_22_clicked()
+{
+    QTableView tableView_boutique;
+    QSqlQueryModel * Modal=new  QSqlQueryModel();
+
+    QSqlQuery qry ;
+     qry.prepare("SELECT * FROM boutique");
+     qry.exec();
+     Modal->setQuery(qry);
+    tableView_boutique.setModel(Modal);
+
+
+
+
+
+
+     QString strStream;
+     QTextStream out(&strStream);
+
+     const int rowCount =tableView_boutique.model()->rowCount();
+     const int columnCount =tableView_boutique.model()->columnCount();
+
+     const QString strTitle ="Document";
+
+
+     out <<  "<html>\n"
+         "<head>\n"
+             "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+         <<  QString("<title>%1</title>\n").arg(strTitle)
+         <<  "</head>\n"
+         "<body bgcolor=#ffffff link=#5000A0>\n"
+        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les boutique")
+        <<"<br>"
+         <<"<table border=1 cellspacing=0 cellpadding=2>\n";
+
+     out << "<thead><tr bgcolor=#f0f0f0>";
+     for (int column = 0; column < columnCount; column++)
+         if (! tableView_boutique.isColumnHidden(column))
+             out << QString("<th>%1</th>").arg( tableView_boutique.model()->headerData(column, Qt::Horizontal).toString());
+     out << "</tr></thead>\n";
+     for (int row = 0; row < rowCount; row++) {
+             out << "<tr>";
+             for (int column = 0; column < columnCount; column++) {
+                 if (! tableView_boutique.isColumnHidden(column)) {
+                     QString data =  tableView_boutique.model()->data( tableView_boutique.model()->index(row, column)).toString().simplified();
+                     out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                 }
+             }
+             out << "</tr>\n";
+         }
+         out <<  "</table>\n"
+                 "<br><br>"
+
+
+         "</body>\n"
+         "</html>\n";
+
+     QTextDocument *document = new QTextDocument();
+     document->setHtml(strStream);
+
+     QPrinter printer;
+
+     QPrintDialog *dialog = new QPrintDialog(&printer, NULL);
+     if (dialog->exec() == QDialog::Accepted) {
+         document->print(&printer);
+     }
+
+     delete document;
 }

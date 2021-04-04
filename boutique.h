@@ -1,10 +1,11 @@
 #ifndef BOUTIQUE_H
 #define BOUTIQUE_H
 
+#include<QDate>
 #include<QString>
 #include<QSqlQueryModel>
 
-
+#include <QPdfWriter>
 class boutique
 {
 public:
@@ -24,6 +25,7 @@ public:
    QSqlQueryModel* afficher();
     bool supprimer(QString);
      bool modifier(QString,QString,QString,int,int);
+     QSqlQueryModel *  trie(const QString &critere, const QString &mode );
 
 
 private:

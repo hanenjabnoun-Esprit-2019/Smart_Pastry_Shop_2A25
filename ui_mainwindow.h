@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -131,6 +132,9 @@ public:
     QLabel *label_18;
     QComboBox *comboBox;
     QTableView *tableView_boutique;
+    QCheckBox *checkBox;
+    QCheckBox *checkBox_2;
+    QPushButton *tri_boutique;
     QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *bar_ajoutB;
@@ -410,7 +414,7 @@ public:
 ""));
         page_12 = new QWidget();
         page_12->setObjectName(QStringLiteral("page_12"));
-        page_12->setGeometry(QRect(0, 0, 100, 30));
+        page_12->setGeometry(QRect(0, 0, 421, 50));
         lineEdit = new QLineEdit(page_12);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(0, 10, 161, 20));
@@ -422,7 +426,7 @@ public:
         toolBox->addItem(page_12, QStringLiteral("Nom de produit"));
         page_13 = new QWidget();
         page_13->setObjectName(QStringLiteral("page_13"));
-        page_13->setGeometry(QRect(0, 0, 100, 30));
+        page_13->setGeometry(QRect(0, 0, 421, 50));
         lineEdit_2 = new QLineEdit(page_13);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(120, 10, 141, 20));
@@ -1280,6 +1284,15 @@ public:
         tableView_boutique = new QTableView(groupBox_14);
         tableView_boutique->setObjectName(QStringLiteral("tableView_boutique"));
         tableView_boutique->setGeometry(QRect(90, 20, 481, 131));
+        checkBox = new QCheckBox(groupBox_14);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(10, 70, 70, 17));
+        checkBox_2 = new QCheckBox(groupBox_14);
+        checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
+        checkBox_2->setGeometry(QRect(10, 90, 70, 17));
+        tri_boutique = new QPushButton(groupBox_14);
+        tri_boutique->setObjectName(QStringLiteral("tri_boutique"));
+        tri_boutique->setGeometry(QRect(90, 150, 75, 23));
         stackedWidget_3->addWidget(page_11);
         horizontalLayoutWidget_2 = new QWidget(groupBox_6);
         horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
@@ -1433,10 +1446,10 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget->setCurrentIndex(1);
-        stackedWidget_2->setCurrentIndex(1);
-        toolBox->setCurrentIndex(2);
-        stackedWidget_3->setCurrentIndex(0);
-        toolBox_2->setCurrentIndex(0);
+        stackedWidget_2->setCurrentIndex(0);
+        toolBox->setCurrentIndex(1);
+        stackedWidget_3->setCurrentIndex(1);
+        toolBox_2->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1504,8 +1517,13 @@ public:
         label_18->setText(QApplication::translate("MainWindow", "Trier selon ", Q_NULLPTR));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "nbr employees", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "nbr_employees", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "nom_boutique", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "nbr_heure", Q_NULLPTR)
         );
+        checkBox->setText(QApplication::translate("MainWindow", "DSC", Q_NULLPTR));
+        checkBox_2->setText(QApplication::translate("MainWindow", "ASC", Q_NULLPTR));
+        tri_boutique->setText(QApplication::translate("MainWindow", "TRI", Q_NULLPTR));
         bar_ajoutB->setText(QApplication::translate("MainWindow", "ajouter", Q_NULLPTR));
         bar_modifB->setText(QApplication::translate("MainWindow", "modifier", Q_NULLPTR));
         bar_affichB->setText(QApplication::translate("MainWindow", "afficher", Q_NULLPTR));

@@ -72,12 +72,12 @@ QSqlQueryModel* commande::afficher()
 
       QSqlQuery query;
       QString nbrP=QString::number(nbr_produit);
-      query.prepare("UPDATE commande set  ref_commande=:ref_commande,nom_produit=:nom_produit,nbr_produit=:nbr_produit WHERE ref_commande=:ref_commande");
+     query.prepare("UPDATE commande set nom_produit=:nom_produit,ref_commande=:ref_commande,nbr_produit=:nbr_produit WHERE ref_commande=:ref_commande");
        query.bindValue(":nom_produit",nom_produit);
-       query.bindValue(":ref_commandet",ref_commande);
+       query.bindValue(":ref_commande",ref_commande);
          query.bindValue(":nbr_produit",nbrP);
  return query.exec();
 
 
  }
-
+/*UPDATE boutique set ID_boutique=:ID_boutique,nom_boutique=:nom_boutique,adresse=:adresse, nbr_employees=:nbr_employees,nbr_heure=:nbr_heure WHERE ID_boutique=:ID_boutique*/

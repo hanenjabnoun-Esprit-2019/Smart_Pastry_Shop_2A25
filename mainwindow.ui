@@ -282,7 +282,7 @@ QPushButton:hover
            </rect>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page_4">
            <widget class="QGroupBox" name="groupBox_7">
@@ -425,15 +425,15 @@ QToolBox::tab:selected
 </string>
              </property>
              <property name="currentIndex">
-              <number>2</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="page_12">
               <property name="geometry">
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>100</width>
-                <height>30</height>
+                <width>421</width>
+                <height>50</height>
                </rect>
               </property>
               <attribute name="label">
@@ -462,8 +462,8 @@ color: rgb(255, 255, 255);</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>100</width>
-                <height>30</height>
+                <width>421</width>
+                <height>50</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1185,7 +1185,7 @@ QPushButton:hover
            </rect>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page_8">
            <widget class="QGroupBox" name="groupBox_11">
@@ -1327,7 +1327,7 @@ QToolBox::tab:selected
 </string>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>4</number>
              </property>
              <widget class="QWidget" name="page_15">
               <property name="geometry">
@@ -1968,7 +1968,17 @@ QPushButton:focus
              </property>
              <item>
               <property name="text">
-               <string>nbr employees</string>
+               <string>nbr_employees</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>nom_boutique</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>nbr_heure</string>
               </property>
              </item>
             </widget>
@@ -1980,6 +1990,45 @@ QPushButton:focus
                <width>481</width>
                <height>131</height>
               </rect>
+             </property>
+            </widget>
+            <widget class="QCheckBox" name="checkBox">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>70</y>
+               <width>70</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>DSC</string>
+             </property>
+            </widget>
+            <widget class="QCheckBox" name="checkBox_2">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>90</y>
+               <width>70</width>
+               <height>17</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>ASC</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="tri_boutique">
+             <property name="geometry">
+              <rect>
+               <x>90</x>
+               <y>150</y>
+               <width>75</width>
+               <height>23</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>TRI</string>
              </property>
             </widget>
            </widget>

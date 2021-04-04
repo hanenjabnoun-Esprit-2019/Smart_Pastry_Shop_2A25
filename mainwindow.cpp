@@ -55,7 +55,8 @@ void MainWindow::on_ajouter_commande_clicked()
     QString nom_produit=ui->lineEdit->text();
        int nbr_produit=ui->lineEdit_2->text().toInt();
         QString ref_commande=ui->lineEdit_3->text();
-      commande c (nom_produit,ref_commande,nbr_produit);
+        QString ID=ui->lineEdit_7->text();
+      commande c (nom_produit,ref_commande,nbr_produit,ID);
         bool test=c.ajouter();
         if(test)
             {
@@ -247,9 +248,10 @@ void MainWindow::on_modifier_commande_clicked()
    QString ref_commande=ui->lineEdit_4->text();
     QString nom_produit=ui->lineEdit_5->text();
    int nbr_produit=ui->lineEdit_6->text().toInt();
-   commande c(nom_produit,ref_commande,nbr_produit);
+   QString ID=ui->lineEdit_15->text();
+   commande c(nom_produit,ref_commande,nbr_produit,ID);
 
-   bool test=c.modifier(nom_produit,ref_commande,nbr_produit);
+   bool test=c.modifier(nom_produit,ref_commande,nbr_produit,ID);
 
    if(test)
        { ui->tableView_Commandes->setModel(c.afficher());
@@ -270,6 +272,7 @@ void MainWindow::on_tableView_Commandes_clicked(const QModelIndex &index)
     ui->lineEdit_4->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),1)).toString());
      ui->lineEdit_5->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),0)).toString());
      ui->lineEdit_6->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),2)).toString());
+     ui->lineEdit_15->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),3)).toString());
 }
 
 void MainWindow::on_tri_boutique_clicked()
@@ -356,4 +359,18 @@ void MainWindow::on_pushButton_22_clicked()
      }
 
      delete document;
+}
+
+void MainWindow::on_lineEdit_17_textChanged(const QString &arg1)
+{
+
+    if(ui->lineEdit_17->text() == "")
+        {
+            ui->tableView_Commandes->setModel(c.afficher());
+        }
+        else
+        {
+             ui->tableView_Commandes->setModel(c.rechercher(ui->lineEdit_17->text()));
+        }
+
 }

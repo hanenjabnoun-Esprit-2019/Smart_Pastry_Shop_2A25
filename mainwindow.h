@@ -67,6 +67,8 @@ private slots:
 
     void on_pushButton_22_clicked();
 
+    void on_lineEdit_17_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     commande c;

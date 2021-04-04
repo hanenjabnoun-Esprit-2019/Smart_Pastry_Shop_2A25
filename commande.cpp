@@ -8,13 +8,15 @@ commande::commande()
     nom_produit="" ;
          nbr_produit=0;
        ref_commande="";
+       ID="";
 }
 
-commande::commande(QString nom_produit ,QString ref_commande , int nbr_produit)
+commande::commande(QString nom_produit ,QString ref_commande , int nbr_produit,QString ID)
 {
     this->nom_produit=nom_produit;
        this->ref_commande=ref_commande;
        this->nbr_produit=nbr_produit;
+    this->ID=ID;
 
 }
 
@@ -32,12 +34,13 @@ bool commande::ajouter(){
 
      QSqlQuery query;
      QString nbr_string=QString::number(nbr_produit);
-     query.prepare("INSERT INTO commande (nom_produit,ref_commande, nbr_produit) "
-                             "VALUES (:nom_produit, :ref_commande, :nbr_produit)");
+     query.prepare("INSERT INTO commande (nom_produit,ref_commande, nbr_produit,ID) "
+                             "VALUES (:nom_produit, :ref_commande, :nbr_produit,:ID)");
 
              query.bindValue(":nom_produit",nom_produit);
              query.bindValue(":ref_commande",ref_commande);
              query.bindValue(":nbr_produit",nbr_string);
+             query.bindValue(":ID",ID);
              return  query.exec();
 
 
@@ -63,21 +66,36 @@ QSqlQueryModel* commande::afficher()
        model->setHeaderData(1, Qt::Horizontal, QObject::tr("ref_command"));
          model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom_produit"));
            model->setHeaderData(2, Qt::Horizontal, QObject::tr("nbr_produit"));
+            model->setHeaderData(3, Qt::Horizontal, QObject::tr("ID"));
 
       return model;
  }
 
- bool commande::modifier(QString nom_produit,QString ref_commande,int nbr_produit)
+ bool commande::modifier(QString nom_produit,QString ref_commande,int nbr_produit,QString ID)
  {
 
       QSqlQuery query;
       QString nbrP=QString::number(nbr_produit);
-     query.prepare("UPDATE commande set nom_produit=:nom_produit,ref_commande=:ref_commande,nbr_produit=:nbr_produit WHERE ref_commande=:ref_commande");
+     query.prepare("UPDATE commande set nom_produit=:nom_produit,ref_commande=:ref_commande,nbr_produit=:nbr_produit,ID=:ID WHERE ref_commande=:ref_commande");
        query.bindValue(":nom_produit",nom_produit);
        query.bindValue(":ref_commande",ref_commande);
          query.bindValue(":nbr_produit",nbrP);
+         query.bindValue(":ID",ID);
  return query.exec();
 
 
  }
-/*UPDATE boutique set ID_boutique=:ID_boutique,nom_boutique=:nom_boutique,adresse=:adresse, nbr_employees=:nbr_employees,nbr_heure=:nbr_heure WHERE ID_boutique=:ID_boutique*/
+
+ QSqlQueryModel * commande::rechercher (const QString &aux)
+
+ {
+     QSqlQueryModel * model = new QSqlQueryModel();
+
+     model->setQuery("select * from commande where ((nom_produit || ref_commande || nbr_produit|| ID) LIKE '%"+aux+"%')");
+     model->setHeaderData(0, Qt::Horizontal, QObject::tr("nom_produit"));
+     model->setHeaderData(1, Qt::Horizontal, QObject::tr("ref_commande"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("nbr_produit"));
+     model->setHeaderData(3, Qt::Horizontal, QObject::tr("ID"));
+
+     return model;
+ }

@@ -164,6 +164,7 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        stackedWidget->setStyleSheet(QStringLiteral("background-color: rgb(85, 0, 0);"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         groupBox = new QGroupBox(page);
@@ -1020,7 +1021,7 @@ public:
 ""));
         page_15 = new QWidget();
         page_15->setObjectName(QStringLiteral("page_15"));
-        page_15->setGeometry(QRect(0, 0, 100, 30));
+        page_15->setGeometry(QRect(0, 0, 331, 26));
         lineEdit_16 = new QLineEdit(page_15);
         lineEdit_16->setObjectName(QStringLiteral("lineEdit_16"));
         lineEdit_16->setGeometry(QRect(40, 0, 121, 20));
@@ -1032,7 +1033,7 @@ public:
         toolBox_2->addItem(page_15, QStringLiteral("ID_boutique"));
         page_16 = new QWidget();
         page_16->setObjectName(QStringLiteral("page_16"));
-        page_16->setGeometry(QRect(0, 0, 100, 30));
+        page_16->setGeometry(QRect(0, 0, 331, 26));
         lineEdit_9 = new QLineEdit(page_16);
         lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
         lineEdit_9->setGeometry(QRect(20, 0, 141, 20));
@@ -1044,7 +1045,7 @@ public:
         toolBox_2->addItem(page_16, QStringLiteral("nom de boutique"));
         page_17 = new QWidget();
         page_17->setObjectName(QStringLiteral("page_17"));
-        page_17->setGeometry(QRect(0, 0, 100, 30));
+        page_17->setGeometry(QRect(0, 0, 331, 26));
         lineEdit_10 = new QLineEdit(page_17);
         lineEdit_10->setObjectName(QStringLiteral("lineEdit_10"));
         lineEdit_10->setGeometry(QRect(60, 0, 121, 20));
@@ -1056,7 +1057,7 @@ public:
         toolBox_2->addItem(page_17, QStringLiteral("adresse"));
         page_18 = new QWidget();
         page_18->setObjectName(QStringLiteral("page_18"));
-        page_18->setGeometry(QRect(0, 0, 100, 30));
+        page_18->setGeometry(QRect(0, 0, 331, 26));
         spinBox = new QLineEdit(page_18);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(20, 0, 113, 20));
@@ -1495,11 +1496,11 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
         stackedWidget_2->setCurrentIndex(2);
         toolBox->setCurrentIndex(3);
         stackedWidget_3->setCurrentIndex(1);
-        toolBox_2->setCurrentIndex(4);
+        toolBox_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

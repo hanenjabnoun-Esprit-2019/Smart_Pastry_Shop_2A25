@@ -20,8 +20,11 @@
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 0, 0);</string>
+      </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QGroupBox" name="groupBox">
@@ -1431,15 +1434,15 @@ QToolBox::tab:selected
 </string>
              </property>
              <property name="currentIndex">
-              <number>4</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="page_15">
               <property name="geometry">
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>100</width>
-                <height>30</height>
+                <width>331</width>
+                <height>26</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1468,8 +1471,8 @@ color: rgb(255, 255, 255);</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>100</width>
-                <height>30</height>
+                <width>331</width>
+                <height>26</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1498,8 +1501,8 @@ color: rgb(255, 255, 255);</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>100</width>
-                <height>30</height>
+                <width>331</width>
+                <height>26</height>
                </rect>
               </property>
               <attribute name="label">
@@ -1528,8 +1531,8 @@ color: rgb(255, 255, 255);</string>
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>100</width>
-                <height>30</height>
+                <width>331</width>
+                <height>26</height>
                </rect>
               </property>
               <attribute name="label">

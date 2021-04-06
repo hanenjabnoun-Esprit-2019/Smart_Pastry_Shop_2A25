@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/test_son">
+        <file>mouse-click-sound-effect-hd.mp3</file>
+        <file>button-3.mp3</file>
+    </qresource>
+</RCC>

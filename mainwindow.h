@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include "commande.h"
-
+#include <QSound>
 #include <QMainWindow>
 #include"boutique.h"
 
@@ -73,5 +73,6 @@ private:
     Ui::MainWindow *ui;
     commande c;
     boutique b;
+
 };
 #endif // MAINWINDOW_H

@@ -9,6 +9,10 @@
 #include <QTextDocument>
 #include <QPrinter>
 #include <QPrintDialog>
+#include <QMovie>
+#include <QMediaPlayer>
+#include<QtMultimedia>
+#include<QSound>
 
 
 
@@ -26,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent)
      ui->spinBox_4->setValidator(new QIntValidator(100, 999, this));
      ui->lineEdit_6->setValidator(new QIntValidator(100, 999, this));
      ui->lineEdit_2->setValidator(new QIntValidator(100, 999, this));
+      ui->lineEdit_16->setMaxLength(10);
+      ui->lineEdit_11->setMaxLength(10);
 
 
 }
@@ -52,6 +58,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_ajouter_commande_clicked()
 {
+
     QString nom_produit=ui->lineEdit->text();
        int nbr_produit=ui->lineEdit_2->text().toInt();
         QString ref_commande=ui->lineEdit_3->text();
@@ -203,9 +210,6 @@ void MainWindow::on_home2_clicked()
 
 void MainWindow::on_modifier_boutique_clicked()
 {
-
-
-
     QString  ID_boutique=ui->lineEdit_11->text();
     QString nom_boutique=ui->lineEdit_12->text();
     QString adresse=ui->lineEdit_13->text();

@@ -1,10 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QMainWindow>
-#include "commande.h"
-#include <QSound>
-#include <QMainWindow>
-#include"boutique.h"
+#include"carte.h"
+#include"client.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,60 +18,63 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_pushButton_clicked();
+
     void on_pushButton_2_clicked();
 
-    void on_pushButton_3_clicked();
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_11_clicked();
+
+
+    void on_pb_ajouter_clicked();
+
+
+    void on_PB_supp_clicked();
+
+    void on_pb_ajouter_c_clicked();
+
+    void on_pb_supp_c_clicked();
+
+    void on_modifclient_clicked();
+
+    void on_table_client_clicked(const QModelIndex &index);
 
 
 
-    void on_ajouter_commande_clicked();
+    void on_modifcarte_clicked();
 
-    void on_supprimer_commande_clicked();
+    void on_table_carte_clicked(const QModelIndex &index);
 
-    void on_ajouter_boutique_clicked();
+    void on_tri_c_clicked();
 
-    void on_supprimer_boutique_clicked();
+    void on_tri_n_clicked();
 
-    void on_bar_ajoutC_clicked();
+    void on_afficher_normal_clicked();
 
-    void on_bar_modifC_clicked();
+    void on_recherche_clicked();
 
-    void on_bar_afficheC_clicked();
+    void on_exp_c_clicked();
 
+    void on_tri_r_clicked();
 
+    void on_tri_ci_clicked();
 
-    void on_bar_suppC_clicked();
+    void on_afficher_clicked();
 
-    void on_bar_ajoutB_clicked();
+    void on_exp_2_clicked();
 
-    void on_bar_modifB_clicked();
-
-    void on_bar_affichB_clicked();
-
-    void on_bar_suppB_clicked();
-
-    void on_home1_clicked();
-
-    void on_home2_clicked();
-
-    void on_modifier_boutique_clicked();
-
-    void on_tableView_boutique_clicked(const QModelIndex &index);
-
-    void on_modifier_commande_clicked();
-
-    void on_tableView_Commandes_clicked(const QModelIndex &index);
-
-    void on_tri_boutique_clicked();
-
-    void on_pushButton_22_clicked();
-
-    void on_lineEdit_17_textChanged(const QString &arg1);
+    void on_rech_2_clicked();
 
 private:
     Ui::MainWindow *ui;
-    commande c;
-    boutique b;
+     client c;
+    carte f;
+
+
+
+
+
 
 };
 #endif // MAINWINDOW_H

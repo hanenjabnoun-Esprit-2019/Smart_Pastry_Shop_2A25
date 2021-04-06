@@ -1,6 +1,5 @@
-QT       += core gui
+QT       += core gui sql
 QT       +=  printsupport
-QT       +=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,15 +17,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    boutique.cpp \
-    commande.cpp \
+    carte.cpp \
+    client.cpp \
     connection.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    boutique.h \
-    commande.h \
+    carte.h \
+    client.h \
     connection.h \
     mainwindow.h
 
@@ -37,8 +36,3 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-QT+= sql
-CONFIG += console
-
-RESOURCES += \
-    resources.qrc

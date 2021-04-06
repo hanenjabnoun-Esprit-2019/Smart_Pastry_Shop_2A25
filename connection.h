@@ -12,5 +12,3 @@ public:
 };
 
 #endif // CONNECTION_H
-
-

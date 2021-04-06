@@ -1,38 +1,29 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include"commande.h"
+#include"carte.h"
+#include"client.h"
 #include<QString>
 #include <QMessageBox>
-#include <QTextStream>
 #include <QSqlQuery>
+#include <QPrintDialog>
+#include <QTextStream>
+#include <QPrinter>
 #include<QtDebug>
 #include <QTextDocument>
-#include <QPrinter>
-#include <QPrintDialog>
-#include <QMovie>
-#include <QMediaPlayer>
-#include<QtMultimedia>
-#include<QSound>
-
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
-    ui->tableView_boutique->setModel(b.afficher());
-    ui->tableView_Commandes->setModel(c.afficher());
-     ui->spinBox->setValidator(new QIntValidator(100, 999, this));
-     ui->spinBox_3->setValidator(new QIntValidator(100, 999, this));
-     ui->spinBox_2->setValidator(new QIntValidator(100, 999, this));
-     ui->spinBox_4->setValidator(new QIntValidator(100, 999, this));
-     ui->lineEdit_6->setValidator(new QIntValidator(100, 999, this));
-     ui->lineEdit_2->setValidator(new QIntValidator(100, 999, this));
-      ui->lineEdit_16->setMaxLength(10);
-      ui->lineEdit_11->setMaxLength(10);
-
+    ui->cin->setValidator(new QIntValidator(100, 9999999, this));
+     ui->tel->setValidator(new QIntValidator(100, 9999999, this));
+      ui->ref->setValidator(new QIntValidator(100, 9999999, this));
+       ui->cin_2->setValidator(new QIntValidator(100, 9999999, this));
+        ui->nbr->setValidator(new QIntValidator(100, 9999999, this));
+    ui->table_client->setModel(c.afficher());
+    ui->table_carte->setModel(f.afficher());
 
 }
 
@@ -42,269 +33,259 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_pushButton_2_clicked()
 {
-     ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 
 
 
 
-void MainWindow::on_ajouter_commande_clicked()
+
+
+//crud client
+
+void MainWindow::on_PB_supp_clicked()
+{
+client c1;
+ c1.setcin(ui->c_supp->text().toInt());
+ bool test=c1.supprimer(c1.getcin());
+ QMessageBox msgbox;
+
+ if(test)
+    { msgbox.setText("succes de supprssion.");
+     ui->table_client->setModel(c.afficher());
+ }
+ else
+     msgbox.setText("echec de suppression");
+ msgbox.exec();
+
+ }
+
+
+
+
+void MainWindow::on_pb_ajouter_clicked()
 {
 
-    QString nom_produit=ui->lineEdit->text();
-       int nbr_produit=ui->lineEdit_2->text().toInt();
-        QString ref_commande=ui->lineEdit_3->text();
-        QString ID=ui->lineEdit_7->text();
-      commande c (nom_produit,ref_commande,nbr_produit,ID);
-        bool test=c.ajouter();
-        if(test)
-            {
-                QMessageBox::information(nullptr, QObject::tr("ok"),
-                            QObject::tr("ajout effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
-               ui->tableView_Commandes->setModel(c.afficher());
+        int cin=ui->cin->text().toInt();
+        QString nom=ui->nom->text();
+        QString prenom=ui->prenom->text();
+        QString adresse=ui->adresse->text();
+        int telephone=ui->tel->text().toInt();
 
 
-        }
-            else
-                QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                            QObject::tr("ajout non effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
 
-}
-
-void MainWindow::on_supprimer_commande_clicked()
-{
-    commande c1;
-    c1.set_ref(ui->lineEdit_8->text());
-      bool test=c1.supprimer(c1.get_ref());
-      if(test)
+   client c (cin,nom,prenom,adresse,telephone);
+         bool test=c.ajouter();
+         if(test)
          {
              QMessageBox::information(nullptr, QObject::tr("ok"),
-                         QObject::tr("suppression effectuer.\n"
+                         QObject::tr("ajout effectuer.\n"
+
+
                                      "Click Cancel to exit."), QMessageBox::Cancel);
-             ui->tableView_Commandes->setModel(c.afficher());
+         ui->table_client->setModel(c.afficher());}
+             else
+                      QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                                  QObject::tr("ajout non effectuer.\n"
+                                              "Click Cancel to exit."), QMessageBox::Cancel);
+}
 
 
+void MainWindow::on_modifclient_clicked()
+{
+    int cin=ui->cin_m->text().toInt();
+    QString nom=ui->nom_m->text();
+    QString prenom=ui->prenom_m->text();
+    QString adresse=ui->adresse_m->text();
+    int telephone=ui->telephone_m->text().toInt();
+
+                  client Cl(cin,nom,prenom,adresse,telephone);
+
+         bool test = Cl.modifclient(cin,nom,prenom,adresse,telephone);
+
+
+         if(test)
+
+         {
+              ui->table_client->setModel(Cl.afficher());
+             QMessageBox::information(nullptr, QObject::tr("update "),
+                         QObject::tr("client modifie\n"
+         "Click Cancel to exit."), QMessageBox::Cancel);}
+         else
+             QMessageBox::critical(nullptr, QObject::tr("update "),
+                         QObject::tr("client non modifie\n"
+         "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void MainWindow::on_table_client_clicked(const QModelIndex &index)
+{
+    ui->cin_m->setText( ui->table_client->model()->data(ui->table_client->model()->index(ui->table_client->selectionModel()->currentIndex().row(),0)).toString() );
+     ui->nom_m->setText( ui->table_client->model()->data(ui->table_client->model()->index(ui->table_client->selectionModel()->currentIndex().row(),1)).toString() );
+      ui->prenom_m->setText( ui->table_client->model()->data(ui->table_client->model()->index(ui->table_client->selectionModel()->currentIndex().row(),2)).toString() );
+       ui->adresse_m->setText( ui->table_client->model()->data(ui->table_client->model()->index(ui->table_client->selectionModel()->currentIndex().row(),3)).toString() );
+        ui->telephone_m->setText( ui->table_client->model()->data(ui->table_client->model()->index(ui->table_client->selectionModel()->currentIndex().row(),4)).toString() );
+
+}
+
+
+//crud carte_fidelite
+
+void MainWindow::on_pb_ajouter_c_clicked()
+{
+    int reference=ui->ref->text().toInt();
+ int cin_client=ui->cin_2->text().toInt();
+ int nbr_point=ui->nbr->text().toInt();
+QDate date_emission=ui->date_e->date();
+
+
+
+carte f (reference,cin_client,nbr_point,date_emission);
+     bool test=f.ajouter();
+     if(test)
+     {
+         QMessageBox::information(nullptr, QObject::tr("ok"),
+                     QObject::tr("ajout effectuer.\n"
+
+
+                                 "Click Cancel to exit."), QMessageBox::Cancel);
+         ui->table_carte->setModel(f.afficher());
      }
          else
-             QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                         QObject::tr("suppression non effectuer.\n"
-                                     "Click Cancel to exit."), QMessageBox::Cancel);
-
+                  QMessageBox::critical(nullptr, QObject::tr("not ok"),
+                              QObject::tr("ajout non effectuer.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
 }
 
-void MainWindow::on_ajouter_boutique_clicked()
+void MainWindow::on_pb_supp_c_clicked()
 {
-   QString ID_boutique=ui->lineEdit_16->text();
-   QString nom_boutique=ui->lineEdit_9->text();
-  QString adresse=ui->lineEdit_10->text();
-  int nbr_employees=ui->spinBox->text().toInt()  ;
-   int nbr_heure=ui->spinBox_3->text().toInt() ;
+    carte f1;
+     f1.setreference(ui->r_supp->text().toInt());
+     bool test=f1.supprimer(f1.getreference());
+     QMessageBox msgbox;
 
-boutique b( ID_boutique,nom_boutique,adresse,nbr_employees,nbr_heure);
-
-bool test=b.ajouter();
-   if(test)
-            {
-                QMessageBox::information(nullptr, QObject::tr("ok"),
-                            QObject::tr("ajout effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
-               ui->tableView_boutique->setModel(b.afficher());
-
-
-        }
-            else
-               {
-       QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                             QObject::tr("ajout non effectuer.\n"
-                                         "Click Cancel to exit."), QMessageBox::Cancel);
-
-
-   }
-
-
-
-
-}
-void MainWindow::on_supprimer_boutique_clicked()
-{
-    boutique b1;
-    b1.set_ID_boutique(ui->lineEdit_14->text());
-
-    bool test=b1.supprimer(ui->lineEdit_14->text());
-    if(test)
-       {
-           QMessageBox::information(nullptr, QObject::tr("ok"),
-                       QObject::tr("suppression effectuer.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
-           ui->tableView_boutique->setModel(b.afficher());
-
-
-   }
-       else
-           QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                       QObject::tr("suppression non effectuer.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
-
-}
-
-void MainWindow::on_bar_ajoutC_clicked()
-{
-     ui->stackedWidget_2->setCurrentIndex(0);
-}
-
-void MainWindow::on_bar_modifC_clicked()
-{
-  ui->stackedWidget_2->setCurrentIndex(1);
-}
-
-void MainWindow::on_bar_afficheC_clicked()
-{
-     ui->stackedWidget_2->setCurrentIndex(2);
-}
-
-
-void MainWindow::on_bar_suppC_clicked()
-{
-     ui->stackedWidget_2->setCurrentIndex(3);
-}
-
-void MainWindow::on_bar_ajoutB_clicked()
-{
-      ui->stackedWidget_3->setCurrentIndex(0);
-}
-
-void MainWindow::on_bar_modifB_clicked()
-{
-    ui->stackedWidget_3->setCurrentIndex(1);
-}
-
-void MainWindow::on_bar_affichB_clicked()
-{
-    ui->stackedWidget_3->setCurrentIndex(3);
-}
-
-void MainWindow::on_bar_suppB_clicked()
-{
-    ui->stackedWidget_3->setCurrentIndex(2);
-}
-
-void MainWindow::on_home1_clicked()
-{
-     ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::on_home2_clicked()
-{
-     ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::on_modifier_boutique_clicked()
-{
-    QString  ID_boutique=ui->lineEdit_11->text();
-    QString nom_boutique=ui->lineEdit_12->text();
-    QString adresse=ui->lineEdit_13->text();
-    int nbr_employees=ui->spinBox_2->text().toInt();
-    int nbr_heure=ui->spinBox_4->text().toInt();
- boutique b(ID_boutique,nom_boutique, adresse,nbr_employees,nbr_heure);
-   bool test=b.modifier(ID_boutique,nom_boutique, adresse,nbr_employees,nbr_heure);
-   if(test)
-       {ui->tableView_boutique->setModel(b.afficher());
-           QMessageBox::information(nullptr, QObject::tr("modifier une boutique"),
-                                    QObject::tr("boutique  modifié.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);}
-       else
-           QMessageBox::critical(nullptr, QObject::tr("Modifier une boutique"),
-                                 QObject::tr("erreur !.\n"
-                                             "Click Cancel to exit."), QMessageBox::Cancel);
-
-
-
-
-
-   }
-
-
-
-
-
-void MainWindow::on_tableView_boutique_clicked(const QModelIndex &index)
-{
-    ui->lineEdit_11->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),0)).toString());
-    ui->lineEdit_12->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),1)).toString());
-    ui->lineEdit_13->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),2)).toString());
-    ui->spinBox_2->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),3)).toString());
-    ui->spinBox_4->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),4)).toString());
-}
-
-void MainWindow::on_modifier_commande_clicked()
-{
-
-   QString ref_commande=ui->lineEdit_4->text();
-    QString nom_produit=ui->lineEdit_5->text();
-   int nbr_produit=ui->lineEdit_6->text().toInt();
-   QString ID=ui->lineEdit_15->text();
-   commande c(nom_produit,ref_commande,nbr_produit,ID);
-
-   bool test=c.modifier(nom_produit,ref_commande,nbr_produit,ID);
-
-   if(test)
-       { ui->tableView_Commandes->setModel(c.afficher());
-           QMessageBox::information(nullptr, QObject::tr("modifier une commande"),
-                                    QObject::tr("commande  modifié.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-   }
-       else
-   {
-           QMessageBox::critical(nullptr, QObject::tr("Modifier une commande"),
-                                 QObject::tr("erreur !.\n"
-                                             "Click Cancel to exit."), QMessageBox::Cancel);}
-
-}
-
-void MainWindow::on_tableView_Commandes_clicked(const QModelIndex &index)
-{
-    ui->lineEdit_4->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),1)).toString());
-     ui->lineEdit_5->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),0)).toString());
-     ui->lineEdit_6->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),2)).toString());
-     ui->lineEdit_15->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),3)).toString());
-}
-
-void MainWindow::on_tri_boutique_clicked()
-{
-    QString critere=ui->comboBox->currentText();
-    QString mode;
-    if (ui->checkBox->checkState()==false)
-{
-         mode="DESC";
-}
-     else if(ui->checkBox_2->checkState()==false)
-     {
-         mode="ASC";
+     if(test)
+        { msgbox.setText("succes de supprssion.");
+         ui->table_carte->setModel(f.afficher());
      }
+     else
+         msgbox.setText("echec de suppression");
+     msgbox.exec();
 
-     ui->tableView_boutique->setModel(b.trie(critere,mode));
 }
 
-void MainWindow::on_pushButton_22_clicked()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void MainWindow::on_modifcarte_clicked()
 {
-    QTableView tableView_boutique;
+    int reference=ui->ref_m->text().toInt();
+ int cin_client=ui->cl_m->text().toInt();
+ int nbr_point=ui->point_m->text().toInt();
+  QDate date_emission=ui->date_m->date();
+
+                  carte Cr(reference,cin_client,nbr_point,date_emission);
+
+         bool test = Cr.modifcarte(reference,cin_client,nbr_point,date_emission);
+
+
+         if(test)
+
+         {
+              ui->table_carte->setModel(Cr.afficher());
+             QMessageBox::information(nullptr, QObject::tr("update "),
+                         QObject::tr("carte fidelite modifie\n"
+         "Click Cancel to exit."), QMessageBox::Cancel);}
+         else
+             QMessageBox::critical(nullptr, QObject::tr("update "),
+                         QObject::tr("carte fidelite non modifie\n"
+         "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void MainWindow::on_table_carte_clicked(const QModelIndex &index)
+{
+    ui->ref_m->setText( ui->table_carte->model()->data(ui->table_carte->model()->index(ui->table_carte->selectionModel()->currentIndex().row(),0)).toString() );
+     ui->cl_m->setText( ui->table_carte->model()->data(ui->table_carte->model()->index(ui->table_carte->selectionModel()->currentIndex().row(),1)).toString() );
+      ui->point_m->setText( ui->table_carte->model()->data(ui->table_carte->model()->index(ui->table_carte->selectionModel()->currentIndex().row(),2)).toString() );
+        ui->date_m->setDate( ui->table_carte->model()->data(ui->table_carte->model()->index(ui->table_carte->selectionModel()->currentIndex().row(),3)).toDate() );
+}
+
+
+//metier client
+
+void MainWindow::on_tri_c_clicked()
+{
+    ui->table_client->setModel(c.trier_cin());
+}
+
+void MainWindow::on_tri_n_clicked()
+{
+    ui->table_client->setModel(c.trier_nom());
+}
+
+void MainWindow::on_afficher_normal_clicked()
+{
+     ui->table_client->setModel(c.afficher());
+}
+
+void MainWindow::on_recherche_clicked()
+{
+
+   QString nom =ui->nom_r->text();
+QString prenom =ui->adr_r->text();
+
+
+            if (nom!= ""){
+           ui->table_client->setModel(c.chercher(nom,prenom)) ;}
+           if (prenom!= ""){
+          ui->table_client->setModel(c.chercher(nom,prenom)) ;
+
+}
+}
+
+
+
+
+
+void MainWindow::on_exp_c_clicked()
+{
+    QTableView table_client;
     QSqlQueryModel * Modal=new  QSqlQueryModel();
 
-    QSqlQuery qry ;
-     qry.prepare("SELECT * FROM boutique");
+    QSqlQuery qry;
+     qry.prepare("SELECT * FROM client");
      qry.exec();
      Modal->setQuery(qry);
-    tableView_boutique.setModel(Modal);
+     table_client.setModel(Modal);
 
 
 
@@ -314,8 +295,8 @@ void MainWindow::on_pushButton_22_clicked()
      QString strStream;
      QTextStream out(&strStream);
 
-     const int rowCount =tableView_boutique.model()->rowCount();
-     const int columnCount =tableView_boutique.model()->columnCount();
+     const int rowCount = table_client.model()->rowCount();
+     const int columnCount =  table_client.model()->columnCount();
 
      const QString strTitle ="Document";
 
@@ -326,20 +307,20 @@ void MainWindow::on_pushButton_22_clicked()
          <<  QString("<title>%1</title>\n").arg(strTitle)
          <<  "</head>\n"
          "<body bgcolor=#ffffff link=#5000A0>\n"
-        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les boutique")
+        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les Clients")
         <<"<br>"
          <<"<table border=1 cellspacing=0 cellpadding=2>\n";
 
      out << "<thead><tr bgcolor=#f0f0f0>";
      for (int column = 0; column < columnCount; column++)
-         if (! tableView_boutique.isColumnHidden(column))
-             out << QString("<th>%1</th>").arg( tableView_boutique.model()->headerData(column, Qt::Horizontal).toString());
+         if (!table_client.isColumnHidden(column))
+             out << QString("<th>%1</th>").arg(table_client.model()->headerData(column, Qt::Horizontal).toString());
      out << "</tr></thead>\n";
      for (int row = 0; row < rowCount; row++) {
              out << "<tr>";
              for (int column = 0; column < columnCount; column++) {
-                 if (! tableView_boutique.isColumnHidden(column)) {
-                     QString data =  tableView_boutique.model()->data( tableView_boutique.model()->index(row, column)).toString().simplified();
+                 if (!table_client.isColumnHidden(column)) {
+                     QString data = table_client.model()->data(table_client.model()->index(row, column)).toString().simplified();
                      out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
                  }
              }
@@ -365,16 +346,110 @@ void MainWindow::on_pushButton_22_clicked()
      delete document;
 }
 
-void MainWindow::on_lineEdit_17_textChanged(const QString &arg1)
-{
 
-    if(ui->lineEdit_17->text() == "")
-        {
-            ui->tableView_Commandes->setModel(c.afficher());
-        }
-        else
-        {
-             ui->tableView_Commandes->setModel(c.rechercher(ui->lineEdit_17->text()));
-        }
+
+
+
+
+
+//metier carte
+
+void MainWindow::on_tri_r_clicked()
+{
+   ui->table_carte->setModel(f.trier_ref());
+}
+
+void MainWindow::on_tri_ci_clicked()
+{
+    ui->table_carte->setModel(f.trier_cinclient());
+}
+
+void MainWindow::on_afficher_clicked()
+{
+    ui->table_carte->setModel(f.afficher());
+}
+
+void MainWindow::on_exp_2_clicked()
+{
+    QTableView table_carte;
+    QSqlQueryModel * Modal=new  QSqlQueryModel();
+
+    QSqlQuery qry;
+     qry.prepare("SELECT * FROM carte");
+     qry.exec();
+     Modal->setQuery(qry);
+     table_carte.setModel(Modal);
+
+
+
+
+
+
+     QString strStream;
+     QTextStream out(&strStream);
+
+     const int rowCount = table_carte.model()->rowCount();
+     const int columnCount =  table_carte.model()->columnCount();
+
+     const QString strTitle ="Document";
+
+
+     out <<  "<html>\n"
+         "<head>\n"
+             "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+         <<  QString("<title>%1</title>\n").arg(strTitle)
+         <<  "</head>\n"
+         "<body bgcolor=#ffffff link=#5000A0>\n"
+        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les cartes fidélite")
+        <<"<br>"
+         <<"<table border=1 cellspacing=0 cellpadding=2>\n";
+
+     out << "<thead><tr bgcolor=#f0f0f0>";
+     for (int column = 0; column < columnCount; column++)
+         if (!table_carte.isColumnHidden(column))
+             out << QString("<th>%1</th>").arg(table_carte.model()->headerData(column, Qt::Horizontal).toString());
+     out << "</tr></thead>\n";
+     for (int row = 0; row < rowCount; row++) {
+             out << "<tr>";
+             for (int column = 0; column < columnCount; column++) {
+                 if (!table_carte.isColumnHidden(column)) {
+                     QString data = table_carte.model()->data(table_carte.model()->index(row, column)).toString().simplified();
+                     out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                 }
+             }
+             out << "</tr>\n";
+         }
+         out <<  "</table>\n"
+                 "<br><br>"
+
+
+         "</body>\n"
+         "</html>\n";
+
+     QTextDocument *document = new QTextDocument();
+     document->setHtml(strStream);
+
+     QPrinter printer;
+
+     QPrintDialog *dialog = new QPrintDialog(&printer, NULL);
+     if (dialog->exec() == QDialog::Accepted) {
+         document->print(&printer);
+     }
+
+     delete document;
+}
+
+void MainWindow::on_rech_2_clicked()
+{
+    int reference=ui->ref_r->text().toInt();
+   int cin_client =ui->cc_r->text().toInt();
+
+
+              if (reference!=0){
+           ui->table_carte->setModel(f.chercher(reference,cin_client)) ;}
+            if (cin_client!=0){
+           ui->table_carte->setModel(f.chercher(reference,cin_client)) ;}
+
 
 }
+

@@ -420,7 +420,7 @@ public:
 ""));
         page_12 = new QWidget();
         page_12->setObjectName(QStringLiteral("page_12"));
-        page_12->setGeometry(QRect(0, 0, 98, 28));
+        page_12->setGeometry(QRect(0, 0, 100, 30));
         lineEdit = new QLineEdit(page_12);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(110, 0, 161, 20));
@@ -432,7 +432,7 @@ public:
         toolBox->addItem(page_12, QStringLiteral("Nom de produit"));
         page_13 = new QWidget();
         page_13->setObjectName(QStringLiteral("page_13"));
-        page_13->setGeometry(QRect(0, 0, 98, 28));
+        page_13->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_2 = new QLineEdit(page_13);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(120, 0, 141, 20));
@@ -444,7 +444,7 @@ public:
         toolBox->addItem(page_13, QStringLiteral("Nombre de produit"));
         page_14 = new QWidget();
         page_14->setObjectName(QStringLiteral("page_14"));
-        page_14->setGeometry(QRect(0, 0, 98, 28));
+        page_14->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_3 = new QLineEdit(page_14);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
         lineEdit_3->setGeometry(QRect(110, 0, 141, 20));
@@ -456,7 +456,7 @@ public:
         toolBox->addItem(page_14, QStringLiteral("Reference de commande"));
         page_20 = new QWidget();
         page_20->setObjectName(QStringLiteral("page_20"));
-        page_20->setGeometry(QRect(0, 0, 98, 28));
+        page_20->setGeometry(QRect(0, 0, 421, 23));
         lineEdit_7 = new QLineEdit(page_20);
         lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
         lineEdit_7->setGeometry(QRect(110, 0, 113, 20));
@@ -609,7 +609,7 @@ public:
         page_6->setObjectName(QStringLiteral("page_6"));
         tableView_Commandes = new QTableView(page_6);
         tableView_Commandes->setObjectName(QStringLiteral("tableView_Commandes"));
-        tableView_Commandes->setGeometry(QRect(30, 60, 591, 111));
+        tableView_Commandes->setGeometry(QRect(50, 60, 541, 101));
         label_4 = new QLabel(page_6);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(30, 0, 231, 16));
@@ -1020,7 +1020,7 @@ public:
 ""));
         page_15 = new QWidget();
         page_15->setObjectName(QStringLiteral("page_15"));
-        page_15->setGeometry(QRect(0, 0, 98, 28));
+        page_15->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_16 = new QLineEdit(page_15);
         lineEdit_16->setObjectName(QStringLiteral("lineEdit_16"));
         lineEdit_16->setGeometry(QRect(40, 0, 121, 20));
@@ -1032,7 +1032,7 @@ public:
         toolBox_2->addItem(page_15, QStringLiteral("ID_boutique"));
         page_16 = new QWidget();
         page_16->setObjectName(QStringLiteral("page_16"));
-        page_16->setGeometry(QRect(0, 0, 98, 28));
+        page_16->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_9 = new QLineEdit(page_16);
         lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
         lineEdit_9->setGeometry(QRect(20, 0, 141, 20));
@@ -1044,7 +1044,7 @@ public:
         toolBox_2->addItem(page_16, QStringLiteral("nom de boutique"));
         page_17 = new QWidget();
         page_17->setObjectName(QStringLiteral("page_17"));
-        page_17->setGeometry(QRect(0, 0, 98, 28));
+        page_17->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_10 = new QLineEdit(page_17);
         lineEdit_10->setObjectName(QStringLiteral("lineEdit_10"));
         lineEdit_10->setGeometry(QRect(60, 0, 121, 20));
@@ -1056,14 +1056,14 @@ public:
         toolBox_2->addItem(page_17, QStringLiteral("adresse"));
         page_18 = new QWidget();
         page_18->setObjectName(QStringLiteral("page_18"));
-        page_18->setGeometry(QRect(0, 0, 98, 28));
+        page_18->setGeometry(QRect(0, 0, 100, 30));
         spinBox = new QLineEdit(page_18);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(20, 0, 113, 20));
         toolBox_2->addItem(page_18, QStringLiteral("Nombre d'employees"));
         page_19 = new QWidget();
         page_19->setObjectName(QStringLiteral("page_19"));
-        page_19->setGeometry(QRect(0, 0, 98, 28));
+        page_19->setGeometry(QRect(0, 0, 331, 26));
         spinBox_3 = new QLineEdit(page_19);
         spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
         spinBox_3->setGeometry(QRect(30, 0, 113, 20));

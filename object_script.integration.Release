@@ -1,0 +1,12 @@
+release/boutique.o
+release/carte.o
+release/client.o
+release/commande.o
+release/connection.o
+release/gestion_boutique.o
+release/gestion_client.o
+release/main.o
+release/mainwindow.o
+release/moc_gestion_boutique.o
+release/moc_gestion_client.o
+release/moc_mainwindow.o

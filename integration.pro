@@ -13,21 +13,28 @@ CONFIG += c++11
 
 SOURCES += \
     boutique.cpp \
+    carte.cpp \
+    client.cpp \
     commande.cpp \
     connection.cpp \
     gestion_boutique.cpp \
+    gestion_client.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     boutique.h \
+    carte.h \
+    client.h \
     commande.h \
     connection.h \
     gestion_boutique.h \
+    gestion_client.h \
     mainwindow.h
 
 FORMS += \
     gestion_boutique.ui \
+    gestion_client.ui \
     mainwindow.ui
 
 # Default rules for deployment.

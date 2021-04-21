@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "gestion_boutique.h"
+#include "gestion_client.h"
 #include <QPrinter>
 #include<QFileDialog>
 #include <QPainter>
@@ -25,4 +26,10 @@ void MainWindow::on_pushButton_clicked()
 {
     gestionboutique = new gestion_boutique(this);
           gestionboutique->show();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    gestionclient = new gestion_client(this);
+          gestionclient->show();
 }

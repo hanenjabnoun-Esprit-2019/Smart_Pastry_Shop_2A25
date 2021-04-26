@@ -1,11 +1,11 @@
 #include "connection.h"
 
-Connection::Connection()
+connection::connection()
 {
 
 }
 
-bool Connection::createconnect()
+bool connection::createconnect()
 {bool test=false;
 QSqlDatabase db = QSqlDatabase :: addDatabase("QODBC");
 db.setDatabaseName("source_projet");//inserer le nom de la source de données ODBC
@@ -21,5 +21,4 @@ test=true;
 
     return  test;
 }
-
 

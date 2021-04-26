@@ -4,15 +4,15 @@
 #include<QObject>
 
 #include<QStringList>
+
 boutique::boutique()
 {
-     ID_boutique="";
-    nom_boutique="";
-   adresse="";
-    nbr_employees=0;
-    nbr_heure=0;
+    ID_boutique="";
+   nom_boutique="";
+  adresse="";
+   nbr_employees=0;
+   nbr_heure=0;
 }
-
 
 boutique::boutique(QString  ID_boutique,QString   nom_boutique,QString adresse,int nbr_employees,int nbr_heure)
 {

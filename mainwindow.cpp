@@ -1,38 +1,29 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include"commande.h"
-#include<QString>
-#include <QMessageBox>
-#include <QTextStream>
-#include <QSqlQuery>
-#include<QtDebug>
-#include <QTextDocument>
+#include "gestion_boutique.h"
 #include <QPrinter>
+#include<QFileDialog>
+#include <QPainter>
 #include <QPrintDialog>
-#include <QMovie>
-#include <QMediaPlayer>
-#include<QtMultimedia>
-#include<QSound>
-
+#include <QPrinterInfo>
+#include "connection.h"
+#include <QMessageBox>
+#include <QSqlRecord>
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
-    ui->tableView_boutique->setModel(b.afficher());
-    ui->tableView_Commandes->setModel(c.afficher());
-     ui->spinBox->setValidator(new QIntValidator(100, 999, this));
-     ui->spinBox_3->setValidator(new QIntValidator(100, 999, this));
-     ui->spinBox_2->setValidator(new QIntValidator(100, 999, this));
-     ui->spinBox_4->setValidator(new QIntValidator(100, 999, this));
-     ui->lineEdit_6->setValidator(new QIntValidator(100, 999, this));
-     ui->lineEdit_2->setValidator(new QIntValidator(100, 999, this));
-      ui->lineEdit_16->setMaxLength(10);
-      ui->lineEdit_11->setMaxLength(10);
-
+   ui->winStack->setCurrentIndex(0);
+   ui->stackedWidget->setCurrentIndex(1);
+   ui->passwordBox->setEchoMode(QLineEdit::Password);
+   ui->passwordBox->setInputMethodHints(Qt::ImhHiddenText| Qt::ImhNoPredictiveText|Qt::ImhNoAutoUppercase);
+   ui->pBox->setEchoMode(QLineEdit::Password);
+   ui->pBox->setInputMethodHints(Qt::ImhHiddenText| Qt::ImhNoPredictiveText|Qt::ImhNoAutoUppercase);
+   ui->pBox_2->setEchoMode(QLineEdit::Password);
+   ui->pBox_2->setInputMethodHints(Qt::ImhHiddenText| Qt::ImhNoPredictiveText|Qt::ImhNoAutoUppercase);
 
 }
 
@@ -42,339 +33,489 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_pushButton_clicked()
+{
+    gestionboutique = new gestion_boutique(this);
+          gestionboutique->show();
+}
+
+bool MainWindow::Login(QString u, QString p)
+{
+    ui->adminButton->setVisible(true);
+
+    bool exists = false;
+
+    QSqlQuery query;
+    query.prepare("SELECT username FROM sys_users WHERE username = (:un) AND passwd = (:pw)");
+   query.bindValue(":un", u);
+    query.bindValue(":pw", p);
+
+    if (query.exec())
+    {
+        if (query.next())
+        {
+            exists = true;
+        }
+    }
+
+    return exists;
+}
+
+void MainWindow::on_loginButton_clicked()
+{
+    this->loggedIn = Login(ui->usernameBox->text(), ui->passwordBox->text());
+
+    if(this->loggedIn)
+    {
+        this->username = ui->usernameBox->text();
+        this->password = ui->passwordBox->text();
+
+        ui->label_3->setText("");
+        ui->winStack->setCurrentIndex(2);
+    }
+    else
+    {
+        ui->label_3->setText("Login failed: Invalid credentials!");
+    }
+}
+
+void MainWindow::on_regButton_clicked()
+{
+    ui->uBox->setText(ui->usernameBox->text());
+    ui->pBox->setText(ui->passwordBox->text());
+    ui->winStack->setCurrentIndex(1);
+}
+
+void MainWindow::on_logoutButton_clicked()
+{
+    if(QMessageBox::Yes == QMessageBox(QMessageBox::Question,
+                                       "Login System", "Are you sure you want to logout?",
+                                       QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        this->loggedIn = false;
+        ui->passwordBox->setText("");
+        ui->label_3->setText("You signed out!");
+        ui->winStack->setCurrentIndex(0);
+    }
+}
+
+void MainWindow::on_completeRegButton_clicked()
+{
+    bool halt = false;
+
+    if(ui->uBox->text() == "")
+    {
+        ui->uBox->setPlaceholderText("Username EMPTY!");
+        halt = true;
+    }
+
+    if(ui->pBox->text() == "")
+    {
+        ui->pBox->setPlaceholderText("Password EMPTY!");
+        halt = true;
+    }
+
+    if(ui->eBox->text() == "")
+    {
+        ui->eBox->setPlaceholderText("E-mail EMPTY!");
+        halt = true;
+    }
+
+    if(ui->fBox->text() == "")
+    {
+        ui->fBox->setPlaceholderText("First Name EMPTY!");
+        halt = true;
+    }
+
+    if(ui->mBox->text() == "")
+    {
+        ui->mBox->setPlaceholderText("Middle Name (optional)");
+        halt = false;
+    }
+
+    if(ui->lBoxb->text() == "")
+    {
+        ui->lBoxb->setPlaceholderText("Last Name EMPTY!");
+        halt = true;
+    }
+
+    QSqlQuery query;
+    query.prepare("SELECT username FROM sys_users WHERE username = (:un)");
+    query.bindValue(":un", ui->uBox->text());
+
+    if(query.exec())
+    {
+        if(query.next())
+        {
+            ui->uBox->setText("");
+            ui->uBox->setPlaceholderText("Choose a different Username!");
+            halt = true;
+        }
+    }
+
+    QSqlQuery query2;
+    query2.prepare("SELECT email FROM sys_users WHERE email = (:em)");
+    query2.bindValue(":em", ui->eBox->text());
+
+    if(query2.exec())
+    {
+        if(query2.next())
+        {
+            ui->eBox->setText("");
+            ui->eBox->setPlaceholderText("Use another E-mail!");
+            halt = true;
+        }
+    }
+
+
+    if(halt)
+    {
+        ui->regLabel->setText("Please correct your mistakes.");
+    }
+    else
+    {
+        /*if (this->picName != "")
+        {
+            QString to = this->picDir+"/"+ui->uBox->text();
+
+            if (QFile::exists(to))
+            {
+                QFile::remove(to);
+            }
+
+            QFile::copy(this->picName, to);
+            this->picName = "";*/
+        }
+
+        ui->regLabel->setText("");
+        QSqlQuery iQuery;
+        iQuery.prepare("INSERT INTO sys_users(username, passwd, fname, mname, lname, email)"\
+                       "VALUES(:un, :pw, :fn, :mn, :ln, :em)");
+        iQuery.bindValue(":un", ui->uBox->text());
+        iQuery.bindValue(":pw", ui->pBox->text());
+        iQuery.bindValue(":fn", ui->fBox->text());
+        iQuery.bindValue(":mn", ui->mBox->text());
+        iQuery.bindValue(":ln", ui->lBoxb->text());
+        iQuery.bindValue(":em", ui->eBox->text());
+
+        if(iQuery.exec())
+        {
+            ui->uBox->setText("");
+            ui->pBox->setText("");
+            ui->eBox->setText("");
+            ui->fBox->setText("");
+            ui->mBox->setText("");
+            ui->lBoxb->setText("");
+            ui->rpLabel->setText("<img src=\":user.png\" />");
+            ui->label_3->setText("Registration Successful! You can now login.");
+            ui->winStack->setCurrentIndex(0);
+        }
+
+}
+
+void MainWindow::on_backButton2_clicked()
+{
+    ui->label_3->setText("");
+    ui->winStack->setCurrentIndex(0);
+}
+
+void MainWindow::on_adminButton_clicked()
+{
+    ui->winStack->setCurrentIndex(4);
+}
+
+void MainWindow::on_editButton_clicked()
+{
+    QSqlQuery fetcher;
+    fetcher.prepare("SELECT * FROM sys_users WHERE username = (:un) AND passwd = (:pw)");
+    fetcher.bindValue(":un", this->username);
+    fetcher.bindValue(":pw", this->password);
+    fetcher.exec();
+
+    int idUsername = fetcher.record().indexOf("username");
+    int idPasswd = fetcher.record().indexOf("passwd");
+    int idEmail = fetcher.record().indexOf("email");
+    int idFname = fetcher.record().indexOf("fname");
+    int idMname = fetcher.record().indexOf("mname");
+    int idLname = fetcher.record().indexOf("lname");
+
+    while (fetcher.next())
+    {
+        ui->uBox_2->setText(fetcher.value(idUsername).toString());
+        ui->pBox_2->setText(fetcher.value(idPasswd).toString());
+        ui->eBox_2->setText(fetcher.value(idEmail).toString());
+        ui->fBox_2->setText(fetcher.value(idFname).toString());
+        ui->mBox_2->setText(fetcher.value(idMname).toString());
+        ui->lBox_2->setText(fetcher.value(idLname).toString());
+    }
+}
+
+void MainWindow::on_delButton_clicked()
+{
+    if(QMessageBox::Yes == QMessageBox(QMessageBox::Question,
+                                       "Login System", "Are you sure you want to delete your account?",
+                                       QMessageBox::Yes|QMessageBox::No).exec())
+    {
+       /* QString to = this->picDir+"/"+this->username;
+
+        if (QFile::exists(to))
+        {
+            QFile::remove(to);
+        }
+*/
+        QSqlQuery dQuery;
+        dQuery.prepare("DELETE FROM sys_users WHERE username = (:un)");
+        dQuery.bindValue(":un", this->username);
+
+        if(dQuery.exec())
+        {
+            ui->usernameBox->setText("");
+            ui->passwordBox->setText("");
+            ui->label_3->setText("Account deleted!");
+            ui->winStack->setCurrentIndex(0);
+        }
+    }
+}
+
+void MainWindow::on_editedButton_clicked()
+{
+    bool halt = false;
+
+    if(ui->uBox_2->text() == "")
+    {
+        ui->uBox_2->setPlaceholderText("Username EMPTY!");
+        halt = true;
+    }
+
+    if(ui->pBox_2->text() == "")
+    {
+        ui->pBox_2->setPlaceholderText("Password EMPTY!");
+        halt = true;
+    }
+
+    if(ui->eBox_2->text() == "")
+    {
+        ui->eBox_2->setPlaceholderText("E-mail EMPTY!");
+        halt = true;
+    }
+
+    if(ui->fBox_2->text() == "")
+    {
+        ui->fBox_2->setPlaceholderText("First Name EMPTY!");
+        halt = true;
+    }
+
+    if(ui->mBox_2->text() == "")
+    {
+        ui->mBox_2->setPlaceholderText("Middle Name (optional)");
+        halt = false;
+    }
+
+    if(ui->lBox_2->text() == "")
+    {
+        ui->lBox_2->setPlaceholderText("Last Name EMPTY!");
+        halt = true;
+    }
+
+    QSqlQuery cQuery;
+    cQuery.prepare("SELECT username FROM sys_users WHERE username = (:un)");
+    cQuery.bindValue(":un", ui->uBox->text());
+
+    if(cQuery.exec())
+    {
+        if(cQuery.next() && ui->uBox_2->text() != cQuery.value(0).toString())
+        {
+            ui->uBox_2->setText("");
+            ui->uBox_2->setPlaceholderText("Choose a different Username!");
+            halt = true;
+        }
+    }
+
+    QSqlQuery cQuery2;
+    cQuery2.prepare("SELECT email FROM sys_users WHERE email = (:em)");
+    cQuery2.bindValue(":em", ui->eBox_2->text());
+
+    if(cQuery2.exec())
+    {
+        if(cQuery2.next() && ui->eBox_2->text() != cQuery2.value(0).toString())
+        {
+            ui->eBox_2->setText("");
+            ui->eBox_2->setPlaceholderText("Use another E-mail!");
+            halt = true;
+        }
+    }
+
+
+    if(halt)
+    {
+        ui->label_10->setText("Please correct your mistakes.");
+    }
+    else
+    {
+       /* if (this->picName != "")
+        {
+            QString to = this->picDir+"/"+ui->uBox_2->text();
+
+            if (QFile::exists(to))
+            {
+                QFile::remove(to);
+            }
+
+            QFile::copy(this->picName, to);
+            this->picName = "";
+        }*/
+
+        ui->label_10->setText("");
+        QSqlQuery iQuery;
+        iQuery.prepare("UPDATE sys_users SET username=(:un), passwd=(:pw), fname=(:fn), mname=(:mn), lname=(:ln), email=(:em) WHERE username=(:uno)");
+        iQuery.bindValue(":un", ui->uBox_2->text());
+        iQuery.bindValue(":pw", ui->pBox_2->text());
+        iQuery.bindValue(":fn", ui->fBox_2->text());
+        iQuery.bindValue(":mn", ui->mBox_2->text());
+        iQuery.bindValue(":ln", ui->lBox_2->text());
+        iQuery.bindValue(":em", ui->eBox_2->text());
+        iQuery.bindValue(":uno", ui->uBox_2->text());
+
+        if(iQuery.exec())
+        {
+            ui->winStack->setCurrentIndex(2);
+        }
+
+    }
+}
+
+void MainWindow::on_backButton_2_clicked()
+{
+     ui->winStack->setCurrentIndex(2);
+}
+
+void MainWindow::on_userBrowse_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_adminBrowse_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_pageButton_clicked()
 {
-     ui->stackedWidget->setCurrentIndex(2);
+    ui->winStack->setCurrentIndex(2);
 }
 
-
-
-
-
-void MainWindow::on_ajouter_commande_clicked()
+void MainWindow::on_delUButton_clicked()
 {
-
-    QString nom_produit=ui->lineEdit->text();
-       int nbr_produit=ui->lineEdit_2->text().toInt();
-        QString ref_commande=ui->lineEdit_3->text();
-        QString ID=ui->lineEdit_7->text();
-      commande c (nom_produit,ref_commande,nbr_produit,ID);
-        bool test=c.ajouter();
-        if(test)
-            {
-                QMessageBox::information(nullptr, QObject::tr("ok"),
-                            QObject::tr("ajout effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
-               ui->tableView_Commandes->setModel(c.afficher());
-
-
-        }
-            else
-                QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                            QObject::tr("ajout non effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
-
-}
-
-void MainWindow::on_supprimer_commande_clicked()
-{
-    commande c1;
-    c1.set_ref(ui->lineEdit_8->text());
-      bool test=c1.supprimer(c1.get_ref());
-      if(test)
-         {
-             QMessageBox::information(nullptr, QObject::tr("ok"),
-                         QObject::tr("suppression effectuer.\n"
-                                     "Click Cancel to exit."), QMessageBox::Cancel);
-             ui->tableView_Commandes->setModel(c.afficher());
-
-
-     }
-         else
-             QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                         QObject::tr("suppression non effectuer.\n"
-                                     "Click Cancel to exit."), QMessageBox::Cancel);
-
-}
-
-void MainWindow::on_ajouter_boutique_clicked()
-{
-   QString ID_boutique=ui->lineEdit_16->text();
-   QString nom_boutique=ui->lineEdit_9->text();
-  QString adresse=ui->lineEdit_10->text();
-  int nbr_employees=ui->spinBox->text().toInt()  ;
-   int nbr_heure=ui->spinBox_3->text().toInt() ;
-
-boutique b( ID_boutique,nom_boutique,adresse,nbr_employees,nbr_heure);
-
-bool test=b.ajouter();
-   if(test)
-            {
-                QMessageBox::information(nullptr, QObject::tr("ok"),
-                            QObject::tr("ajout effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
-               ui->tableView_boutique->setModel(b.afficher());
-
-
-        }
-            else
-               {
-       QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                             QObject::tr("ajout non effectuer.\n"
-                                         "Click Cancel to exit."), QMessageBox::Cancel);
-
-
-   }
-
-
-
-
-}
-void MainWindow::on_supprimer_boutique_clicked()
-{
-    boutique b1;
-    b1.set_ID_boutique(ui->lineEdit_14->text());
-
-    bool test=b1.supprimer(ui->lineEdit_14->text());
-    if(test)
-       {
-           QMessageBox::information(nullptr, QObject::tr("ok"),
-                       QObject::tr("suppression effectuer.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
-           ui->tableView_boutique->setModel(b.afficher());
-
-
-   }
-       else
-           QMessageBox::critical(nullptr, QObject::tr("not ok"),
-                       QObject::tr("suppression non effectuer.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
-
-}
-
-void MainWindow::on_bar_ajoutC_clicked()
-{
-     ui->stackedWidget_2->setCurrentIndex(0);
-}
-
-void MainWindow::on_bar_modifC_clicked()
-{
-  ui->stackedWidget_2->setCurrentIndex(1);
-}
-
-void MainWindow::on_bar_afficheC_clicked()
-{
-     ui->stackedWidget_2->setCurrentIndex(2);
-}
-
-
-void MainWindow::on_bar_suppC_clicked()
-{
-     ui->stackedWidget_2->setCurrentIndex(3);
-}
-
-void MainWindow::on_bar_ajoutB_clicked()
-{
-      ui->stackedWidget_3->setCurrentIndex(0);
-}
-
-void MainWindow::on_bar_modifB_clicked()
-{
-    ui->stackedWidget_3->setCurrentIndex(1);
-}
-
-void MainWindow::on_bar_affichB_clicked()
-{
-    ui->stackedWidget_3->setCurrentIndex(3);
-}
-
-void MainWindow::on_bar_suppB_clicked()
-{
-    ui->stackedWidget_3->setCurrentIndex(2);
-}
-
-void MainWindow::on_home1_clicked()
-{
-     ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::on_home2_clicked()
-{
-     ui->stackedWidget->setCurrentIndex(0);
-}
-
-void MainWindow::on_modifier_boutique_clicked()
-{
-    QString  ID_boutique=ui->lineEdit_11->text();
-    QString nom_boutique=ui->lineEdit_12->text();
-    QString adresse=ui->lineEdit_13->text();
-    int nbr_employees=ui->spinBox_2->text().toInt();
-    int nbr_heure=ui->spinBox_4->text().toInt();
- boutique b(ID_boutique,nom_boutique, adresse,nbr_employees,nbr_heure);
-   bool test=b.modifier(ID_boutique,nom_boutique, adresse,nbr_employees,nbr_heure);
-   if(test)
-       {ui->tableView_boutique->setModel(b.afficher());
-           QMessageBox::information(nullptr, QObject::tr("modifier une boutique"),
-                                    QObject::tr("boutique  modifié.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);}
-       else
-           QMessageBox::critical(nullptr, QObject::tr("Modifier une boutique"),
-                                 QObject::tr("erreur !.\n"
-                                             "Click Cancel to exit."), QMessageBox::Cancel);
-
-
-
-
-
-   }
-
-
-
-
-
-void MainWindow::on_tableView_boutique_clicked(const QModelIndex &index)
-{
-    ui->lineEdit_11->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),0)).toString());
-    ui->lineEdit_12->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),1)).toString());
-    ui->lineEdit_13->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),2)).toString());
-    ui->spinBox_2->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),3)).toString());
-    ui->spinBox_4->setText( ui->tableView_boutique->model()->data(ui->tableView_boutique->model()->index(ui->tableView_boutique->selectionModel()->currentIndex().row(),4)).toString());
-}
-
-void MainWindow::on_modifier_commande_clicked()
-{
-
-   QString ref_commande=ui->lineEdit_4->text();
-    QString nom_produit=ui->lineEdit_5->text();
-   int nbr_produit=ui->lineEdit_6->text().toInt();
-   QString ID=ui->lineEdit_15->text();
-   commande c(nom_produit,ref_commande,nbr_produit,ID);
-
-   bool test=c.modifier(nom_produit,ref_commande,nbr_produit,ID);
-
-   if(test)
-       { ui->tableView_Commandes->setModel(c.afficher());
-           QMessageBox::information(nullptr, QObject::tr("modifier une commande"),
-                                    QObject::tr("commande  modifié.\n"
-                                                "Click Cancel to exit."), QMessageBox::Cancel);
-   }
-       else
-   {
-           QMessageBox::critical(nullptr, QObject::tr("Modifier une commande"),
-                                 QObject::tr("erreur !.\n"
-                                             "Click Cancel to exit."), QMessageBox::Cancel);}
-
-}
-
-void MainWindow::on_tableView_Commandes_clicked(const QModelIndex &index)
-{
-    ui->lineEdit_4->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),1)).toString());
-     ui->lineEdit_5->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),0)).toString());
-     ui->lineEdit_6->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),2)).toString());
-     ui->lineEdit_15->setText( ui->tableView_Commandes->model()->data(ui->tableView_Commandes->model()->index(ui->tableView_Commandes->selectionModel()->currentIndex().row(),3)).toString());
-}
-
-void MainWindow::on_tri_boutique_clicked()
-{
-    QString critere=ui->comboBox->currentText();
-    QString mode;
-    if (ui->checkBox->checkState()==false)
-{
-         mode="DESC";
-}
-     else if(ui->checkBox_2->checkState()==false)
-     {
-         mode="ASC";
-     }
-
-     ui->tableView_boutique->setModel(b.trie(critere,mode));
-}
-
-void MainWindow::on_pushButton_22_clicked()
-{
-    QTableView tableView_boutique;
-    QSqlQueryModel * Modal=new  QSqlQueryModel();
-
-    QSqlQuery qry ;
-     qry.prepare("SELECT * FROM boutique");
-     qry.exec();
-     Modal->setQuery(qry);
-    tableView_boutique.setModel(Modal);
-
-
-
-
-
-
-     QString strStream;
-     QTextStream out(&strStream);
-
-     const int rowCount =tableView_boutique.model()->rowCount();
-     const int columnCount =tableView_boutique.model()->columnCount();
-
-     const QString strTitle ="Document";
-
-
-     out <<  "<html>\n"
-         "<head>\n"
-             "<meta Content=\"Text/html; charset=Windows-1251\">\n"
-         <<  QString("<title>%1</title>\n").arg(strTitle)
-         <<  "</head>\n"
-         "<body bgcolor=#ffffff link=#5000A0>\n"
-        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les boutique")
-        <<"<br>"
-         <<"<table border=1 cellspacing=0 cellpadding=2>\n";
-
-     out << "<thead><tr bgcolor=#f0f0f0>";
-     for (int column = 0; column < columnCount; column++)
-         if (! tableView_boutique.isColumnHidden(column))
-             out << QString("<th>%1</th>").arg( tableView_boutique.model()->headerData(column, Qt::Horizontal).toString());
-     out << "</tr></thead>\n";
-     for (int row = 0; row < rowCount; row++) {
-             out << "<tr>";
-             for (int column = 0; column < columnCount; column++) {
-                 if (! tableView_boutique.isColumnHidden(column)) {
-                     QString data =  tableView_boutique.model()->data( tableView_boutique.model()->index(row, column)).toString().simplified();
-                     out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
-                 }
-             }
-             out << "</tr>\n";
-         }
-         out <<  "</table>\n"
-                 "<br><br>"
-
-
-         "</body>\n"
-         "</html>\n";
-
-     QTextDocument *document = new QTextDocument();
-     document->setHtml(strStream);
-
-     QPrinter printer;
-
-     QPrintDialog *dialog = new QPrintDialog(&printer, NULL);
-     if (dialog->exec() == QDialog::Accepted) {
-         document->print(&printer);
-     }
-
-     delete document;
-}
-
-void MainWindow::on_lineEdit_17_textChanged(const QString &arg1)
-{
-
-    if(ui->lineEdit_17->text() == "")
+    if(QMessageBox::Yes == QMessageBox(QMessageBox::Question,
+                                           "Login System", "Are you sure you want to erase all accounts?",
+                                           QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        QSqlQuery dQuery;
+        dQuery.prepare("DELETE FROM sys_users WHERE rank !=1 AND rank != -1");
+
+        if(dQuery.exec())
         {
-            ui->tableView_Commandes->setModel(c.afficher());
+            ui->label_13->setText("Query executed!");
         }
-        else
+    }
+}
+
+void MainWindow::on_delAButton_clicked()
+{
+    if(QMessageBox::Yes == QMessageBox(QMessageBox::Question,
+                                           "Login System", "Are you sure you want to erase all administrators?"\
+                                           "\n(This won't erase regular users and you)",
+                                           QMessageBox::Yes|QMessageBox::No).exec())
+    {
+        QSqlQuery dQuery;
+        dQuery.prepare("DELETE FROM sys_users WHERE rank != 1 AND username != \"" + this->username + "\"");
+
+        if(dQuery.exec())
         {
-             ui->tableView_Commandes->setModel(c.rechercher(ui->lineEdit_17->text()));
+            ui->label_13->setText("Query executed!");
+        }
+    }
+}
+
+void MainWindow::on_backButton_5_clicked()
+{
+    this->tblMdl->revertAll();
+    this->tblMdl->database().rollback();
+}
+
+void MainWindow::on_editedButton_2_clicked()
+{
+
+    if(this->tblMdl->submitAll())
+    {
+        this->tblMdl->database().commit();
+        ui->label_13->setText("Saved to database!");
+    }
+    else
+    {
+        this->tblMdl->database().rollback();
+    }
+}
+
+void MainWindow::on_winStack_currentChanged(int arg1)
+{
+    if(arg1 == 3 && this->loggedIn)
+    {
+       /* if(QFile::exists(this->picDir+"/"+this->username))
+        {
+            ui->rpLabel_2->setText("<img src=\"file:///"+this->picDir+"/"+this->username+"\" alt=\"Image read error!\" height=\"128\" width=\"128\" />");
+        }*/
+    }
+
+    if(arg1 == 2 && this->loggedIn)
+    {
+        /*if(QFile::exists(this->picDir+"/"+this->username))
+        {
+            ui->loggedPic->setText("<img src=\"file:///"+this->picDir+"/"+this->username+"\" alt=\"Image read error!\" height=\"128\" width=\"128\" />");
+        }*/
+
+        QSqlQuery fetcher;
+        fetcher.prepare("SELECT * FROM sys_users WHERE username = (:un)");
+        fetcher.bindValue(":un", this->username);
+        fetcher.exec();
+
+        int idFname = fetcher.record().indexOf("fname");
+        int idMname = fetcher.record().indexOf("mname");
+        int idLname = fetcher.record().indexOf("lname");
+        int idRank = fetcher.record().indexOf("rank");
+        int idEmail = fetcher.record().indexOf("email");
+
+        QString fullname, email, rank;
+
+        while (fetcher.next())
+        {
+            fullname = fetcher.value(idFname).toString();
+            fullname += " " + fetcher.value(idMname).toString();
+            fullname += " " + fetcher.value(idLname).toString();
+            rank = fetcher.value(idRank).toString();
+            email = fetcher.value(idEmail).toString();
+        }
+        if(rank == "-1")
+        {
+            ui->adminButton->setVisible(true);
+        }
+        if (rank== "1")
+        {
+          ui->adminButton->setVisible(false);
         }
 
+        ui->nameLabel->setText(fullname);
+        ui->rankLabel->setText(rank);
+        ui->emailLabel->setText(email);
+    }
+
+    if(arg1 == 4 && this->loggedIn)
+    {
+        ui->stackedWidget->setCurrentIndex(0);
+    }
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+  ui->winStack->setCurrentIndex(5);
 }

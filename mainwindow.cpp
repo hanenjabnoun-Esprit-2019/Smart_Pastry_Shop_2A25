@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "gestion_boutique.h"
 #include "gestion_materiels.h"
-
+#include "gestion_des_clients.h"
 #include <QPrinter>
 #include<QFileDialog>
 #include <QPainter>
@@ -526,4 +526,10 @@ void MainWindow::on_pushButton_4_clicked()
 {
     gestionmateriels = new gestion_materiels(this);
           gestionmateriels->show();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    gestionclient = new gestion_des_clients(this);
+          gestionclient->show();
 }

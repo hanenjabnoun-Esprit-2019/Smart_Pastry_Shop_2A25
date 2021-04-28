@@ -135,5 +135,3 @@ QSqlQueryModel *carte::chercher(int reference,int cin_client)
 
 }
 
-
-

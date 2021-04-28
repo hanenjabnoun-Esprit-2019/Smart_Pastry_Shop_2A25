@@ -13,9 +13,12 @@ CONFIG += c++11
 
 SOURCES += \
     boutique.cpp \
+    carte.cpp \
+    client.cpp \
     commande.cpp \
     connection.cpp \
     gestion_boutique.cpp \
+    gestion_des_clients.cpp \
     gestion_materiels.cpp \
     main.cpp \
     maintenance.cpp \
@@ -25,9 +28,12 @@ SOURCES += \
 
 HEADERS += \
     boutique.h \
+    carte.h \
+    client.h \
     commande.h \
     connection.h \
     gestion_boutique.h \
+    gestion_des_clients.h \
     gestion_materiels.h \
     maintenance.h \
     mainwindow.h \
@@ -36,6 +42,7 @@ HEADERS += \
 
 FORMS += \
     gestion_boutique.ui \
+    gestion_des_clients.ui \
     gestion_materiels.ui \
     mainwindow.ui
 

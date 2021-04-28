@@ -12,6 +12,9 @@ db.setDatabaseName("source_projet");//inserer le nom de la source de données OD
 db.setUserName("aziz");//inserer nom de l'utilisateur
 db.setPassword("esprit18");//inserer mot de passe de cet utilisateur
 
+
+
+
 if (db.open())
 test=true;
 

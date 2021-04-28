@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "gestion_boutique.h"
+#include "gestion_materiels.h"
+
 #include <QPrinter>
 #include<QFileDialog>
 #include <QPainter>
@@ -518,4 +520,10 @@ void MainWindow::on_winStack_currentChanged(int arg1)
 void MainWindow::on_pushButton_2_clicked()
 {
   ui->winStack->setCurrentIndex(5);
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    gestionmateriels = new gestion_materiels(this);
+          gestionmateriels->show();
 }

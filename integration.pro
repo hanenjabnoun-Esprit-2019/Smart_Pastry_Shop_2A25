@@ -16,18 +16,27 @@ SOURCES += \
     commande.cpp \
     connection.cpp \
     gestion_boutique.cpp \
+    gestion_materiels.cpp \
     main.cpp \
-    mainwindow.cpp
+    maintenance.cpp \
+    mainwindow.cpp \
+    materiel.cpp \
+    notif.cpp
 
 HEADERS += \
     boutique.h \
     commande.h \
     connection.h \
     gestion_boutique.h \
-    mainwindow.h
+    gestion_materiels.h \
+    maintenance.h \
+    mainwindow.h \
+    materiel.h \
+    notif.h
 
 FORMS += \
     gestion_boutique.ui \
+    gestion_materiels.ui \
     mainwindow.ui
 
 # Default rules for deployment.

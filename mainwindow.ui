@@ -27,7 +27,7 @@
      <string notr="true">background-color:rgb(255, 170, 127);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="Login">
      <widget class="QFrame" name="frame_2">
@@ -1272,7 +1272,7 @@ Color: #101010;</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

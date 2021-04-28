@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "gestion_boutique.h"
+#include "gestion_materiels.h"
 #include <QSqlTableModel>
 
 QT_BEGIN_NAMESPACE
@@ -63,9 +64,12 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     gestion_boutique * gestionboutique;
+    gestion_materiels * gestionmateriels;
     QString username;
     QString password;
 };

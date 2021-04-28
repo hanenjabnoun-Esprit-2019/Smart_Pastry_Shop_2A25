@@ -5,6 +5,7 @@
 #include "gestion_boutique.h"
 #include "gestion_materiels.h"
 #include "gestion_des_clients.h"
+#include "personnels.h"
 #include <QSqlTableModel>
 
 QT_BEGIN_NAMESPACE
@@ -69,6 +70,8 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     gestion_boutique * gestionboutique;
@@ -76,5 +79,6 @@ private:
       gestion_des_clients * gestionclient;
     QString username;
     QString password;
+    personnels *personnelss;
 };
 #endif // MAINWINDOW_H

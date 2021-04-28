@@ -112,6 +112,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -593,6 +594,13 @@ public:
 "Border-radius: 5px;\n"
 "Background: #aaa;\n"
 "Color: #101010;"));
+        pushButton_6 = new QPushButton(frame_9);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(70, 260, 75, 23));
+        pushButton_6->setStyleSheet(QLatin1String("Padding: 1px;\n"
+"Border-radius: 5px;\n"
+"Background: #aaa;\n"
+"Color: #101010;"));
         winStack->addWidget(page_7);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -605,7 +613,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        winStack->setCurrentIndex(0);
+        winStack->setCurrentIndex(5);
         stackedWidget->setCurrentIndex(0);
 
 
@@ -672,6 +680,7 @@ public:
         pushButton_3->setText(QApplication::translate("MainWindow", "button bilel", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "button saif ", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("MainWindow", "button saif", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("MainWindow", "button hela", Q_NULLPTR));
     } // retranslateUi
 
 };

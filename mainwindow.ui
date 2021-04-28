@@ -1262,6 +1262,25 @@ Color: #101010;</string>
         <string>button saif</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>260</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">Padding: 1px;
+Border-radius: 5px;
+Background: #aaa;
+Color: #101010;</string>
+       </property>
+       <property name="text">
+        <string>button hela</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>

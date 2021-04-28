@@ -17,6 +17,7 @@ SOURCES += \
     client.cpp \
     commande.cpp \
     connection.cpp \
+    departement.cpp \
     gestion_boutique.cpp \
     gestion_des_clients.cpp \
     gestion_materiels.cpp \
@@ -24,7 +25,10 @@ SOURCES += \
     maintenance.cpp \
     mainwindow.cpp \
     materiel.cpp \
-    notif.cpp
+    notif.cpp \
+    personnel.cpp \
+    personnels.cpp \
+    smtp.cpp
 
 HEADERS += \
     boutique.h \
@@ -32,19 +36,24 @@ HEADERS += \
     client.h \
     commande.h \
     connection.h \
+    departement.h \
     gestion_boutique.h \
     gestion_des_clients.h \
     gestion_materiels.h \
     maintenance.h \
     mainwindow.h \
     materiel.h \
-    notif.h
+    notif.h \
+    personnel.h \
+    personnels.h \
+    smtp.h
 
 FORMS += \
     gestion_boutique.ui \
     gestion_des_clients.ui \
     gestion_materiels.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    personnels.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

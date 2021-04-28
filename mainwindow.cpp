@@ -533,3 +533,9 @@ void MainWindow::on_pushButton_3_clicked()
     gestionclient = new gestion_des_clients(this);
           gestionclient->show();
 }
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    personnelss = new personnels(this);
+     personnelss->show();
+}

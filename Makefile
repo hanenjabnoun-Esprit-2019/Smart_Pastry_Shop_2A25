@@ -103,6 +103,8 @@ Makefile: integration.pro ../../../../Qt/5.9.9/mingw53_32/mkspecs/win32-g++/qmak
 		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_bluetooth.pri \
 		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_charts.pri \
+		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_charts_private.pri \
 		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_concurrent.pri \
 		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_concurrent_private.pri \
 		../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_core.pri \
@@ -267,6 +269,8 @@ Makefile: integration.pro ../../../../Qt/5.9.9/mingw53_32/mkspecs/win32-g++/qmak
 ../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_bluetooth.pri:
 ../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_bluetooth_private.pri:
 ../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_charts.pri:
+../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_charts_private.pri:
 ../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_concurrent.pri:
 ../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_concurrent_private.pri:
 ../../../../Qt/5.9.9/mingw53_32/mkspecs/modules/qt_lib_core.pri:

@@ -359,3 +359,9 @@ void gestion_boutique::on_lineEdit_17_textChanged(const QString &arg1)
              ui->tableView_Commandes->setModel(c.rechercher(ui->lineEdit_17->text()));
         }
 }
+
+void gestion_boutique::on_statistique_commande_clicked()
+{
+    secDialog = new secondDialog(this);
+    secDialog ->show();
+}

@@ -7,6 +7,7 @@
 #include <QSound>
 #include <QMainWindow>
 #include"boutique.h"
+#include "seconddialog.h"
 
 namespace Ui {
 class gestion_boutique;
@@ -67,10 +68,13 @@ private slots:
 
     void on_lineEdit_17_textChanged(const QString &arg1);
 
+    void on_statistique_commande_clicked();
+
 private:
     Ui::gestion_boutique *ui;
     commande c;
     boutique b;
+    secondDialog *secDialog;
 };
 
 #endif // GESTION_BOUTIQUE_H

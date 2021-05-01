@@ -17,18 +17,25 @@ SOURCES += \
     connection.cpp \
     gestion_boutique.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qcustomplot.cpp \
+    seconddialog.cpp \
+    tableprinter.cpp
 
 HEADERS += \
     boutique.h \
     commande.h \
     connection.h \
     gestion_boutique.h \
-    mainwindow.h
+    mainwindow.h \
+    qcustomplot.h \
+    seconddialog.h \
+    tableprinter.h
 
 FORMS += \
     gestion_boutique.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    seconddialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

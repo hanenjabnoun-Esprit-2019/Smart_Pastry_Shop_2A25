@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "gestion_boutique.h"
 #include <QSqlTableModel>
+#include "seconddialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -68,5 +69,6 @@ private:
     gestion_boutique * gestionboutique;
     QString username;
     QString password;
+    secondDialog *secDialog;
 };
 #endif // MAINWINDOW_H

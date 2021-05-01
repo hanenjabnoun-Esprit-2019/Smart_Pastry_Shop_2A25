@@ -1,0 +1,15 @@
+INPUT(
+./release/boutique.o
+./release/commande.o
+./release/connection.o
+./release/gestion_boutique.o
+./release/main.o
+./release/mainwindow.o
+./release/qcustomplot.o
+./release/seconddialog.o
+./release/tableprinter.o
+./release/moc_gestion_boutique.o
+./release/moc_mainwindow.o
+./release/moc_qcustomplot.o
+./release/moc_seconddialog.o
+);

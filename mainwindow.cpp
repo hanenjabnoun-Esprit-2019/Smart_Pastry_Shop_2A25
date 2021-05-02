@@ -539,3 +539,9 @@ void MainWindow::on_pushButton_6_clicked()
     personnelss = new personnels(this);
      personnelss->show();
 }
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    gestioningredient= new gestion_ingredient(this);
+    gestioningredient->show();
+}

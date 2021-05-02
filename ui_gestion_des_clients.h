@@ -1034,7 +1034,7 @@ public:
 
         retranslateUi(gestion_des_clients);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
         tabWidget->setCurrentIndex(3);
         tabWidget_2->setCurrentIndex(3);
 

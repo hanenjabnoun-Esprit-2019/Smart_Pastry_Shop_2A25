@@ -20,7 +20,9 @@ SOURCES += \
     departement.cpp \
     gestion_boutique.cpp \
     gestion_des_clients.cpp \
+    gestion_ingredient.cpp \
     gestion_materiels.cpp \
+    ingredient.cpp \
     main.cpp \
     maintenance.cpp \
     mainwindow.cpp \
@@ -28,7 +30,11 @@ SOURCES += \
     notif.cpp \
     personnel.cpp \
     personnels.cpp \
-    smtp.cpp
+    produit.cpp \
+    qcustomplot.cpp \
+    seconddialog.cpp \
+    smtp.cpp \
+    tableprinter.cpp
 
 HEADERS += \
     boutique.h \
@@ -39,21 +45,29 @@ HEADERS += \
     departement.h \
     gestion_boutique.h \
     gestion_des_clients.h \
+    gestion_ingredient.h \
     gestion_materiels.h \
+    ingredient.h \
     maintenance.h \
     mainwindow.h \
     materiel.h \
     notif.h \
     personnel.h \
     personnels.h \
-    smtp.h
+    produit.h \
+    qcustomplot.h \
+    seconddialog.h \
+    smtp.h \
+    tableprinter.h
 
 FORMS += \
     gestion_boutique.ui \
     gestion_des_clients.ui \
+    gestion_ingredient.ui \
     gestion_materiels.ui \
     mainwindow.ui \
-    personnels.ui
+    personnels.ui \
+    seconddialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

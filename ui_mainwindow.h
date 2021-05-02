@@ -679,7 +679,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "button aziz", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("MainWindow", "button bilel", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "button saif ", Q_NULLPTR));
-        pushButton_5->setText(QApplication::translate("MainWindow", "button saif", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("MainWindow", "button laila", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindow", "button hela", Q_NULLPTR));
     } // retranslateUi
 

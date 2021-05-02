@@ -550,7 +550,7 @@ public:
         gestion_materiels->setCentralWidget(centralwidget);
         menubar = new QMenuBar(gestion_materiels);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1051, 26));
+        menubar->setGeometry(QRect(0, 0, 1051, 21));
         gestion_materiels->setMenuBar(menubar);
         statusbar = new QStatusBar(gestion_materiels);
         statusbar->setObjectName(QStringLiteral("statusbar"));

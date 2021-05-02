@@ -79,12 +79,12 @@ QString maintenance::getdescription(){return description;}
      QSqlQueryModel*model=new QSqlQueryModel();
 
           model->setQuery("SELECT*FROM Maintenance");
-          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Reference"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Identifiant"));
-          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nom du reparateur"));
-          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Derniere reparation"));
-          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Prochaine visite"));
-          model->setHeaderData(5, Qt::Horizontal, QObject::tr("description"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Reference"));
+          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom du reparateur"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Derniere reparation"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prochaine visite"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("description"));
 
 
 

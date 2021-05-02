@@ -13,6 +13,8 @@
 #include <QMediaPlayer>
 #include<QtMultimedia>
 #include<QSound>
+#include "notif.h"
+
 
 gestion_boutique::gestion_boutique(QWidget *parent) :
     QDialog(parent),
@@ -70,9 +72,15 @@ void gestion_boutique::on_ajouter_commande_clicked()
 
         }
             else
+        {
+
+            notif n("Erreur","ajout non effectuer ");
+                 n.afficher();}
+
+            /*
                 QMessageBox::critical(nullptr, QObject::tr("not ok"),
                             QObject::tr("ajout non effectuer.\n"
-                                        "Click Cancel to exit."), QMessageBox::Cancel);
+                                        "Click Cancel to exit."), QMessageBox::Cancel);*/
 }
 
 void gestion_boutique::on_supprimer_commande_clicked()
@@ -90,9 +98,13 @@ void gestion_boutique::on_supprimer_commande_clicked()
 
      }
          else
-             QMessageBox::critical(nullptr, QObject::tr("not ok"),
+      {
+             /*QMessageBox::critical(nullptr, QObject::tr("not ok"),
                          QObject::tr("suppression non effectuer.\n"
-                                     "Click Cancel to exit."), QMessageBox::Cancel);
+                                     "Click Cancel to exit."), QMessageBox::Cancel);*/
+          notif n("Erreur","suppression non effectuer ");
+               n.afficher();}
+
 }
 
 void gestion_boutique::on_ajouter_boutique_clicked()
@@ -117,9 +129,12 @@ bool test=b.ajouter();
         }
             else
                {
-       QMessageBox::critical(nullptr, QObject::tr("not ok"),
+      /* QMessageBox::critical(nullptr, QObject::tr("not ok"),
                              QObject::tr("ajout non effectuer.\n"
-                                         "Click Cancel to exit."), QMessageBox::Cancel);}
+                                         "Click Cancel to exit."), QMessageBox::Cancel);}*/
+       notif n("Erreur","ajout non effectuer ");
+            n.afficher();}
+
 
    }
 
@@ -139,9 +154,12 @@ void gestion_boutique::on_supprimer_boutique_clicked()
 
    }
        else
-           QMessageBox::critical(nullptr, QObject::tr("not ok"),
+    {
+          /* QMessageBox::critical(nullptr, QObject::tr("not ok"),
                        QObject::tr("suppression non effectuer.\n"
-                                   "Click Cancel to exit."), QMessageBox::Cancel);
+                                   "Click Cancel to exit."), QMessageBox::Cancel);*/
+        notif n("Erreur","suppression non effectuer ");
+             n.afficher();}
 
 }
 
@@ -215,9 +233,12 @@ void gestion_boutique::on_modifier_boutique_clicked()
                                     QObject::tr("boutique  modifié.\n"
                                                 "Click Cancel to exit."), QMessageBox::Cancel);}
        else
-           QMessageBox::critical(nullptr, QObject::tr("Modifier une boutique"),
+   {
+           /*QMessageBox::critical(nullptr, QObject::tr("Modifier une boutique"),
                                  QObject::tr("erreur !.\n"
-                                             "Click Cancel to exit."), QMessageBox::Cancel);
+                                             "Click Cancel to exit."), QMessageBox::Cancel);*/
+       notif n("Erreur","modification non effectuer ");
+            n.afficher();}
 }
 
 void gestion_boutique::on_tableView_boutique_clicked(const QModelIndex &index)
@@ -247,9 +268,12 @@ void gestion_boutique::on_modifier_commande_clicked()
     }
         else
     {
-            QMessageBox::critical(nullptr, QObject::tr("Modifier une commande"),
+           /* QMessageBox::critical(nullptr, QObject::tr("Modifier une commande"),
                                   QObject::tr("erreur !.\n"
-                                              "Click Cancel to exit."), QMessageBox::Cancel);}
+                                              "Click Cancel to exit."), QMessageBox::Cancel);}*/
+        notif n("Erreur","modification non effectuer ");
+             n.afficher();}
+
 
 }
 
@@ -358,4 +382,10 @@ void gestion_boutique::on_lineEdit_17_textChanged(const QString &arg1)
         {
              ui->tableView_Commandes->setModel(c.rechercher(ui->lineEdit_17->text()));
         }
+}
+
+void gestion_boutique::on_statistique_commande_clicked()
+{
+    secDialog = new secondDialog(this);
+    secDialog ->show();
 }

@@ -5,6 +5,7 @@
 #include "gestion_boutique.h"
 #include "gestion_materiels.h"
 #include "gestion_des_clients.h"
+#include "gestion_ingredient.h"
 #include "personnels.h"
 #include <QSqlTableModel>
 
@@ -72,11 +73,14 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     gestion_boutique * gestionboutique;
     gestion_materiels * gestionmateriels;
       gestion_des_clients * gestionclient;
+      gestion_ingredient *gestioningredient;
     QString username;
     QString password;
     personnels *personnelss;

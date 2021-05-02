@@ -1259,7 +1259,7 @@ Background: #aaa;
 Color: #101010;</string>
        </property>
        <property name="text">
-        <string>button saif</string>
+        <string>button laila</string>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_6">

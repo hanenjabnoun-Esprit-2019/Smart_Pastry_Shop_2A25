@@ -2158,7 +2158,7 @@ public:
 
         retranslateUi(personnels);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
         stackedWidget_3->setCurrentIndex(0);
 
 

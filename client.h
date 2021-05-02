@@ -25,7 +25,12 @@ public:
      bool ajouter();
      QSqlQueryModel* afficher();
      bool supprimer(int);
-     void modifier(int,QString,int);
+     bool modifclient(int,QString,QString,QString,int);
+
+
+      QSqlQueryModel* trier_cin();
+       QSqlQueryModel* trier_nom();
+ QSqlQueryModel * chercher(QString nom,QString prenom);
 
 private:
     int cin;

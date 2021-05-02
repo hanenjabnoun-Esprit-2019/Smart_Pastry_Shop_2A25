@@ -73,6 +73,69 @@ QSqlQueryModel*client::afficher()
 }
 
 
+bool client::modifclient(int cin,QString nom,QString prenom,QString adresse,int telephone){
+    QSqlQuery query;
+    query.prepare("UPDATE CLIENT set cin=:cin,nom=:nom,prenom=:prenom,adresse=:adresse,telephone=:telephone WHERE cin=:cin");
+    query.bindValue(":cin",cin);
+    query.bindValue(":nom",nom);
+    query.bindValue(":prenom",prenom);
+    query.bindValue(":adresse",adresse);
+    query.bindValue(":telephone",telephone);
+
+    return (query.exec());}
+
+
+QSqlQueryModel* client:: trier_cin()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from client order by (cin)ASC ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Carte identité"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom client"));
+      model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom client"));
+       model->setHeaderData(3, Qt::Horizontal, QObject::tr("Adresse client"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("Telephone client"));
+
+    return model;
+}
+QSqlQueryModel* client:: trier_nom()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+
+
+    model->setQuery("select * from client order by (nom)ASC ");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Carte identité"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom client"));
+      model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom client"));
+       model->setHeaderData(3, Qt::Horizontal, QObject::tr("Adresse client"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("Telephone client"));
+
+    return model;
+}
 
 
 
+
+
+
+
+
+
+ QSqlQueryModel *client::chercher(QString nom,QString prenom)
+  {
+
+     {
+         QSqlQueryModel *model = new QSqlQueryModel;
+         model->setQuery("SELECT * FROM client WHERE  upper(nom) Like upper('"+nom+"%') and upper(prenom) Like upper('"+prenom+"%') ");
+         model->setHeaderData(0, Qt::Horizontal, QObject::tr("Carte identité"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom client"));
+           model->setHeaderData(2, Qt::Horizontal, QObject::tr("prenom client"));
+            model->setHeaderData(3, Qt::Horizontal, QObject::tr("Adresse client"));
+             model->setHeaderData(4, Qt::Horizontal, QObject::tr("Telephone client"));
+         qDebug() << model;
+         return model ;
+     }
+
+
+}

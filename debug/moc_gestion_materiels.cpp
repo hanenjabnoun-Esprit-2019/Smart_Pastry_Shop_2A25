@@ -153,13 +153,13 @@ void gestion_materiels::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 9: _t->on_Tab_materiel_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         case 10: _t->on_Trier_ID_clicked(); break;
         case 11: _t->on_Trier_Prix_clicked(); break;
-        //case 12: _t->on_pushButton_8_clicked(); break;
+
         case 13: _t->on_Rechercher_materiel_clicked(); break;
         case 14: _t->on_pushButton_15_clicked(); break;
         case 15: _t->on_table_maintenance_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        //case 16: _t->on_trier_ref_mainte_clicked(); break;
-       // case 17: _t->on_trier_repa_mainte_clicked(); break;
-        //case 18: _t->on_rechercher_maint_clicked(); break;
+        case 16: _t->on_trier_ref_mainte_clicked(); break;
+        case 17: _t->on_trier_repa_mainte_clicked(); break;
+        case 18: _t->on_rechercher_maint_clicked(); break;
         case 19: _t->on_pushButton_13_clicked(); break;
         default: ;
         }

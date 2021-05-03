@@ -128,7 +128,7 @@ void gestion_materiels::on_pb_ajouter_m_clicked()
 
 
 
-maintenance A (reference,id_materiel,nom_reparateur,derniere_reparation,prochaine_visite,description);
+maintenance A (id_materiel,nom_reparateur,derniere_reparation,prochaine_visite,description,reference);
      bool test=A.ajouter();
      if(test)
      {
@@ -242,9 +242,9 @@ void gestion_materiels::on_pushButton_15_clicked()
     QDate derniere_reparation=ui->modifier_date_mainte->date();
     QDate prochaine_visite=ui->modifier_visite_->date();
     QString description=ui->modifier_des->text();
-                 maintenance A(reference,id_materiel, nom_reparateur, derniere_reparation, prochaine_visite,  description);
+                 maintenance A(id_materiel, nom_reparateur, derniere_reparation, prochaine_visite,  description,reference);
 
-        bool test = A.modifiermaintenance(reference, id_materiel, nom_reparateur, derniere_reparation, prochaine_visite,  description);
+        bool test = A.modifiermaintenance( id_materiel, nom_reparateur, derniere_reparation, prochaine_visite,  description,reference);
 
 
         if(test)
@@ -266,14 +266,14 @@ void gestion_materiels::on_pushButton_15_clicked()
 
 void gestion_materiels::on_table_maintenance_clicked(const QModelIndex &index)
 {
-ui->ref_modifier->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),0)).toString() );
-ui->id_modifier->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),1)).toString() );
-ui->nom_modif->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),2)).toString() );
-ui->modifier_des->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),6)).toString() );
+ui->ref_modifier->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),5)).toString() );
+ui->id_modifier->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),0)).toString() );
+ui->modifier_nom->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),1)).toString() );
+ui->modifier_des->setText( ui->table_maintenance->model()->data(ui->table_maintenance->model()->index(ui->table_maintenance->selectionModel()->currentIndex().row(),4)).toString() );
 }
 
 
-/*void gestion_materiels::on_trier_ref_mainte_clicked()
+void gestion_materiels::on_trier_ref_mainte_clicked()
 {
  ui->table_maintenance->setModel(A.trier_reference());
 }
@@ -293,7 +293,7 @@ void gestion_materiels::on_rechercher_maint_clicked()
     if (description!= ""){
     ui->table_maintenance->setModel(A.chercher_maintenance_avancee(nom_reparateur,description)) ;}
 }
-*/
+
 
 void gestion_materiels::on_pushButton_13_clicked()
 {

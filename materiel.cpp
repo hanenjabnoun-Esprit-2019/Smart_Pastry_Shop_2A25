@@ -88,11 +88,11 @@ QString materiel::getlieux_achat(){return lieux_achat;}
           model->setQuery("SELECT*FROM Materiel");
           model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
           model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prix"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Quantite"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de l'achat"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Periode de garantie"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("lieux d'achat"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prix"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantite"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date de l'achat"));
+          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Periode de garantie"));
+          model->setHeaderData(6, Qt::Horizontal, QObject::tr("lieux d'achat"));
 
 
 
@@ -122,11 +122,11 @@ return  query.exec();
      model->setQuery("select * from materiel order by (id_materiel)ASC ");
      model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
      model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prix"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Quantite"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de l'achat"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Periode de garantie"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("lieux d'achat"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prix"));
+     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantite"));
+     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date de l'achat"));
+     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Periode de garantie"));
+     model->setHeaderData(6, Qt::Horizontal, QObject::tr("lieux d'achat"));
      return model;
  }
  QSqlQueryModel* materiel:: trier_prix()
@@ -138,11 +138,11 @@ return  query.exec();
      model->setQuery("select * from materiel order by (prix)ASC ");
      model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
      model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prix"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Quantite"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de l'achat"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Periode de garantie"));
-     model->setHeaderData(1, Qt::Horizontal, QObject::tr("lieux d'achat"));
+     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prix"));
+     model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantite"));
+     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date de l'achat"));
+     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Periode de garantie"));
+     model->setHeaderData(6, Qt::Horizontal, QObject::tr("lieux d'achat"));
 
      return model;
  }
@@ -161,11 +161,11 @@ return  query.exec();
      model->setQuery("SELECT * FROM materiel WHERE upper(nom) Like upper('"+nom+"%') and upper(lieux_achat) Like upper('"+lieux_achat+"%') ");
         model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prix"));
-        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Quantite"));
-        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Date de l'achat"));
-        model->setHeaderData(1, Qt::Horizontal, QObject::tr("Periode de garantie"));
-        model->setHeaderData(1, Qt::Horizontal, QObject::tr("lieux d'achat"));
+        model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prix"));
+        model->setHeaderData(3, Qt::Horizontal, QObject::tr("Quantite"));
+        model->setHeaderData(4, Qt::Horizontal, QObject::tr("Date de l'achat"));
+        model->setHeaderData(5, Qt::Horizontal, QObject::tr("Periode de garantie"));
+        model->setHeaderData(6, Qt::Horizontal, QObject::tr("lieux d'achat"));
         return model;
         }
 }

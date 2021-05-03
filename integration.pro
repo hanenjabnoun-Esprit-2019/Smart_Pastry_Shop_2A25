@@ -18,6 +18,7 @@ SOURCES += \
     gestion_boutique.cpp \
     main.cpp \
     mainwindow.cpp \
+    notif.cpp \
     qcustomplot.cpp \
     seconddialog.cpp \
     tableprinter.cpp
@@ -28,6 +29,7 @@ HEADERS += \
     connection.h \
     gestion_boutique.h \
     mainwindow.h \
+    notif.h \
     qcustomplot.h \
     seconddialog.h \
     tableprinter.h

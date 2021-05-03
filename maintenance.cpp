@@ -254,10 +254,10 @@ int maintenance::getreference(){return reference;}
           model->setQuery("SELECT*FROM Maintenance");
 
           model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
-          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom du reparateur"));
-          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Derniere reparation"));
-          model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prochaine visite"));
-          model->setHeaderData(4, Qt::Horizontal, QObject::tr("description"));
+          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prochaine visite"));
+          model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nom du reparateur"));
+          model->setHeaderData(3, Qt::Horizontal, QObject::tr("description"));
+          model->setHeaderData(4, Qt::Horizontal, QObject::tr("Derniere reparation"));
           model->setHeaderData(5, Qt::Horizontal, QObject::tr("Reference"));
 
 
@@ -294,10 +294,10 @@ QSqlQueryModel*maintenance::trier_reference()
              model->setQuery("select * from maintenance order by (reference)ASC ");
 
              model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
-             model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom du reparateur"));
-             model->setHeaderData(2, Qt::Horizontal, QObject::tr("Derniere reparation"));
-             model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prochaine visite"));
-             model->setHeaderData(4, Qt::Horizontal, QObject::tr("description"));
+             model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prochaine visite"));
+             model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nom du reparateur"));
+             model->setHeaderData(3, Qt::Horizontal, QObject::tr("description"));
+             model->setHeaderData(4, Qt::Horizontal, QObject::tr("Derniere reparation"));
              model->setHeaderData(5, Qt::Horizontal, QObject::tr("Reference"));
 return model;
      }
@@ -311,10 +311,10 @@ QSqlQueryModel* maintenance::trier_reparateur()
          model->setQuery("select * from maintenance order by (nom_reparateur)ASC ");
 
          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
-         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom du reparateur"));
-         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Derniere reparation"));
-         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prochaine visite"));
-         model->setHeaderData(4, Qt::Horizontal, QObject::tr("description"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prochaine visite"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nom du reparateur"));
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("description"));
+         model->setHeaderData(4, Qt::Horizontal, QObject::tr("Derniere reparation"));
          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Reference"));
 
          return model;
@@ -334,10 +334,10 @@ QSqlQueryModel* maintenance::trier_reparateur()
          model->setQuery("SELECT * FROM maintenance WHERE upper(nom_reparateur) Like upper('"+nom_reparateur+"%') and upper(description) Like upper('"+description+"%') ");
 
          model->setHeaderData(0, Qt::Horizontal, QObject::tr("Identifiant"));
-         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom du reparateur"));
-         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Derniere reparation"));
-         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Prochaine visite"));
-         model->setHeaderData(4, Qt::Horizontal, QObject::tr("description"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Prochaine visite"));
+         model->setHeaderData(2, Qt::Horizontal, QObject::tr("Nom du reparateur"));
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("description"));
+         model->setHeaderData(4, Qt::Horizontal, QObject::tr("Derniere reparation"));
          model->setHeaderData(5, Qt::Horizontal, QObject::tr("Reference"));
          return model;
             }

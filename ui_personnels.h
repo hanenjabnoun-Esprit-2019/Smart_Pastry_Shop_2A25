@@ -257,7 +257,7 @@ public:
         font.setFamily(QStringLiteral("Courier New"));
         font.setPointSize(11);
         stackedWidget->setFont(font);
-        stackedWidget->setStyleSheet(QStringLiteral(""));
+        stackedWidget->setStyleSheet(QStringLiteral("background-color:rgb(255, 170, 127);"));
         page_31 = new QWidget();
         page_31->setObjectName(QStringLiteral("page_31"));
         pushButton_4 = new QPushButton(page_31);
@@ -2150,7 +2150,7 @@ public:
         personnels->setCentralWidget(centralwidget);
         menubar = new QMenuBar(personnels);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1109, 21));
+        menubar->setGeometry(QRect(0, 0, 1109, 26));
         personnels->setMenuBar(menubar);
         statusbar = new QStatusBar(personnels);
         statusbar->setObjectName(QStringLiteral("statusbar"));

@@ -564,6 +564,7 @@ public:
         frame_9 = new QFrame(page_7);
         frame_9->setObjectName(QStringLiteral("frame_9"));
         frame_9->setGeometry(QRect(19, 9, 671, 371));
+        frame_9->setStyleSheet(QStringLiteral("background-color:rgb(255, 170, 127);"));
         frame_9->setFrameShape(QFrame::StyledPanel);
         frame_9->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame_9);
@@ -605,7 +606,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 800, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));

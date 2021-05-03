@@ -119,6 +119,7 @@ public:
         if (gestion_ingredient->objectName().isEmpty())
             gestion_ingredient->setObjectName(QStringLiteral("gestion_ingredient"));
         gestion_ingredient->resize(885, 504);
+        gestion_ingredient->setStyleSheet(QStringLiteral("background-color:rgb(255, 170, 127);"));
         stackedWidget = new QStackedWidget(gestion_ingredient);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
         stackedWidget->setGeometry(QRect(70, 10, 781, 451));
@@ -1205,7 +1206,7 @@ public:
         retranslateUi(gestion_ingredient);
 
         stackedWidget->setCurrentIndex(2);
-        stackedWidget_3->setCurrentIndex(1);
+        stackedWidget_3->setCurrentIndex(0);
         stackedWidget_2->setCurrentIndex(0);
 
 

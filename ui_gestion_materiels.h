@@ -26,7 +26,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -37,24 +36,15 @@ public:
     QWidget *centralwidget;
     QStackedWidget *stackedWidget;
     QWidget *page;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *verticalLayout_2;
-    QLabel *label_2;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QLabel *label;
+    QLabel *label_2;
     QWidget *page_2;
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
-    QWidget *verticalLayoutWidget_3;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_3;
-    QWidget *verticalLayoutWidget_4;
-    QVBoxLayout *verticalLayout_4;
     QLabel *label_4;
     QGroupBox *groupBox;
     QTabWidget *tabWidget;
@@ -105,15 +95,12 @@ public:
     QLineEdit *cherche_lieux_achat;
     QLineEdit *chercher_nom;
     QPushButton *Rechercher_materiel;
+    QLabel *label_3;
     QWidget *page_3;
     QPushButton *pushButton_11;
     QPushButton *pushButton_12;
     QLabel *label_18;
     QLabel *label_19;
-    QWidget *verticalLayoutWidget_5;
-    QVBoxLayout *verticalLayout_5;
-    QWidget *verticalLayoutWidget_6;
-    QVBoxLayout *verticalLayout_6;
     QGroupBox *groupBox_2;
     QTabWidget *tabWidget_2;
     QWidget *tab_5;
@@ -166,83 +153,233 @@ public:
     {
         if (gestion_materiels->objectName().isEmpty())
             gestion_materiels->setObjectName(QStringLiteral("gestion_materiels"));
-        gestion_materiels->resize(1051, 600);
+        gestion_materiels->resize(1314, 481);
         centralwidget = new QWidget(gestion_materiels);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(0, 10, 1071, 501));
+        stackedWidget->setGeometry(QRect(-20, 70, 1291, 651));
+        stackedWidget->setStyleSheet(QStringLiteral("background-color:rgb(255, 170, 127);"));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
-        verticalLayoutWidget = new QWidget(page);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(20, 70, 1031, 31));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(verticalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-
-        verticalLayout->addWidget(label);
-
-        verticalLayoutWidget_2 = new QWidget(page);
-        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(20, 110, 1031, 31));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(verticalLayoutWidget_2);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        verticalLayout_2->addWidget(label_2);
-
         pushButton = new QPushButton(page);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(160, 250, 221, 28));
+        pushButton->setGeometry(QRect(170, 357, 311, 41));
+        pushButton->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         pushButton_2 = new QPushButton(page);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(730, 250, 221, 28));
+        pushButton_2->setGeometry(QRect(760, 360, 271, 41));
+        pushButton_2->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         pushButton_3 = new QPushButton(page);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(960, 440, 93, 28));
+        pushButton_3->setGeometry(QRect(1150, 460, 93, 28));
+        pushButton_3->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         pushButton_4 = new QPushButton(page);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(960, 30, 93, 28));
+        pushButton_4->setGeometry(QRect(1160, 50, 93, 28));
+        pushButton_4->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
+        label = new QLabel(page);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 90, 561, 29));
+        label_2 = new QLabel(page);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(10, 70, 661, 29));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QStringLiteral("page_2"));
         pushButton_5 = new QPushButton(page_2);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(970, 30, 93, 28));
+        pushButton_5->setGeometry(QRect(1140, 20, 93, 28));
+        pushButton_5->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         pushButton_6 = new QPushButton(page_2);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(970, 470, 93, 28));
-        verticalLayoutWidget_3 = new QWidget(page_2);
-        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(20, 70, 1031, 31));
-        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(verticalLayoutWidget_3);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        verticalLayout_3->addWidget(label_3);
-
-        verticalLayoutWidget_4 = new QWidget(page_2);
-        verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(20, 110, 1031, 31));
-        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        pushButton_6->setGeometry(QRect(1170, 600, 93, 28));
+        pushButton_6->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         label_4 = new QLabel(page_2);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(20, 110, 1029, 29));
+        label_4->setGeometry(QRect(30, 50, 1029, 29));
         groupBox = new QGroupBox(page_2);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(30, 150, 1021, 311));
+        groupBox->setGeometry(QRect(30, 150, 1191, 431));
         tabWidget = new QTabWidget(groupBox);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 20, 1001, 281));
+        tabWidget->setGeometry(QRect(0, 20, 1191, 401));
+        tabWidget->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         le_id = new QLineEdit(tab);
@@ -355,10 +492,10 @@ public:
         tab_4->setObjectName(QStringLiteral("tab_4"));
         pushButton_10 = new QPushButton(tab_4);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        pushButton_10->setGeometry(QRect(660, 220, 141, 28));
+        pushButton_10->setGeometry(QRect(610, 340, 141, 28));
         Tab_materiel = new QTableView(tab_4);
         Tab_materiel->setObjectName(QStringLiteral("Tab_materiel"));
-        Tab_materiel->setGeometry(QRect(350, 10, 641, 201));
+        Tab_materiel->setGeometry(QRect(210, 10, 961, 321));
         Trier_ID = new QPushButton(tab_4);
         Trier_ID->setObjectName(QStringLiteral("Trier_ID"));
         Trier_ID->setGeometry(QRect(10, 20, 171, 28));
@@ -382,41 +519,110 @@ public:
         chercher_nom->setGeometry(QRect(20, 230, 171, 22));
         Rechercher_materiel = new QPushButton(tab_4);
         Rechercher_materiel->setObjectName(QStringLiteral("Rechercher_materiel"));
-        Rechercher_materiel->setGeometry(QRect(220, 200, 93, 28));
+        Rechercher_materiel->setGeometry(QRect(10, 270, 93, 28));
         tabWidget->addTab(tab_4, QString());
+        label_3 = new QLabel(page_2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(20, 20, 1029, 29));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName(QStringLiteral("page_3"));
         pushButton_11 = new QPushButton(page_3);
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
         pushButton_11->setGeometry(QRect(970, 20, 93, 28));
+        pushButton_11->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         pushButton_12 = new QPushButton(page_3);
         pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
         pushButton_12->setGeometry(QRect(970, 470, 93, 28));
+        pushButton_12->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         label_18 = new QLabel(page_3);
         label_18->setObjectName(QStringLiteral("label_18"));
         label_18->setGeometry(QRect(20, 60, 1029, 29));
         label_19 = new QLabel(page_3);
         label_19->setObjectName(QStringLiteral("label_19"));
         label_19->setGeometry(QRect(40, 100, 1029, 29));
-        verticalLayoutWidget_5 = new QWidget(page_3);
-        verticalLayoutWidget_5->setObjectName(QStringLiteral("verticalLayoutWidget_5"));
-        verticalLayoutWidget_5->setGeometry(QRect(30, 100, 1031, 31));
-        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_5);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        verticalLayoutWidget_6 = new QWidget(page_3);
-        verticalLayoutWidget_6->setObjectName(QStringLiteral("verticalLayoutWidget_6"));
-        verticalLayoutWidget_6->setGeometry(QRect(30, 60, 1031, 31));
-        verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget_6);
-        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
         groupBox_2 = new QGroupBox(page_3);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(30, 140, 1021, 321));
         tabWidget_2 = new QTabWidget(groupBox_2);
         tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
         tabWidget_2->setGeometry(QRect(10, 20, 1001, 291));
+        tabWidget_2->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
         m_id_materie = new QLineEdit(tab_5);
@@ -524,12 +730,90 @@ public:
         trier_ref_mainte = new QPushButton(tab_8);
         trier_ref_mainte->setObjectName(QStringLiteral("trier_ref_mainte"));
         trier_ref_mainte->setGeometry(QRect(30, 10, 171, 28));
+        trier_ref_mainte->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         trier_repa_mainte = new QPushButton(tab_8);
         trier_repa_mainte->setObjectName(QStringLiteral("trier_repa_mainte"));
         trier_repa_mainte->setGeometry(QRect(30, 50, 171, 28));
+        trier_repa_mainte->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         pushButton_14 = new QPushButton(tab_8);
         pushButton_14->setObjectName(QStringLiteral("pushButton_14"));
         pushButton_14->setGeometry(QRect(30, 90, 171, 28));
+        pushButton_14->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color: rgb(42, 46, 50);\n"
+"   border-radius:0px;\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"\n"
+"qproperty-iconSize:35px;\n"
+"\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"		color:#ffff99;\n"
+"\n"
+"}\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color: rgb(59, 62, 66);\n"
+"	border-style:solid;\n"
+"	border-left-width:7px;\n"
+"	border-color: #ff3333;\n"
+"	color:#ffff99;\n"
+"}\n"
+""));
         label_37 = new QLabel(tab_8);
         label_37->setObjectName(QStringLiteral("label_37"));
         label_37->setGeometry(QRect(60, 160, 151, 16));
@@ -550,7 +834,7 @@ public:
         gestion_materiels->setCentralWidget(centralwidget);
         menubar = new QMenuBar(gestion_materiels);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1051, 21));
+        menubar->setGeometry(QRect(0, 0, 1314, 26));
         gestion_materiels->setMenuBar(menubar);
         statusbar = new QStatusBar(gestion_materiels);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -559,8 +843,8 @@ public:
         retranslateUi(gestion_materiels);
 
         stackedWidget->setCurrentIndex(1);
-        tabWidget->setCurrentIndex(3);
-        tabWidget_2->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(gestion_materiels);
@@ -569,15 +853,14 @@ public:
     void retranslateUi(QMainWindow *gestion_materiels)
     {
         gestion_materiels->setWindowTitle(QApplication::translate("gestion_materiels", "MainWindow", Q_NULLPTR));
-        label->setText(QApplication::translate("gestion_materiels", "                                                                                                                         Cookies", Q_NULLPTR));
-        label_2->setText(QApplication::translate("gestion_materiels", "                                                                                                  Gestion du Materiel et de la maintenance", Q_NULLPTR));
         pushButton->setText(QApplication::translate("gestion_materiels", "Gestion du materiel", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("gestion_materiels", "Gestion de la maintenance", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("gestion_materiels", "Deconexion", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("gestion_materiels", "HOME", Q_NULLPTR));
+        label->setText(QApplication::translate("gestion_materiels", "                                                                                                                         Cookies", Q_NULLPTR));
+        label_2->setText(QApplication::translate("gestion_materiels", "                                                                                                  Gestion du Materiel et de la maintenance", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("gestion_materiels", "HOME", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("gestion_materiels", "Deconexion", Q_NULLPTR));
-        label_3->setText(QApplication::translate("gestion_materiels", "                                                                                                                         Cookies", Q_NULLPTR));
         label_4->setText(QApplication::translate("gestion_materiels", "                                                                                                  Gestion du Materiel et de la maintenance", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("gestion_materiels", "Gestion du materiel", Q_NULLPTR));
         label_5->setText(QApplication::translate("gestion_materiels", "id_materiel", Q_NULLPTR));
@@ -609,6 +892,7 @@ public:
         label_31->setText(QApplication::translate("gestion_materiels", "Donner le nom du Materiel", Q_NULLPTR));
         Rechercher_materiel->setText(QApplication::translate("gestion_materiels", "Rechercher", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("gestion_materiels", "Afficher", Q_NULLPTR));
+        label_3->setText(QApplication::translate("gestion_materiels", "                                                                                                                         Cookies", Q_NULLPTR));
         pushButton_11->setText(QApplication::translate("gestion_materiels", "HOME", Q_NULLPTR));
         pushButton_12->setText(QApplication::translate("gestion_materiels", "Deconexion", Q_NULLPTR));
         label_18->setText(QApplication::translate("gestion_materiels", "                                                                                                                         Cookies", Q_NULLPTR));

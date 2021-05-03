@@ -3,13 +3,34 @@
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
+#include "gestion_ingredient.h"
+#include <QInputDialog>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     connection c;
     bool test=c.createconnect();
+
     MainWindow w;
+QTranslator translator;
+    QStringList languages ;
+    languages << "francais" << "anglais";
+
+    QString lang = QInputDialog::getItem(NULL,"Select Language",
+                                         "Language",languages);
+
+    if(lang == "anglais"){
+        translator.load("C:/Users/admin/Desktop/Smart_Pastry_Shop_2A25-master/english.qm");
+    }
+
+    if(lang != "francais")
+        a.installTranslator(&translator);
+
+
+  //  gestion_ingredient gg;
+    //gg.show();
+   // w.show();
 
     if(test)
 

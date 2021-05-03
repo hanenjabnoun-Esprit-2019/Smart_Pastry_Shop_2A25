@@ -11,12 +11,13 @@
 #include "connection.h"
 #include <QMessageBox>
 #include <QSqlRecord>
-
+#include "gestion_ingredient.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
    ui->winStack->setCurrentIndex(0);
    ui->stackedWidget->setCurrentIndex(1);
@@ -65,6 +66,7 @@ bool MainWindow::Login(QString u, QString p)
 
 void MainWindow::on_loginButton_clicked()
 {
+
     this->loggedIn = Login(ui->usernameBox->text(), ui->passwordBox->text());
 
     if(this->loggedIn)

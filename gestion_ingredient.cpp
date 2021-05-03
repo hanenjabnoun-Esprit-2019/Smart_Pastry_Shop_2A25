@@ -11,6 +11,7 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QDate>
+#include <QTranslator>
 
 gestion_ingredient::gestion_ingredient(QWidget *parent) :
     QDialog(parent),
@@ -282,7 +283,6 @@ void gestion_ingredient::on_pdf_clicked()
 
 
 
-
      QString strStream;
      QTextStream out(&strStream);
 
@@ -349,3 +349,5 @@ void gestion_ingredient::on_lineEdit_3_textChanged(const QString &arg1)
         }
 
 }
+
+

@@ -32,6 +32,7 @@ public:
         if (secondDialog->objectName().isEmpty())
             secondDialog->setObjectName(QStringLiteral("secondDialog"));
         secondDialog->resize(724, 418);
+        secondDialog->setStyleSheet(QStringLiteral("background-color:rgb(255, 170, 127);"));
         afficher = new QPushButton(secondDialog);
         afficher->setObjectName(QStringLiteral("afficher"));
         afficher->setGeometry(QRect(600, 170, 101, 31));

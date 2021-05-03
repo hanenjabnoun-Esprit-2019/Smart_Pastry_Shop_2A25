@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">background-color:rgb(255, 170, 127);</string>
     </property>
     <property name="currentIndex">
      <number>2</number>
@@ -4053,7 +4053,7 @@ font-family:calibri;
      <x>0</x>
      <y>0</y>
      <width>1109</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

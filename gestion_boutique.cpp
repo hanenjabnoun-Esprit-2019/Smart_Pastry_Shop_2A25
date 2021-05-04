@@ -14,6 +14,7 @@
 #include<QtMultimedia>
 #include<QSound>
 #include "notif.h"
+#include "smtp2.h"
 
 
 gestion_boutique::gestion_boutique(QWidget *parent) :
@@ -389,4 +390,26 @@ void gestion_boutique::on_statistique_commande_clicked()
 {
     secDialog = new secondDialog(this);
     secDialog ->show();
+}
+
+void gestion_boutique::sendMail()
+{
+    Smtp* smtp = new Smtp("omrani.mohamedaziz@esprit.tn", "191JMT2910", "smtp.gmail.com", 465);
+    connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+
+    smtp->sendMail("omrani.mohamedaziz@esprit.tn",ui->lineEdit_18->text() , "hoptimal","you are welcome");
+}
+
+void gestion_boutique::mailSent(QString status)
+{
+    if(status == "Message sent")
+        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+}
+
+
+
+void gestion_boutique::on_pushButton_4_clicked()
+{
+    sendMail();
 }

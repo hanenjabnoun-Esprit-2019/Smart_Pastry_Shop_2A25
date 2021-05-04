@@ -34,6 +34,7 @@ SOURCES += \
     qcustomplot.cpp \
     seconddialog.cpp \
     smtp.cpp \
+    smtp2.cpp \
     tableprinter.cpp
 
 HEADERS += \
@@ -58,6 +59,7 @@ HEADERS += \
     qcustomplot.h \
     seconddialog.h \
     smtp.h \
+    smtp2.h \
     tableprinter.h
 
 FORMS += \

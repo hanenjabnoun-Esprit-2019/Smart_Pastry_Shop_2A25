@@ -1,19 +1,18 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'gestion_des_clients.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.9.9)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include <memory>
 #include "../gestion_des_clients.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'gestion_des_clients.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.15.2. It"
+#error "This file was generated using the moc from 5.9.9. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -22,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_gestion_des_clients_t {
-    QByteArrayData data[26];
-    char stringdata0[501];
+    QByteArrayData data[25];
+    char stringdata0[489];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,20 +43,19 @@ QT_MOC_LITERAL(8, 157, 23), // "on_pb_ajouter_c_clicked"
 QT_MOC_LITERAL(9, 181, 20), // "on_pb_supp_c_clicked"
 QT_MOC_LITERAL(10, 202, 22), // "on_modifclient_clicked"
 QT_MOC_LITERAL(11, 225, 23), // "on_table_client_clicked"
-QT_MOC_LITERAL(12, 249, 11), // "QModelIndex"
-QT_MOC_LITERAL(13, 261, 5), // "index"
-QT_MOC_LITERAL(14, 267, 21), // "on_modifcarte_clicked"
-QT_MOC_LITERAL(15, 289, 22), // "on_table_carte_clicked"
-QT_MOC_LITERAL(16, 312, 16), // "on_tri_c_clicked"
-QT_MOC_LITERAL(17, 329, 16), // "on_tri_n_clicked"
-QT_MOC_LITERAL(18, 346, 26), // "on_afficher_normal_clicked"
-QT_MOC_LITERAL(19, 373, 20), // "on_recherche_clicked"
-QT_MOC_LITERAL(20, 394, 16), // "on_exp_c_clicked"
-QT_MOC_LITERAL(21, 411, 16), // "on_tri_r_clicked"
-QT_MOC_LITERAL(22, 428, 17), // "on_tri_ci_clicked"
-QT_MOC_LITERAL(23, 446, 19), // "on_afficher_clicked"
-QT_MOC_LITERAL(24, 466, 16), // "on_exp_2_clicked"
-QT_MOC_LITERAL(25, 483, 17) // "on_rech_2_clicked"
+QT_MOC_LITERAL(12, 249, 5), // "index"
+QT_MOC_LITERAL(13, 255, 21), // "on_modifcarte_clicked"
+QT_MOC_LITERAL(14, 277, 22), // "on_table_carte_clicked"
+QT_MOC_LITERAL(15, 300, 16), // "on_tri_c_clicked"
+QT_MOC_LITERAL(16, 317, 16), // "on_tri_n_clicked"
+QT_MOC_LITERAL(17, 334, 26), // "on_afficher_normal_clicked"
+QT_MOC_LITERAL(18, 361, 20), // "on_recherche_clicked"
+QT_MOC_LITERAL(19, 382, 16), // "on_exp_c_clicked"
+QT_MOC_LITERAL(20, 399, 16), // "on_tri_r_clicked"
+QT_MOC_LITERAL(21, 416, 17), // "on_tri_ci_clicked"
+QT_MOC_LITERAL(22, 434, 19), // "on_afficher_clicked"
+QT_MOC_LITERAL(23, 454, 16), // "on_exp_2_clicked"
+QT_MOC_LITERAL(24, 471, 17) // "on_rech_2_clicked"
 
     },
     "gestion_des_clients\0on_pushButton_clicked\0"
@@ -66,10 +64,10 @@ QT_MOC_LITERAL(25, 483, 17) // "on_rech_2_clicked"
     "on_pushButton_11_clicked\0on_pb_ajouter_clicked\0"
     "on_PB_supp_clicked\0on_pb_ajouter_c_clicked\0"
     "on_pb_supp_c_clicked\0on_modifclient_clicked\0"
-    "on_table_client_clicked\0QModelIndex\0"
-    "index\0on_modifcarte_clicked\0"
-    "on_table_carte_clicked\0on_tri_c_clicked\0"
-    "on_tri_n_clicked\0on_afficher_normal_clicked\0"
+    "on_table_client_clicked\0index\0"
+    "on_modifcarte_clicked\0on_table_carte_clicked\0"
+    "on_tri_c_clicked\0on_tri_n_clicked\0"
+    "on_afficher_normal_clicked\0"
     "on_recherche_clicked\0on_exp_c_clicked\0"
     "on_tri_r_clicked\0on_tri_ci_clicked\0"
     "on_afficher_clicked\0on_exp_2_clicked\0"
@@ -80,7 +78,7 @@ QT_MOC_LITERAL(25, 483, 17) // "on_rech_2_clicked"
 static const uint qt_meta_data_gestion_des_clients[] = {
 
  // content:
-       8,       // revision
+       7,       // revision
        0,       // classname
        0,    0, // classinfo
       22,   14, // methods
@@ -101,18 +99,18 @@ static const uint qt_meta_data_gestion_des_clients[] = {
        9,    0,  131,    2, 0x08 /* Private */,
       10,    0,  132,    2, 0x08 /* Private */,
       11,    1,  133,    2, 0x08 /* Private */,
-      14,    0,  136,    2, 0x08 /* Private */,
-      15,    1,  137,    2, 0x08 /* Private */,
-      16,    0,  140,    2, 0x08 /* Private */,
-      17,    0,  141,    2, 0x08 /* Private */,
-      18,    0,  142,    2, 0x08 /* Private */,
-      19,    0,  143,    2, 0x08 /* Private */,
-      20,    0,  144,    2, 0x08 /* Private */,
-      21,    0,  145,    2, 0x08 /* Private */,
-      22,    0,  146,    2, 0x08 /* Private */,
-      23,    0,  147,    2, 0x08 /* Private */,
-      24,    0,  148,    2, 0x08 /* Private */,
-      25,    0,  149,    2, 0x08 /* Private */,
+      13,    0,  136,    2, 0x08 /* Private */,
+      14,    1,  137,    2, 0x08 /* Private */,
+      15,    0,  140,    2, 0x08 /* Private */,
+      16,    0,  141,    2, 0x08 /* Private */,
+      17,    0,  142,    2, 0x08 /* Private */,
+      18,    0,  143,    2, 0x08 /* Private */,
+      19,    0,  144,    2, 0x08 /* Private */,
+      20,    0,  145,    2, 0x08 /* Private */,
+      21,    0,  146,    2, 0x08 /* Private */,
+      22,    0,  147,    2, 0x08 /* Private */,
+      23,    0,  148,    2, 0x08 /* Private */,
+      24,    0,  149,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -124,9 +122,9 @@ static const uint qt_meta_data_gestion_des_clients[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,   13,
+    QMetaType::Void, QMetaType::QModelIndex,   12,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,   13,
+    QMetaType::Void, QMetaType::QModelIndex,   12,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -144,7 +142,7 @@ static const uint qt_meta_data_gestion_des_clients[] = {
 void gestion_des_clients::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<gestion_des_clients *>(_o);
+        gestion_des_clients *_t = static_cast<gestion_des_clients *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
@@ -174,14 +172,10 @@ void gestion_des_clients::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
     }
 }
 
-QT_INIT_METAOBJECT const QMetaObject gestion_des_clients::staticMetaObject = { {
-    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
-    qt_meta_stringdata_gestion_des_clients.data,
-    qt_meta_data_gestion_des_clients,
-    qt_static_metacall,
-    nullptr,
-    nullptr
-} };
+const QMetaObject gestion_des_clients::staticMetaObject = {
+    { &QMainWindow::staticMetaObject, qt_meta_stringdata_gestion_des_clients.data,
+      qt_meta_data_gestion_des_clients,  qt_static_metacall, nullptr, nullptr}
+};
 
 
 const QMetaObject *gestion_des_clients::metaObject() const

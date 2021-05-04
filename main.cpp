@@ -21,7 +21,7 @@ QTranslator translator;
                                          "Language",languages);
 
     if(lang == "anglais"){
-        translator.load("C:/Users/admin/Desktop/Smart_Pastry_Shop_2A25-master/english.qm");
+        translator.load("C:/Users/Sofien/Desktop/integrationfi/Smart_Pastry_Shop_2A25/english.qm");
     }
 
     if(lang != "francais")

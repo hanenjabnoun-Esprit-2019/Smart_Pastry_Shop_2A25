@@ -20,10 +20,10 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>-10</x>
       <y>0</y>
       <width>1311</width>
-      <height>541</height>
+      <height>561</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -33,10 +33,10 @@
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>390</y>
-        <width>221</width>
-        <height>28</height>
+        <x>300</x>
+        <y>227</y>
+        <width>231</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="focusPolicy">
@@ -78,10 +78,10 @@ QPushButton:focus
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>860</x>
-        <y>390</y>
-        <width>221</width>
-        <height>28</height>
+        <x>780</x>
+        <y>227</y>
+        <width>231</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -117,47 +117,6 @@ QPushButton:focus
        <string>Gestion Carte-fidelite</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>1210</x>
-        <y>500</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-	background-color: rgb(42, 46, 50);
-   border-radius:0px;
-	color:#ffffff;
-	font-size:16px;
-font-family:Calibri;
-
-qproperty-iconSize:35px;
-
-}
-QPushButton:hover
-{
-	background-color:rgb(50, 53, 57);
-		color:#ffff99;
-
-}
-QPushButton:focus
-{
-	background-color: rgb(59, 62, 66);
-	border-style:solid;
-	border-left-width:7px;
-	border-color: #ff3333;
-	color:#ffff99;
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Deconexion</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
@@ -169,23 +128,129 @@ QPushButton:focus
       </property>
       <property name="font">
        <font>
-        <family>Adobe Caslon Pro</family>
-        <pointsize>20</pointsize>
+        <family>Droid Sans</family>
+        <pointsize>-1</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+color: rgb(244, 143, 55);
+color: #393;
+margin: 0 auto;
+font-size: 35px;
+font-family: 'Droid Sans';</string>
+      </property>
       <property name="text">
-       <string>                         Cookies</string>
+       <string>Gestion clients et carte-fidélité</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>1080</x>
+        <y>40</y>
+        <width>141</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>290</y>
+        <width>231</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/our_customers-777x437.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>290</y>
+        <width>231</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/impression-carte-de-fidelite-double.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>1020</x>
+        <y>530</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color:red;
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  red;
+	border-color: red;
+	color:rgb(255, 255, 255);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Deconnexion</string>
       </property>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="pushButton_6">
       <property name="geometry">
        <rect>
-        <x>1190</x>
-        <y>30</y>
+        <x>1220</x>
+        <y>510</y>
         <width>93</width>
         <height>28</height>
        </rect>
@@ -206,57 +271,15 @@ font-family:Calibri;
 QPushButton:hover
 {
 	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
+	border-color:red;
 	/*color:rgb(30, 227, 0);*/
 }
 
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
+	background-color:  red;
+	border-color: red;
 	color:rgb(255, 255, 255);
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>HOME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="geometry">
-       <rect>
-        <x>1220</x>
-        <y>510</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-	background-color: rgb(42, 46, 50);
-   border-radius:0px;
-	color:#ffffff;
-	font-size:16px;
-font-family:Calibri;
-
-qproperty-iconSize:35px;
-
-}
-QPushButton:hover
-{
-	background-color:rgb(50, 53, 57);
-		color:#ffff99;
-
-}
-QPushButton:focus
-{
-	background-color: rgb(59, 62, 66);
-	border-style:solid;
-	border-left-width:7px;
-	border-color: #ff3333;
-	color:#ffff99;
 }
 </string>
       </property>
@@ -847,9 +870,9 @@ QPushButton:focus
         <widget class="QTableView" name="table_client">
          <property name="geometry">
           <rect>
-           <x>200</x>
+           <x>280</x>
            <y>20</y>
-           <width>971</width>
+           <width>781</width>
            <height>251</height>
           </rect>
          </property>
@@ -1013,13 +1036,11 @@ QPushButton:focus
        <string>                                     COOKIES</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="page_3">
-     <widget class="QPushButton" name="pushButton_11">
+     <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>1180</x>
-        <y>30</y>
+        <x>1090</x>
+        <y>510</y>
         <width>93</width>
         <height>28</height>
        </rect>
@@ -1050,12 +1071,34 @@ QPushButton:focus
 	border-color: rgba(30, 227, 0,0);
 	color:rgb(255, 255, 255);
 }
+
 </string>
       </property>
       <property name="text">
        <string>HOME</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>1100</x>
+        <y>10</y>
+        <width>141</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
      <widget class="QPushButton" name="pushButton_12">
       <property name="geometry">
        <rect>
@@ -1075,7 +1118,7 @@ QPushButton:focus
         <x>30</x>
         <y>100</y>
         <width>1251</width>
-        <height>421</height>
+        <height>411</height>
        </rect>
       </property>
       <property name="font">
@@ -1092,7 +1135,7 @@ QPushButton:focus
          <x>20</x>
          <y>50</y>
          <width>1201</width>
-         <height>361</height>
+         <height>351</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -1125,7 +1168,7 @@ QPushButton:focus
 </string>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="tab_5">
         <attribute name="title">
@@ -1215,7 +1258,7 @@ color: rgb(255, 255, 255);</string>
          <property name="geometry">
           <rect>
            <x>560</x>
-           <y>290</y>
+           <y>250</y>
            <width>93</width>
            <height>28</height>
           </rect>
@@ -1338,7 +1381,7 @@ color: rgb(255, 255, 255);</string>
          <property name="geometry">
           <rect>
            <x>550</x>
-           <y>290</y>
+           <y>260</y>
            <width>93</width>
            <height>28</height>
           </rect>
@@ -1594,7 +1637,7 @@ QPushButton:focus
           <rect>
            <x>220</x>
            <y>10</y>
-           <width>951</width>
+           <width>781</width>
            <height>271</height>
           </rect>
          </property>
@@ -1773,19 +1816,127 @@ color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
-        <x>-30</x>
-        <y>0</y>
-        <width>1059</width>
-        <height>40</height>
+        <x>30</x>
+        <y>19</y>
+        <width>861</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>20</pointsize>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
       </property>
       <property name="text">
        <string>                                                             Cookies</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>10</y>
+        <width>141</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>520</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>HOME</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>520</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color:red;
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  red;
+	border-color: red;
+	color:rgb(255, 255, 255);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Deconexion</string>
       </property>
      </widget>
     </widget>
@@ -1797,7 +1948,7 @@ color: rgb(255, 255, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>1316</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -21,6 +21,7 @@ gestion_boutique::gestion_boutique(QWidget *parent) :
     ui(new Ui::gestion_boutique)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
     ui->tableView_boutique->setModel(b.afficher());
     ui->tableView_Commandes->setModel(c.afficher());
      ui->spinBox->setValidator(new QIntValidator(100, 999, this));

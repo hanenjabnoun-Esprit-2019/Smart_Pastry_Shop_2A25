@@ -5,11 +5,14 @@ INPUT(
 ./release/gestion_boutique.o
 ./release/main.o
 ./release/mainwindow.o
+./release/notif.o
 ./release/qcustomplot.o
 ./release/seconddialog.o
+./release/smtp.o
 ./release/tableprinter.o
 ./release/moc_gestion_boutique.o
 ./release/moc_mainwindow.o
 ./release/moc_qcustomplot.o
 ./release/moc_seconddialog.o
+./release/moc_smtp.o
 );

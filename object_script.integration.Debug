@@ -5,11 +5,14 @@ INPUT(
 ./debug/gestion_boutique.o
 ./debug/main.o
 ./debug/mainwindow.o
+./debug/notif.o
 ./debug/qcustomplot.o
 ./debug/seconddialog.o
+./debug/smtp.o
 ./debug/tableprinter.o
 ./debug/moc_gestion_boutique.o
 ./debug/moc_mainwindow.o
 ./debug/moc_qcustomplot.o
 ./debug/moc_seconddialog.o
+./debug/moc_smtp.o
 );

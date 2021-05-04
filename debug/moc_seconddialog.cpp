@@ -83,7 +83,7 @@ void secondDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 0: { QVector<double> _r = _t->Statistique();
             if (_a[0]) *reinterpret_cast< QVector<double>*>(_a[0]) = std::move(_r); }  break;
         case 1: _t->makePlot(); break;
-        //case 2: _t->on_pushButton_clicked(); break;
+
         case 3: _t->on_afficher_clicked(); break;
         default: ;
         }

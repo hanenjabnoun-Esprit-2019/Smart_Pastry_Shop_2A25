@@ -63,6 +63,8 @@ public:
     QLabel *label;
     QPushButton *statistique_commande;
     QPushButton *ajouter_commande;
+    QPushButton *sendmail;
+    QLineEdit *lineEdit_email;
     QWidget *page_6;
     QLabel *label_2;
     QLabel *label_3;
@@ -141,11 +143,11 @@ public:
     {
         if (gestion_boutique->objectName().isEmpty())
             gestion_boutique->setObjectName(QStringLiteral("gestion_boutique"));
-        gestion_boutique->resize(970, 473);
+        gestion_boutique->resize(970, 579);
         gestion_boutique->setStyleSheet(QStringLiteral("background-color: rgb(85, 0, 0);"));
         stackedWidget = new QStackedWidget(gestion_boutique);
         stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
-        stackedWidget->setGeometry(QRect(49, 29, 871, 391));
+        stackedWidget->setGeometry(QRect(49, 29, 871, 481));
         page = new QWidget();
         page->setObjectName(QStringLiteral("page"));
         groupBox = new QGroupBox(page);
@@ -275,10 +277,10 @@ public:
         page_3->setObjectName(QStringLiteral("page_3"));
         groupBox_3 = new QGroupBox(page_3);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(79, 29, 751, 331));
+        groupBox_3->setGeometry(QRect(79, 29, 751, 411));
         groupBox_4 = new QGroupBox(groupBox_3);
         groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(40, 50, 681, 251));
+        groupBox_4->setGeometry(QRect(40, 50, 681, 331));
         horizontalLayoutWidget = new QWidget(groupBox_4);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(90, 20, 491, 31));
@@ -411,12 +413,12 @@ public:
 
         stackedWidget_2 = new QStackedWidget(groupBox_4);
         stackedWidget_2->setObjectName(QStringLiteral("stackedWidget_2"));
-        stackedWidget_2->setGeometry(QRect(29, 59, 631, 171));
+        stackedWidget_2->setGeometry(QRect(29, 59, 631, 251));
         page_5 = new QWidget();
         page_5->setObjectName(QStringLiteral("page_5"));
         toolBox = new QToolBox(page_5);
         toolBox->setObjectName(QStringLiteral("toolBox"));
-        toolBox->setGeometry(QRect(110, 40, 391, 123));
+        toolBox->setGeometry(QRect(110, 40, 391, 141));
         toolBox->setStyleSheet(QLatin1String("QToolBox::tab\n"
 "{\n"
 "	background-color: rgb(42, 46, 50);\n"
@@ -453,7 +455,7 @@ public:
 ""));
         page_7 = new QWidget();
         page_7->setObjectName(QStringLiteral("page_7"));
-        page_7->setGeometry(QRect(0, 0, 391, 20));
+        page_7->setGeometry(QRect(0, 0, 391, 33));
         lineEdit = new QLineEdit(page_7);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(40, 0, 113, 20));
@@ -465,7 +467,7 @@ public:
         toolBox->addItem(page_7, QStringLiteral("Nom de produit "));
         page_8 = new QWidget();
         page_8->setObjectName(QStringLiteral("page_8"));
-        page_8->setGeometry(QRect(0, 0, 391, 20));
+        page_8->setGeometry(QRect(0, 0, 391, 33));
         lineEdit_2 = new QLineEdit(page_8);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(20, 0, 113, 20));
@@ -477,7 +479,7 @@ public:
         toolBox->addItem(page_8, QStringLiteral("Nombre de produit "));
         page_9 = new QWidget();
         page_9->setObjectName(QStringLiteral("page_9"));
-        page_9->setGeometry(QRect(0, 0, 391, 20));
+        page_9->setGeometry(QRect(0, 0, 391, 33));
         lineEdit_3 = new QLineEdit(page_9);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
         lineEdit_3->setGeometry(QRect(20, 0, 113, 20));
@@ -489,7 +491,7 @@ public:
         toolBox->addItem(page_9, QStringLiteral("Reference de commande "));
         page_10 = new QWidget();
         page_10->setObjectName(QStringLiteral("page_10"));
-        page_10->setGeometry(QRect(0, 0, 391, 20));
+        page_10->setGeometry(QRect(0, 0, 391, 33));
         lineEdit_7 = new QLineEdit(page_10);
         lineEdit_7->setObjectName(QStringLiteral("lineEdit_7"));
         lineEdit_7->setGeometry(QRect(30, 0, 113, 20));
@@ -560,6 +562,43 @@ public:
 "	color:rgb(255, 255, 255);\n"
 "}\n"
 ""));
+        sendmail = new QPushButton(page_5);
+        sendmail->setObjectName(QStringLiteral("sendmail"));
+        sendmail->setGeometry(QRect(20, 220, 75, 23));
+        sendmail->setStyleSheet(QLatin1String("QPushButton\n"
+"{\n"
+"	background-color:rgb(50, 53, 57);\n"
+"	border-style:solid;\n"
+"	border-radius:7px;\n"
+"	border-width:1px;\n"
+"border-color: rgb(50, 53, 57);\n"
+"	color:#ffffff;\n"
+"	font-size:16px;\n"
+"font-family:Calibri;\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color: #00000000;\n"
+"	border-color: rgb(30, 227, 0);\n"
+"	/*color:rgb(30, 227, 0);*/\n"
+"}\n"
+"\n"
+"QPushButton:focus\n"
+"{\n"
+"	background-color:  rgb(30, 227, 0);\n"
+"	border-color: rgba(30, 227, 0,0);\n"
+"	color:rgb(255, 255, 255);\n"
+"}\n"
+""));
+        lineEdit_email = new QLineEdit(page_5);
+        lineEdit_email->setObjectName(QStringLiteral("lineEdit_email"));
+        lineEdit_email->setGeometry(QRect(10, 190, 161, 20));
+        lineEdit_email->setStyleSheet(QLatin1String("border: 0px solid rgb(100, 100,100);; \n"
+"border-bottom-width: 2px;\n"
+"border-radius: px;\n"
+"background-color: rgba(255, 255, 255, 0);\n"
+"color: rgb(255, 255, 255);"));
         stackedWidget_2->addWidget(page_5);
         page_6 = new QWidget();
         page_6->setObjectName(QStringLiteral("page_6"));
@@ -967,7 +1006,7 @@ public:
 ""));
         page_15 = new QWidget();
         page_15->setObjectName(QStringLiteral("page_15"));
-        page_15->setGeometry(QRect(0, 0, 98, 28));
+        page_15->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_16 = new QLineEdit(page_15);
         lineEdit_16->setObjectName(QStringLiteral("lineEdit_16"));
         lineEdit_16->setGeometry(QRect(70, 0, 171, 20));
@@ -979,7 +1018,7 @@ public:
         toolBox_2->addItem(page_15, QStringLiteral("ID_boutique"));
         page_16 = new QWidget();
         page_16->setObjectName(QStringLiteral("page_16"));
-        page_16->setGeometry(QRect(0, 0, 98, 28));
+        page_16->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_9 = new QLineEdit(page_16);
         lineEdit_9->setObjectName(QStringLiteral("lineEdit_9"));
         lineEdit_9->setGeometry(QRect(90, 0, 141, 20));
@@ -991,7 +1030,7 @@ public:
         toolBox_2->addItem(page_16, QStringLiteral("nom de boutique"));
         page_17 = new QWidget();
         page_17->setObjectName(QStringLiteral("page_17"));
-        page_17->setGeometry(QRect(0, 0, 98, 28));
+        page_17->setGeometry(QRect(0, 0, 100, 30));
         lineEdit_10 = new QLineEdit(page_17);
         lineEdit_10->setObjectName(QStringLiteral("lineEdit_10"));
         lineEdit_10->setGeometry(QRect(90, 0, 151, 20));
@@ -1003,7 +1042,7 @@ public:
         toolBox_2->addItem(page_17, QStringLiteral("adresse"));
         page_18 = new QWidget();
         page_18->setObjectName(QStringLiteral("page_18"));
-        page_18->setGeometry(QRect(0, 0, 98, 28));
+        page_18->setGeometry(QRect(0, 0, 100, 30));
         spinBox = new QLineEdit(page_18);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(100, 0, 131, 20));
@@ -1015,7 +1054,7 @@ public:
         toolBox_2->addItem(page_18, QStringLiteral("nombre d'employees"));
         page_19 = new QWidget();
         page_19->setObjectName(QStringLiteral("page_19"));
-        page_19->setGeometry(QRect(0, 0, 98, 28));
+        page_19->setGeometry(QRect(0, 0, 341, 26));
         spinBox_3 = new QLineEdit(page_19);
         spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
         spinBox_3->setGeometry(QRect(70, 0, 151, 20));
@@ -1433,7 +1472,7 @@ public:
 
         stackedWidget->setCurrentIndex(1);
         stackedWidget_2->setCurrentIndex(0);
-        toolBox->setCurrentIndex(3);
+        toolBox->setCurrentIndex(2);
         stackedWidget_3->setCurrentIndex(3);
         toolBox_2->setCurrentIndex(4);
 
@@ -1463,6 +1502,7 @@ public:
         label->setText(QApplication::translate("gestion_boutique", "PASSER VOTRE COMMANDE ", Q_NULLPTR));
         statistique_commande->setText(QApplication::translate("gestion_boutique", "statistique ", Q_NULLPTR));
         ajouter_commande->setText(QApplication::translate("gestion_boutique", "ajouter ", Q_NULLPTR));
+        sendmail->setText(QApplication::translate("gestion_boutique", "send mail", Q_NULLPTR));
         label_2->setText(QApplication::translate("gestion_boutique", "taper la reference de commande", Q_NULLPTR));
         label_3->setText(QApplication::translate("gestion_boutique", "nom de produit", Q_NULLPTR));
         label_4->setText(QApplication::translate("gestion_boutique", "nombre de produit ", Q_NULLPTR));

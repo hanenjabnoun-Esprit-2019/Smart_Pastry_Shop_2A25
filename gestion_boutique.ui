@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>970</width>
-    <height>473</height>
+    <height>579</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <x>49</x>
      <y>29</y>
      <width>871</width>
-     <height>391</height>
+     <height>481</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -227,7 +227,7 @@ QPushButton:focus
        <x>79</x>
        <y>29</y>
        <width>751</width>
-       <height>331</height>
+       <height>411</height>
       </rect>
      </property>
      <property name="title">
@@ -239,7 +239,7 @@ QPushButton:focus
         <x>40</x>
         <y>50</y>
         <width>681</width>
-        <height>251</height>
+        <height>331</height>
        </rect>
       </property>
       <property name="title">
@@ -403,7 +403,7 @@ QPushButton:focus
          <x>29</x>
          <y>59</y>
          <width>631</width>
-         <height>171</height>
+         <height>251</height>
         </rect>
        </property>
        <property name="currentIndex">
@@ -416,7 +416,7 @@ QPushButton:focus
            <x>110</x>
            <y>40</y>
            <width>391</width>
-           <height>123</height>
+           <height>141</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -456,7 +456,7 @@ QToolBox::tab:selected
 </string>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="page_7">
           <property name="geometry">
@@ -464,7 +464,7 @@ QToolBox::tab:selected
             <x>0</x>
             <y>0</y>
             <width>391</width>
-            <height>20</height>
+            <height>33</height>
            </rect>
           </property>
           <attribute name="label">
@@ -494,7 +494,7 @@ color: rgb(255, 255, 255);</string>
             <x>0</x>
             <y>0</y>
             <width>391</width>
-            <height>20</height>
+            <height>33</height>
            </rect>
           </property>
           <attribute name="label">
@@ -524,7 +524,7 @@ color: rgb(255, 255, 255);</string>
             <x>0</x>
             <y>0</y>
             <width>391</width>
-            <height>20</height>
+            <height>33</height>
            </rect>
           </property>
           <attribute name="label">
@@ -554,7 +554,7 @@ color: rgb(255, 255, 255);</string>
             <x>0</x>
             <y>0</y>
             <width>391</width>
-            <height>20</height>
+            <height>33</height>
            </rect>
           </property>
           <attribute name="label">
@@ -672,6 +672,64 @@ QPushButton:focus
          </property>
          <property name="text">
           <string>ajouter </string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="sendmail">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>220</y>
+           <width>75</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
+         </property>
+         <property name="text">
+          <string>send mail</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_email">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>190</y>
+           <width>161</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 0px solid rgb(100, 100,100);; 
+border-bottom-width: 2px;
+border-radius: px;
+background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);</string>
          </property>
         </widget>
        </widget>
@@ -1323,8 +1381,8 @@ QToolBox::tab:selected
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>100</width>
+            <height>30</height>
            </rect>
           </property>
           <attribute name="label">
@@ -1353,8 +1411,8 @@ color: rgb(255, 255, 255);</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>100</width>
+            <height>30</height>
            </rect>
           </property>
           <attribute name="label">
@@ -1383,8 +1441,8 @@ color: rgb(255, 255, 255);</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>100</width>
+            <height>30</height>
            </rect>
           </property>
           <attribute name="label">
@@ -1413,8 +1471,8 @@ color: rgb(255, 255, 255);</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>100</width>
+            <height>30</height>
            </rect>
           </property>
           <attribute name="label">
@@ -1443,8 +1501,8 @@ color: rgb(255, 255, 255);</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>341</width>
+            <height>26</height>
            </rect>
           </property>
           <attribute name="label">

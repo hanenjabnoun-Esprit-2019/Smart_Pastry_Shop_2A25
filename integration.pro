@@ -21,6 +21,7 @@ SOURCES += \
     notif.cpp \
     qcustomplot.cpp \
     seconddialog.cpp \
+    smtp.cpp \
     tableprinter.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     notif.h \
     qcustomplot.h \
     seconddialog.h \
+    smtp.h \
     tableprinter.h
 
 FORMS += \

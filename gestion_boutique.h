@@ -22,6 +22,10 @@ public:
     ~gestion_boutique();
 
 private slots:
+    void sendMail();
+
+    void mailSent(QString);
+
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
@@ -69,6 +73,8 @@ private slots:
     void on_lineEdit_17_textChanged(const QString &arg1);
 
     void on_statistique_commande_clicked();
+
+    void on_sendmail_clicked();
 
 private:
     Ui::gestion_boutique *ui;

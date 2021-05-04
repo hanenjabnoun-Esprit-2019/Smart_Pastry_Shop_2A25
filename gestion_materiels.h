@@ -7,7 +7,7 @@
 #include"materiel.h"
 #include"maintenance.h"
 #include <QMainWindow>
-
+#include "statelivrec.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class gestion_materiels; }
 QT_END_NAMESPACE
@@ -63,10 +63,15 @@ private slots:
 
     void on_pushButton_13_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::gestion_materiels *ui;
     materiel M;
+
     maintenance A;
+
+    statelivrec *stat_liv;
 
 
 

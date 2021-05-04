@@ -366,3 +366,9 @@ void gestion_materiels::on_pushButton_13_clicked()
     }
 
 
+
+void gestion_materiels::on_pushButton_4_clicked()
+{
+    stat_liv=new statelivrec(this);
+    stat_liv->show();
+}

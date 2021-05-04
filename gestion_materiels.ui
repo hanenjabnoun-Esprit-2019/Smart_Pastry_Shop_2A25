@@ -27,7 +27,7 @@
      <string notr="true">background-color:rgb(255, 170, 127);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="pushButton">
@@ -325,7 +325,7 @@ QPushButton:focus
 </string>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -503,6 +503,19 @@ QPushButton:focus
            <width>110</width>
            <height>22</height>
           </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="geometry">
+          <rect>
+           <x>570</x>
+           <y>80</y>
+           <width>101</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>statistique</string>
          </property>
         </widget>
        </widget>

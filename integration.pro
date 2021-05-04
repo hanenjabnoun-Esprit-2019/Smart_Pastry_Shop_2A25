@@ -1,6 +1,6 @@
 QT       += core gui
 QT       +=  printsupport
-QT       +=multimedia
+QT       +=multimedia charts
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -35,6 +35,7 @@ SOURCES += \
     seconddialog.cpp \
     smtp.cpp \
     smtp2.cpp \
+    statelivrec.cpp \
     tableprinter.cpp
 
 HEADERS += \
@@ -60,6 +61,7 @@ HEADERS += \
     seconddialog.h \
     smtp.h \
     smtp2.h \
+    statelivrec.h \
     tableprinter.h
 
 FORMS += \
@@ -69,7 +71,8 @@ FORMS += \
     gestion_materiels.ui \
     mainwindow.ui \
     personnels.ui \
-    seconddialog.ui
+    seconddialog.ui \
+    statelivrec.ui
 TRANSLATIONS = english.ts
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

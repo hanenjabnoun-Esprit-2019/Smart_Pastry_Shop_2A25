@@ -220,6 +220,7 @@ Makefile: integration.pro C:/Qt/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.conf C:
 		integration.pro \
 		C:/Qt/5.9.9/mingw53_32/lib/qtmaind.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl \
+		C:/Qt/5.9.9/mingw53_32/lib/Qt5Charts.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Multimedia.prl \
 		C:/Qt/5.9.9/mingw53_32/lib/Qt5Gui.prl \
@@ -386,6 +387,7 @@ C:/Qt/5.9.9/mingw53_32/mkspecs/features/lex.prf:
 integration.pro:
 C:/Qt/5.9.9/mingw53_32/lib/qtmaind.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5PrintSupport.prl:
+C:/Qt/5.9.9/mingw53_32/lib/Qt5Charts.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Widgets.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Multimedia.prl:
 C:/Qt/5.9.9/mingw53_32/lib/Qt5Gui.prl:

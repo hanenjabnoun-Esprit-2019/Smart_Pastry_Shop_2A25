@@ -63,6 +63,7 @@ public:
     QDoubleSpinBox *la_quantite;
     QDateEdit *le_date_achat;
     QDateEdit *le_date_garantie;
+    QPushButton *pushButton_4;
     QWidget *tab_2;
     QLabel *label_13;
     QLineEdit *le_id_supp;
@@ -388,6 +389,9 @@ public:
         le_date_garantie = new QDateEdit(tab);
         le_date_garantie->setObjectName(QStringLiteral("le_date_garantie"));
         le_date_garantie->setGeometry(QRect(300, 170, 110, 22));
+        pushButton_4 = new QPushButton(tab);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(570, 80, 75, 23));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -887,8 +891,8 @@ public:
 
         retranslateUi(gestion_materiels);
 
-        stackedWidget->setCurrentIndex(0);
-        tabWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
         tabWidget_2->setCurrentIndex(1);
 
 
@@ -915,6 +919,7 @@ public:
         label_10->setText(QApplication::translate("gestion_materiels", "date_garantie", Q_NULLPTR));
         label_11->setText(QApplication::translate("gestion_materiels", "prix", Q_NULLPTR));
         pb_ajouter->setText(QApplication::translate("gestion_materiels", "Ajouter", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("gestion_materiels", "PushButton", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("gestion_materiels", "Ajouter", Q_NULLPTR));
         label_13->setText(QApplication::translate("gestion_materiels", "Donner l'ID du produit a supprimer :", Q_NULLPTR));
         PB_supp->setText(QApplication::translate("gestion_materiels", "Supprimer", Q_NULLPTR));

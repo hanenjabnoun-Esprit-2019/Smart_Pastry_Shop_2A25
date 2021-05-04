@@ -22,6 +22,7 @@ INPUT(
 ./debug/seconddialog.o
 ./debug/smtp.o
 ./debug/smtp2.o
+./debug/statelivrec.o
 ./debug/tableprinter.o
 ./debug/moc_gestion_boutique.o
 ./debug/moc_gestion_des_clients.o
@@ -33,4 +34,5 @@ INPUT(
 ./debug/moc_seconddialog.o
 ./debug/moc_smtp.o
 ./debug/moc_smtp2.o
+./debug/moc_statelivrec.o
 );

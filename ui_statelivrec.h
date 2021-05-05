@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'statelivrec.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.9
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,13 +10,10 @@
 #define UI_STATELIVREC_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 
 QT_BEGIN_NAMESPACE
 
@@ -29,13 +26,13 @@ public:
     void setupUi(QDialog *statelivrec)
     {
         if (statelivrec->objectName().isEmpty())
-            statelivrec->setObjectName(QStringLiteral("statelivrec"));
+            statelivrec->setObjectName(QString::fromUtf8("statelivrec"));
         statelivrec->resize(743, 487);
         horizontalFrame = new QFrame(statelivrec);
-        horizontalFrame->setObjectName(QStringLiteral("horizontalFrame"));
+        horizontalFrame->setObjectName(QString::fromUtf8("horizontalFrame"));
         horizontalFrame->setGeometry(QRect(0, 20, 711, 461));
         horizontalLayout = new QHBoxLayout(horizontalFrame);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
 
         retranslateUi(statelivrec);
 
@@ -44,7 +41,7 @@ public:
 
     void retranslateUi(QDialog *statelivrec)
     {
-        statelivrec->setWindowTitle(QApplication::translate("statelivrec", "Dialog", Q_NULLPTR));
+        statelivrec->setWindowTitle(QCoreApplication::translate("statelivrec", "Dialog", nullptr));
     } // retranslateUi
 
 };

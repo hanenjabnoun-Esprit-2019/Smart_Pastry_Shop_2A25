@@ -20,14 +20,14 @@
       <x>50</x>
       <y>10</y>
       <width>701</width>
-      <height>441</height>
+      <height>501</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color:rgb(255, 170, 127);</string>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="Login">
      <widget class="QFrame" name="frame_2">
@@ -36,7 +36,7 @@
         <x>0</x>
         <y>9</y>
         <width>711</width>
-        <height>381</height>
+        <height>491</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -73,7 +73,7 @@ font-family: 'Droid Sans';</string>
        <property name="geometry">
         <rect>
          <x>420</x>
-         <y>150</y>
+         <y>140</y>
          <width>241</width>
          <height>151</height>
         </rect>
@@ -435,7 +435,7 @@ Color: #fefefe;</string>
         <x>0</x>
         <y>10</y>
         <width>691</width>
-        <height>381</height>
+        <height>491</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -684,6 +684,47 @@ Color: #fefefe;</string>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>380</y>
+         <width>401</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Visitez nous sur notre page web</string>
        </property>
       </widget>
      </widget>

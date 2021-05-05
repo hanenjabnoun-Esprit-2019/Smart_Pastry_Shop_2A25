@@ -388,12 +388,12 @@ void personnels::on_pushButton_100_clicked()
 
 void personnels::on_pushButton_105_clicked()
 {
-    smtp* Smtp = new smtp (ui->try_4->currentText(), ui->paswd_3->text(), ui->server_3->text(), ui->port_3->text().toUShort());
-        connect(Smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+    smtp* Smtp = new smtp (ui->lineEdit_151->text(), ui->paswd_3->text(), ui->server_3->text(), ui->port_3->text().toUShort());
+           connect(Smtp, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
 
 
-        Smtp->sendMail(ui->try_4->currentText(), ui->lineEdit_151->text() , ui->lineEdit_148->text(),ui->lineEdit_149->text());
-    QString status;
+           Smtp->sendMail(ui->lineEdit_151->text(),  ui->try_4->currentText() , ui->lineEdit_148->text(),ui->lineEdit_149->text());
+       QString status;
 }
 void personnels::mailSent(QString status)
 {
@@ -433,7 +433,7 @@ int personnels::on_pushButton_103_clicked()
                 QPrinter printer;
                 QString ch="test";
                       printer.setOutputFormat(QPrinter::PdfFormat);
-                      printer.setOutputFileName("C:/Users/ASUS/Desktop/demande.pdf");
+                      printer.setOutputFileName("C:/Users/21623/Desktop/demande.pdf");
                       QPainter painter;
                       QImage carte(":/imagen/Demande de congé cookies.png");
                       if (! painter.begin(&printer)) { // failed to open file

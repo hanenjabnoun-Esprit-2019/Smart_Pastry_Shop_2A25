@@ -120,9 +120,9 @@ QPushButton:focus
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>350</x>
         <y>120</y>
-        <width>439</width>
+        <width>571</width>
         <height>49</height>
        </rect>
       </property>
@@ -149,10 +149,10 @@ font-family: 'Droid Sans';</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>1080</x>
+        <x>1050</x>
         <y>40</y>
-        <width>141</width>
-        <height>91</height>
+        <width>171</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="text">
@@ -203,90 +203,8 @@ font-family: 'Droid Sans';</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>1020</x>
-        <y>530</y>
-        <width>111</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:#ffffff;
-	font-size:16px;
-font-family:Calibri;
-}
-
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color:red;
-	/*color:rgb(30, 227, 0);*/
-}
-
-QPushButton:focus
-{
-	background-color:  red;
-	border-color: red;
-	color:rgb(255, 255, 255);
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Deconnexion</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="geometry">
-       <rect>
-        <x>1220</x>
-        <y>510</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:#ffffff;
-	font-size:16px;
-font-family:Calibri;
-}
-
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color:red;
-	/*color:rgb(30, 227, 0);*/
-}
-
-QPushButton:focus
-{
-	background-color:  red;
-	border-color: red;
-	color:rgb(255, 255, 255);
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Deconexion</string>
-      </property>
-     </widget>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
@@ -342,7 +260,7 @@ QPushButton:focus
 </string>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -472,7 +390,7 @@ color: rgb(255, 255, 255);</string>
          <property name="geometry">
           <rect>
            <x>590</x>
-           <y>290</y>
+           <y>260</y>
            <width>93</width>
            <height>28</height>
           </rect>
@@ -480,29 +398,30 @@ color: rgb(255, 255, 255);</string>
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
+
 
 </string>
          </property>
@@ -594,29 +513,30 @@ color: rgb(255, 255, 255);</string>
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
+
 </string>
          </property>
          <property name="text">
@@ -632,7 +552,7 @@ QPushButton:focus
          <property name="geometry">
           <rect>
            <x>520</x>
-           <y>290</y>
+           <y>260</y>
            <width>93</width>
            <height>28</height>
           </rect>
@@ -1896,47 +1816,6 @@ QPushButton:focus
       </property>
       <property name="text">
        <string>HOME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="geometry">
-       <rect>
-        <x>1150</x>
-        <y>520</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
-	color:#ffffff;
-	font-size:16px;
-font-family:Calibri;
-}
-
-QPushButton:hover
-{
-	background-color: #00000000;
-	border-color:red;
-	/*color:rgb(30, 227, 0);*/
-}
-
-QPushButton:focus
-{
-	background-color:  red;
-	border-color: red;
-	color:rgb(255, 255, 255);
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Deconexion</string>
       </property>
      </widget>
     </widget>

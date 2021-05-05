@@ -298,7 +298,7 @@ void gestion_ingredient::on_pdf_clicked()
          <<  QString("<title>%1</title>\n").arg(strTitle)
          <<  "</head>\n"
          "<body bgcolor=#ffffff link=#5000A0>\n"
-        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les boutique")
+        << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les Ingredients")
         <<"<br>"
          <<"<table border=1 cellspacing=0 cellpadding=2>\n";
 
@@ -351,3 +351,8 @@ void gestion_ingredient::on_lineEdit_3_textChanged(const QString &arg1)
 }
 
 
+
+void gestion_ingredient::on_pushButton_10_clicked()
+{
+     ui->stackedWidget->setCurrentIndex(0);
+}

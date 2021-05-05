@@ -1,18 +1,19 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'gestion_boutique.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.9.9)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
+#include <memory>
 #include "../gestion_boutique.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'gestion_boutique.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.9.9. It"
+#error "This file was generated using the moc from 5.15.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -21,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_gestion_boutique_t {
-    QByteArrayData data[31];
-    char stringdata0[672];
+    QByteArrayData data[32];
+    char stringdata0[684];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -53,15 +54,16 @@ QT_MOC_LITERAL(18, 376, 16), // "on_home2_clicked"
 QT_MOC_LITERAL(19, 393, 16), // "on_home1_clicked"
 QT_MOC_LITERAL(20, 410, 28), // "on_modifier_boutique_clicked"
 QT_MOC_LITERAL(21, 439, 29), // "on_tableView_boutique_clicked"
-QT_MOC_LITERAL(22, 469, 5), // "index"
-QT_MOC_LITERAL(23, 475, 28), // "on_modifier_commande_clicked"
-QT_MOC_LITERAL(24, 504, 30), // "on_tableView_Commandes_clicked"
-QT_MOC_LITERAL(25, 535, 23), // "on_tri_boutique_clicked"
-QT_MOC_LITERAL(26, 559, 24), // "on_pushButton_22_clicked"
-QT_MOC_LITERAL(27, 584, 26), // "on_lineEdit_17_textChanged"
-QT_MOC_LITERAL(28, 611, 4), // "arg1"
-QT_MOC_LITERAL(29, 616, 31), // "on_statistique_commande_clicked"
-QT_MOC_LITERAL(30, 648, 23) // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(22, 469, 11), // "QModelIndex"
+QT_MOC_LITERAL(23, 481, 5), // "index"
+QT_MOC_LITERAL(24, 487, 28), // "on_modifier_commande_clicked"
+QT_MOC_LITERAL(25, 516, 30), // "on_tableView_Commandes_clicked"
+QT_MOC_LITERAL(26, 547, 23), // "on_tri_boutique_clicked"
+QT_MOC_LITERAL(27, 571, 24), // "on_pushButton_22_clicked"
+QT_MOC_LITERAL(28, 596, 26), // "on_lineEdit_17_textChanged"
+QT_MOC_LITERAL(29, 623, 4), // "arg1"
+QT_MOC_LITERAL(30, 628, 31), // "on_statistique_commande_clicked"
+QT_MOC_LITERAL(31, 660, 23) // "on_pushButton_4_clicked"
 
     },
     "gestion_boutique\0sendMail\0\0mailSent\0"
@@ -76,8 +78,8 @@ QT_MOC_LITERAL(30, 648, 23) // "on_pushButton_4_clicked"
     "on_bar_affichB_clicked\0on_bar_suppB_clicked\0"
     "on_home2_clicked\0on_home1_clicked\0"
     "on_modifier_boutique_clicked\0"
-    "on_tableView_boutique_clicked\0index\0"
-    "on_modifier_commande_clicked\0"
+    "on_tableView_boutique_clicked\0QModelIndex\0"
+    "index\0on_modifier_commande_clicked\0"
     "on_tableView_Commandes_clicked\0"
     "on_tri_boutique_clicked\0"
     "on_pushButton_22_clicked\0"
@@ -90,7 +92,7 @@ QT_MOC_LITERAL(30, 648, 23) // "on_pushButton_4_clicked"
 static const uint qt_meta_data_gestion_boutique[] = {
 
  // content:
-       7,       // revision
+       8,       // revision
        0,       // classname
        0,    0, // classinfo
       27,   14, // methods
@@ -121,13 +123,13 @@ static const uint qt_meta_data_gestion_boutique[] = {
       19,    0,  168,    2, 0x08 /* Private */,
       20,    0,  169,    2, 0x08 /* Private */,
       21,    1,  170,    2, 0x08 /* Private */,
-      23,    0,  173,    2, 0x08 /* Private */,
-      24,    1,  174,    2, 0x08 /* Private */,
-      25,    0,  177,    2, 0x08 /* Private */,
-      26,    0,  178,    2, 0x08 /* Private */,
-      27,    1,  179,    2, 0x08 /* Private */,
-      29,    0,  182,    2, 0x08 /* Private */,
-      30,    0,  183,    2, 0x08 /* Private */,
+      24,    0,  173,    2, 0x08 /* Private */,
+      25,    1,  174,    2, 0x08 /* Private */,
+      26,    0,  177,    2, 0x08 /* Private */,
+      27,    0,  178,    2, 0x08 /* Private */,
+      28,    1,  179,    2, 0x08 /* Private */,
+      30,    0,  182,    2, 0x08 /* Private */,
+      31,    0,  183,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -149,12 +151,12 @@ static const uint qt_meta_data_gestion_boutique[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,   22,
+    QMetaType::Void, 0x80000000 | 22,   23,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QModelIndex,   22,
+    QMetaType::Void, 0x80000000 | 22,   23,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   28,
+    QMetaType::Void, QMetaType::QString,   29,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -164,7 +166,7 @@ static const uint qt_meta_data_gestion_boutique[] = {
 void gestion_boutique::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        gestion_boutique *_t = static_cast<gestion_boutique *>(_o);
+        auto *_t = static_cast<gestion_boutique *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->sendMail(); break;
@@ -199,10 +201,14 @@ void gestion_boutique::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     }
 }
 
-const QMetaObject gestion_boutique::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_gestion_boutique.data,
-      qt_meta_data_gestion_boutique,  qt_static_metacall, nullptr, nullptr}
-};
+QT_INIT_METAOBJECT const QMetaObject gestion_boutique::staticMetaObject = { {
+    QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
+    qt_meta_stringdata_gestion_boutique.data,
+    qt_meta_data_gestion_boutique,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
 
 
 const QMetaObject *gestion_boutique::metaObject() const

@@ -74,6 +74,8 @@ private slots:
 
     void on_comboBox_2_currentIndexChanged(const QString &arg1);
 
+    void on_pushButton_10_clicked();
+
 private:
     Ui::gestion_ingredient *ui;
     Ingredient I;

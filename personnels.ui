@@ -17,9 +17,9 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>30</x>
       <y>30</y>
-      <width>891</width>
+      <width>931</width>
       <height>501</height>
      </rect>
     </property>
@@ -33,38 +33,53 @@
      <string notr="true">background-color:rgb(255, 170, 127);</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_31">
      <widget class="QPushButton" name="pushButton_4">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>150</y>
-        <width>191</width>
+        <x>150</x>
+        <y>250</y>
+        <width>211</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>calibri</family>
+        <family>Calibri</family>
         <pointsize>-1</pointsize>
         <underline>false</underline>
         <strikeout>false</strikeout>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #8B0000	;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+
+qproperty-iconSize:35px;
+
+}
+QPushButton:hover
+{
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
+
+}
+QPushButton:focus
+{
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
+}
+</string>
       </property>
       <property name="text">
        <string>Départements</string>
@@ -73,24 +88,39 @@ font-family:calibri;
      <widget class="QPushButton" name="pushButton_5">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>160</y>
-        <width>181</width>
+        <x>530</x>
+        <y>250</y>
+        <width>201</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #8B0000	;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+
+qproperty-iconSize:35px;
+
+}
+QPushButton:hover
+{
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
+
+}
+QPushButton:focus
+{
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
+}
+</string>
       </property>
       <property name="text">
        <string>Personnels</string>
@@ -2224,56 +2254,82 @@ font-family:calibri;
        </widget>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_100">
+     <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>290</y>
-        <width>181</width>
-        <height>41</height>
+        <x>90</x>
+        <y>140</y>
+        <width>661</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #8B0000	;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">text-align: center;
+color: rgb(244, 143, 55);
+color: #393;
+margin: 0 auto;
+font-size: 35px;
+font-family: 'Droid Sans';</string>
       </property>
       <property name="text">
-       <string>Mailing</string>
+       <string>Gestion départements et personnels</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_101">
+     <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>280</y>
-        <width>181</width>
-        <height>41</height>
+        <x>530</x>
+        <y>310</y>
+        <width>201</width>
+        <height>151</height>
        </rect>
       </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #8B0000	;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../integrationF/Smart_Pastry_Shop_2A25/image/femme-preparant-patisserie-vendre-au-departement-boulangerie-supermarche_342744-1064.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>300</y>
+        <width>211</width>
+        <height>161</height>
+       </rect>
       </property>
       <property name="text">
-       <string>Imprimer </string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../integrationF/Smart_Pastry_Shop_2A25/image/personnel-equipement-boulangerie-pour-faire-du-pain-patisserie-organigramme-isometrique-vector-illustration_1284-30241.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>30</y>
+        <width>171</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -2563,27 +2619,42 @@ font-family:calibri;
      <widget class="QPushButton" name="pushButton_93">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>410</y>
+        <x>740</x>
+        <y>440</y>
         <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: black	;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
       </property>
       <property name="text">
-       <string>Menu</string>
+       <string>HOME</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_94">
@@ -2760,6 +2831,25 @@ font-family:calibri;
       </property>
       <property name="text">
        <string>Envoyer un e-mail</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>40</y>
+        <width>141</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -2947,27 +3037,42 @@ font-family:calibri;
      <widget class="QPushButton" name="pushButton_99">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>380</y>
+        <x>770</x>
+        <y>430</y>
         <width>101</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: 	#F0E68C			;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
       </property>
       <property name="text">
-       <string>Menu</string>
+       <string>HOME</string>
       </property>
      </widget>
     </widget>
@@ -3061,34 +3166,49 @@ font-family:calibri;
      <widget class="QPushButton" name="pushButton_102">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>260</y>
+        <x>780</x>
+        <y>450</y>
         <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:black	;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
       </property>
       <property name="text">
-       <string>Menu</string>
+       <string>HOME</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_105">
       <property name="geometry">
        <rect>
         <x>670</x>
-        <y>390</y>
+        <y>310</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -3593,27 +3713,61 @@ font-family:calibri;
      <widget class="QPushButton" name="pushButton_147">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>370</y>
+        <x>760</x>
+        <y>450</y>
         <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: 	#B0E0E6			;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
       </property>
       <property name="text">
-       <string>Menu</string>
+       <string>HOME</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>40</y>
+        <width>131</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -3916,27 +4070,42 @@ font-family:calibri;
      <widget class="QPushButton" name="pushButton_148">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>420</y>
-        <width>261</width>
-        <height>61</height>
+        <x>780</x>
+        <y>450</y>
+        <width>111</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: 	#B0E0E6			;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 13px;
-  margin: 2px 1px;
-  border-radius : 16px;</string>
+       <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
       </property>
       <property name="text">
-       <string>Menu</string>
+       <string>HOME</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_39">

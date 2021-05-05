@@ -12,6 +12,7 @@
 #include <QMessageBox>
 #include <QSqlRecord>
 #include "gestion_ingredient.h"
+#include <QDesktopServices>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -546,4 +547,10 @@ void MainWindow::on_pushButton_5_clicked()
 {
     gestioningredient= new gestion_ingredient(this);
     gestioningredient->show();
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    QString link="https://3ir4moa0pvwdnq81.vistaprintdigital.com/?_=1620172305641&cacheInvalidated=true&fbclid=IwAR35FWl03S9D0XxYzxCkUaC4VJS57jMFaQtbV7HZwkxTWJnvCz6RgVuwMdk";
+      QDesktopServices::openUrl(QUrl(link));
 }

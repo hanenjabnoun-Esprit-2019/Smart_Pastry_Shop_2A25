@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'seconddialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.9.9
+** Created by: Qt User Interface Compiler version 5.15.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,11 +10,8 @@
 #define UI_SECONDDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
 #include <qcustomplot.h>
 
@@ -30,20 +27,20 @@ public:
     void setupUi(QDialog *secondDialog)
     {
         if (secondDialog->objectName().isEmpty())
-            secondDialog->setObjectName(QStringLiteral("secondDialog"));
+            secondDialog->setObjectName(QString::fromUtf8("secondDialog"));
         secondDialog->resize(724, 418);
-        secondDialog->setStyleSheet(QStringLiteral("background-color:rgb(255, 170, 127);"));
+        secondDialog->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 170, 127);"));
         afficher = new QPushButton(secondDialog);
-        afficher->setObjectName(QStringLiteral("afficher"));
+        afficher->setObjectName(QString::fromUtf8("afficher"));
         afficher->setGeometry(QRect(600, 170, 101, 31));
-        afficher->setStyleSheet(QLatin1String("border-width: 2px;\n"
+        afficher->setStyleSheet(QString::fromUtf8("border-width: 2px;\n"
 "background-image:url(:/Desktop/multimedia/white.png);"));
         customPlot = new QCustomPlot(secondDialog);
-        customPlot->setObjectName(QStringLiteral("customPlot"));
+        customPlot->setObjectName(QString::fromUtf8("customPlot"));
         customPlot->setGeometry(QRect(20, 60, 551, 271));
-        customPlot->setStyleSheet(QStringLiteral(""));
+        customPlot->setStyleSheet(QString::fromUtf8(""));
         pushButton = new QPushButton(secondDialog);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(620, 230, 75, 23));
 
         retranslateUi(secondDialog);
@@ -53,9 +50,9 @@ public:
 
     void retranslateUi(QDialog *secondDialog)
     {
-        secondDialog->setWindowTitle(QApplication::translate("secondDialog", "Dialog", Q_NULLPTR));
-        afficher->setText(QApplication::translate("secondDialog", "afficher", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("secondDialog", "PushButton", Q_NULLPTR));
+        secondDialog->setWindowTitle(QCoreApplication::translate("secondDialog", "Dialog", nullptr));
+        afficher->setText(QCoreApplication::translate("secondDialog", "afficher", nullptr));
+        pushButton->setText(QCoreApplication::translate("secondDialog", "PushButton", nullptr));
     } // retranslateUi
 
 };

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>885</width>
-    <height>504</height>
+    <width>1010</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
     <rect>
      <x>70</x>
      <y>10</y>
-     <width>781</width>
+     <width>771</width>
      <height>451</height>
     </rect>
    </property>
@@ -93,7 +93,7 @@ QPushButton:hover
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QFrame" name="frame_2">
@@ -101,8 +101,8 @@ QPushButton:hover
       <rect>
        <x>0</x>
        <y>20</y>
-       <width>721</width>
-       <height>411</height>
+       <width>831</width>
+       <height>461</height>
       </rect>
      </property>
      <property name="toolTip">
@@ -170,133 +170,144 @@ backfround:white;
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>110</y>
-        <width>421</width>
-        <height>51</height>
+        <x>60</x>
+        <y>200</y>
+        <width>211</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">margin-top:0px;
-QMainWindow,QWidget,QMessageBox{
-background: qlineargradient(spread:pad, x1:0.472, y1:0, x2:0.502, y2:1, stop:0 rgba(0, 53, 84, 255), stop:1 rgba(0, 70, 111, 255));
-font-family:&quot;Quicksand SemiBold&quot;;
+       <string notr="true">QPushButton
+{
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+
+qproperty-iconSize:35px;
+
+}
+QPushButton:hover
+{
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
+
+}
+QPushButton:focus
+{
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
 
-
-QListWidget{
-background:transparent;
-}
-
-QFrame{
-background:transparent;
-}
-
-
-QLabel,QGroupBox{
-color: white;
-background:transparent;
-}
-QComboBox{
-background:rgb(0, 48, 75);
-color:white;
-height:32px;
-border-radius:5px;
-}
-
-QLineEdit,QDateEdit,QDateTimeEdit{
-background:rgba(0, 33, 52, 100);
-color:white;
-height:32px;
-border-radius:8px;
-}
-
-QPushButton{
-width:131px;
-height:32px;
-background:rgba(0, 33, 52, 100);
-color:white;
-border-radius:10px;
-}
-
-QPushButton:hover{
-background: #cae9ff;
-color:black;
-}
-
-
-Line{
-backfround:white;
-}</string>
+</string>
       </property>
       <property name="text">
-       <string>gs engredient</string>
+       <string>Gestion ingredients</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>210</y>
-        <width>421</width>
-        <height>51</height>
+        <x>400</x>
+        <y>200</y>
+        <width>211</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">margin-top:0px;
-QMainWindow,QWidget,QMessageBox{
-background: qlineargradient(spread:pad, x1:0.472, y1:0, x2:0.502, y2:1, stop:0 rgba(0, 53, 84, 255), stop:1 rgba(0, 70, 111, 255));
-font-family:&quot;Quicksand SemiBold&quot;;
+       <string notr="true">QPushButton
+{
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+
+qproperty-iconSize:35px;
+
+}
+QPushButton:hover
+{
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
+
+}
+QPushButton:focus
+{
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
 
-
-QListWidget{
-background:transparent;
-}
-
-QFrame{
-background:transparent;
-}
-
-
-QLabel,QGroupBox{
-color: white;
-background:transparent;
-}
-QComboBox{
-background:rgb(0, 48, 75);
-color:white;
-height:32px;
-border-radius:5px;
-}
-
-QLineEdit,QDateEdit,QDateTimeEdit{
-background:rgba(0, 33, 52, 100);
-color:white;
-height:32px;
-border-radius:8px;
-}
-
-QPushButton{
-width:131px;
-height:32px;
-background:rgba(0, 33, 52, 100);
-color:white;
-border-radius:10px;
-}
-
-QPushButton:hover{
-background: #cae9ff;
-color:black;
-}
-
-
-Line{
-backfround:white;
-}</string>
+</string>
       </property>
       <property name="text">
-       <string>gs produit</string>
+       <string>Gestion produits</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>110</y>
+        <width>591</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align: center;
+color: rgb(244, 143, 55);
+color: #393;
+margin: 0 auto;
+font-size: 35px;
+font-family: 'Droid Sans';</string>
+      </property>
+      <property name="text">
+       <string>Gestion ingredients et produits</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>260</y>
+        <width>211</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../integrationF/Smart_Pastry_Shop_2A25/image/téléchargement.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>250</y>
+        <width>211</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../integrationF/Smart_Pastry_Shop_2A25/image/marche-patisserie-complexes.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -305,8 +316,8 @@ backfround:white;
     <widget class="QFrame" name="frame">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
+       <x>20</x>
+       <y>80</y>
        <width>711</width>
        <height>431</height>
       </rect>
@@ -591,9 +602,9 @@ backfround:white;
        <widget class="QPushButton" name="ajouter_i">
         <property name="geometry">
          <rect>
-          <x>520</x>
-          <y>270</y>
-          <width>181</width>
+          <x>410</x>
+          <y>150</y>
+          <width>151</width>
           <height>31</height>
          </rect>
         </property>
@@ -612,29 +623,30 @@ backfround:white;
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
+
 </string>
         </property>
         <property name="text">
@@ -773,6 +785,46 @@ color: rgb(255, 255, 255);</string>
          </rect>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="geometry">
+         <rect>
+          <x>630</x>
+          <y>260</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_9">
        <widget class="QTableView" name="tab_ingredient">
@@ -838,8 +890,8 @@ color: rgb(255, 255, 255);</string>
        <widget class="QPushButton" name="modifier_i">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>310</y>
+          <x>490</x>
+          <y>140</y>
           <width>181</width>
           <height>31</height>
          </rect>
@@ -859,28 +911,28 @@ color: rgb(255, 255, 255);</string>
         <property name="styleSheet">
          <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
 </string>
         </property>
@@ -1020,15 +1072,13 @@ color: rgb(255, 255, 255);</string>
          </rect>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="page_11">
-       <widget class="QPushButton" name="supprimer_i">
+       <widget class="QPushButton" name="pushButton_10">
         <property name="geometry">
          <rect>
-          <x>554</x>
-          <y>300</y>
-          <width>161</width>
-          <height>31</height>
+          <x>590</x>
+          <y>280</y>
+          <width>121</width>
+          <height>23</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1047,16 +1097,61 @@ font-family:Calibri;
 QPushButton:hover
 {
 	background-color: #00000000;
-	border-color:red;
+	border-color: rgb(30, 227, 0);
 	/*color:rgb(30, 227, 0);*/
 }
 
 QPushButton:focus
 {
-	background-color:  red;
-	border-color: red;
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
 	color:rgb(255, 255, 255);
 }
+
+</string>
+        </property>
+        <property name="text">
+         <string>HOME</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_11">
+       <widget class="QPushButton" name="supprimer_i">
+        <property name="geometry">
+         <rect>
+          <x>540</x>
+          <y>260</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton
+{
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+
+qproperty-iconSize:35px;
+
+}
+QPushButton:hover
+{
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
+
+}
+QPushButton:focus
+{
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
+}
+
 </string>
         </property>
         <property name="text">
@@ -1082,7 +1177,7 @@ QPushButton:focus
           <x>0</x>
           <y>50</y>
           <width>491</width>
-          <height>291</height>
+          <height>241</height>
          </rect>
         </property>
        </widget>
@@ -1099,17 +1194,20 @@ QPushButton:focus
       </widget>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QLabel" name="label_10">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>141</width>
-       <height>23</height>
+       <x>330</x>
+       <y>20</y>
+       <width>221</width>
+       <height>31</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
      <property name="text">
-      <string>Retour</string>
+      <string>COOKIES</string>
      </property>
     </widget>
    </widget>
@@ -1382,14 +1480,14 @@ backfround:white;
 }</string>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page_4">
       <widget class="QPushButton" name="ajouter_produit">
        <property name="geometry">
         <rect>
-         <x>530</x>
-         <y>310</y>
+         <x>420</x>
+         <y>190</y>
          <width>181</width>
          <height>31</height>
         </rect>
@@ -1409,29 +1507,30 @@ backfround:white;
        <property name="styleSheet">
         <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
+
 </string>
        </property>
        <property name="text">
@@ -1766,28 +1865,28 @@ color: rgb(255, 255, 255);</string>
        <property name="styleSheet">
         <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color: rgb(30, 227, 0);
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  rgb(30, 227, 0);
-	border-color: rgba(30, 227, 0,0);
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
 </string>
        </property>
@@ -1942,8 +2041,8 @@ color: rgb(255, 255, 255);</string>
       <widget class="QPushButton" name="pushButton_7">
        <property name="geometry">
         <rect>
-         <x>554</x>
-         <y>300</y>
+         <x>510</x>
+         <y>230</y>
          <width>161</width>
          <height>31</height>
         </rect>
@@ -1951,28 +2050,28 @@ color: rgb(255, 255, 255);</string>
        <property name="styleSheet">
         <string notr="true">QPushButton
 {
-	background-color:rgb(50, 53, 57);
-	border-style:solid;
-	border-radius:7px;
-	border-width:1px;
-border-color: rgb(50, 53, 57);
+	background-color: rgb(42, 46, 50);
+   border-radius:0px;
 	color:#ffffff;
 	font-size:16px;
 font-family:Calibri;
-}
 
+qproperty-iconSize:35px;
+
+}
 QPushButton:hover
 {
-	background-color: #00000000;
-	border-color:red;
-	/*color:rgb(30, 227, 0);*/
-}
+	background-color:rgb(50, 53, 57);
+		color:#ffff99;
 
+}
 QPushButton:focus
 {
-	background-color:  red;
-	border-color: red;
-	color:rgb(255, 255, 255);
+	background-color: rgb(59, 62, 66);
+	border-style:solid;
+	border-left-width:7px;
+	border-color: #ff3333;
+	color:#ffff99;
 }
 </string>
        </property>
@@ -2012,48 +2111,26 @@ color: rgb(255, 255, 255);</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>121</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton
-{
-	background-color: rgb(42, 46, 50);
-   border-radius:0px;
-	color:#ffffff;
-	font-size:16px;
-font-family:Calibri;
-
-qproperty-iconSize:35px;
-
-}
-QPushButton:hover
-{
-	background-color:rgb(50, 53, 57);
-		color:#ffff99;
-
-}
-QPushButton:focus
-{
-	background-color: rgb(59, 62, 66);
-	border-style:solid;
-	border-left-width:7px;
-	border-color: #ff3333;
-	color:#ffff99;
-}
-</string>
-     </property>
-     <property name="text">
-      <string>Retour</string>
-     </property>
-    </widget>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>10</y>
+     <width>111</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../integrationF/Smart_Pastry_Shop_2A25/image/182141689_901413657425909_592955327907562813_n.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
  <resources/>

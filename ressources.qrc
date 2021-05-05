@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/imagen">
+        <file>Demande de congé cookies.png</file>
+    </qresource>
+</RCC>

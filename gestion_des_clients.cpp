@@ -411,6 +411,7 @@ void gestion_des_clients::on_exp_2_clicked()
          "<body bgcolor=#ffffff link=#5000A0>\n"
         << QString("<h3 style=\" font-size: 32px; font-family: Arial, Helvetica, sans-serif; color: red ; font-weight: lighter; text-align: center;\">%1</h3>\n").arg("Tous les cartes fidélite")
         <<"<br>"
+
          <<"<table border=1 cellspacing=0 cellpadding=2>\n";
 
      out << "<thead><tr bgcolor=#f0f0f0>";
